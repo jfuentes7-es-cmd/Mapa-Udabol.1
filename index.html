@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Interactivo Campus UDABOL</title>
+    <title>UDABOL Campus Sacaba - Buscador de Aulas</title>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -22,198 +22,486 @@
             background: #0f172a;
         }
 
-        #map {
-            width: 100%;
-            height: 100vh;
-        }
-
-        /* Buscador Moderno */
-        .search-container {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            width: 90%;
-            max-width: 460px;
-            background: rgba(15, 23, 42, 0.92);
-            padding: 12px 16px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .search-header {
+        /* BARRA SUPERIOR AZUL INSTITUCIONAL */
+        .top-navbar {
+            height: 56px;
+            background: #002244;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 8px;
+            padding: 0 16px;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 2000;
+            position: relative;
         }
 
-        .search-header h2 {
+        .brand-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+            background: #eab308;
+            color: #002244;
+            font-weight: 900;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .brand-title h1 {
             font-size: 15px;
-            color: #f8fafc;
-            font-weight: 600;
+            font-weight: 700;
         }
 
-        .search-box {
+        .brand-title p {
+            font-size: 11px;
+            color: #94a3b8;
+        }
+
+        .top-actions {
             display: flex;
             gap: 8px;
         }
 
-        input[type="text"] {
-            flex: 1;
-            padding: 10px 14px;
-            background: rgba(255, 255, 255, 0.08);
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            font-size: 14px;
-            color: #fff;
-            outline: none;
-            transition: all 0.3s ease;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
         }
 
-        input[type="text"]::placeholder {
+        .nav-btn.active, .nav-btn:hover {
+            background: #eab308;
+            color: #002244;
+            border-color: #eab308;
+        }
+
+        /* LAYOUT PRINCIPAL */
+        .main-container {
+            display: flex;
+            height: calc(100vh - 56px);
+            position: relative;
+        }
+
+        /* PANEL LATERAL IZQUIERDO */
+        .sidebar {
+            width: 380px;
+            background: #ffffff;
+            height: 100%;
+            z-index: 1500;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-tabs {
+            display: flex;
+            border-bottom: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 8px;
+            border: none;
+            background: transparent;
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748b;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: #002244;
+            border-bottom-color: #002244;
+            background: #ffffff;
+        }
+
+        .sidebar-search {
+            padding: 14px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 10px 12px 10px 36px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
             color: #94a3b8;
         }
 
-        input[type="text"]:focus {
-            border-color: #38bdf8;
-            background: rgba(255, 255, 255, 0.15);
+        /* TAGS DE FILTRO */
+        .filter-chips {
+            display: flex;
+            gap: 6px;
         }
 
-        .btn-buscar {
-            background: linear-gradient(135deg, #800000, #b22222);
-            color: white;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 10px;
+        .chip-btn {
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
-            transition: transform 0.2s;
         }
 
-        .btn-buscar:active {
-            transform: scale(0.96);
+        .chip-btn.active {
+            background: #002244;
+            color: #ffffff;
+            border-color: #002244;
         }
 
-        .btn-limpiar {
-            background: rgba(255, 255, 255, 0.15);
-            color: #e2e8f0;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            display: none;
+        /* LISTA DE TARJETAS */
+        .cards-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #f8fafc;
         }
 
-        /* Botón GPS Flotante */
-        .btn-gps {
-            position: absolute;
-            bottom: 110px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(15, 23, 42, 0.9);
-            color: #38bdf8;
-            border: 1.5px solid #38bdf8;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
+        .aula-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+        }
+
+        .card-time {
+            float: right;
+            font-size: 11px;
+            color: #d97706;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 2px;
+        }
+
+        .card-subtitle {
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        .card-spec {
+            font-size: 11px;
+            color: #334155;
+            margin-bottom: 3px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 22px;
+            gap: 4px;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .btn-llegar {
+            flex: 2;
+            background: #002244;
+            color: white;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .btn-plano {
+            flex: 1;
+            background: #eab308;
+            color: #002244;
+            border: none;
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* CONTENEDOR DEL MAPA */
+        #map {
+            flex: 1;
+            height: 100%;
+        }
+
+        /* SELECTOR DE CAPAS INFERIOR DERECHO */
+        .layer-selector {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             backdrop-filter: blur(8px);
-            transition: transform 0.2s;
+            width: 140px;
         }
 
-        .btn-gps:active {
-            transform: scale(0.92);
+        .layer-selector h4 {
+            font-size: 10px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
         }
 
-        /* Estilos del Punto Azul de Ubicación GPS */
-        .user-location-marker {
-            width: 16px;
-            height: 16px;
-            background-color: #007aff;
-            border: 3px solid #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 0 12px rgba(0, 122, 255, 0.8);
+        .layer-opt {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #334155;
+            cursor: pointer;
+            border-radius: 6px;
         }
 
-        /* Etiquetas fijas sobre los ambientes */
+        .layer-opt.active {
+            background: #f1f5f9;
+            color: #002244;
+        }
+
+        /* ETIQUETAS Y POPUPS INTERACTIVOS */
         .etiqueta-ambiente {
-            background: rgba(15, 23, 42, 0.88);
-            color: #f8fafc;
+            background: rgba(0, 34, 68, 0.9);
+            color: #ffffff;
             border: 1px solid #38bdf8;
             border-radius: 6px;
             padding: 2px 7px;
             font-size: 11px;
             font-weight: 600;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
-        /* Card Inferior Informativa */
-        .info-card {
-            position: absolute;
-            bottom: 25px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1000;
-            width: 90%;
-            max-width: 460px;
-            background: rgba(15, 23, 42, 0.95);
-            padding: 16px 20px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            backdrop-filter: blur(12px);
-            border-left: 4px solid #38bdf8;
-            color: #fff;
-            display: none;
+        /* ESTILO DEL POPUP COMO LA IMAGEN */
+        .leaflet-popup-content-wrapper {
+            border-radius: 10px;
+            padding: 0;
+            overflow: hidden;
         }
 
-        .info-card h3 {
-            color: #38bdf8;
-            font-size: 16px;
-            margin-bottom: 4px;
+        .popup-custom {
+            padding: 10px;
+            min-width: 180px;
         }
 
-        .info-card p {
-            color: #cbd5e1;
+        .popup-header {
+            background: #002244;
+            color: white;
+            padding: 4px 8px;
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+
+        .popup-title {
             font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .popup-sub {
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        .popup-btns {
+            display: flex;
+            gap: 6px;
+        }
+
+        .popup-btns button {
+            flex: 1;
+            padding: 5px;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .popup-btn-llegar {
+            background: #002244;
+            color: white;
+        }
+
+        .popup-btn-plano {
+            background: #eab308;
+            color: #002244;
+        }
+
+        /* BOTÓN GPS */
+        .btn-gps {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: #ffffff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
 
-    <div class="search-container">
-        <div class="search-header">
-            <h2>🎓 UDABOL Campus Sacaba</h2>
+    <!-- BARRA SUPERIOR AZUL -->
+    <header class="top-navbar">
+        <div class="brand-section">
+            <span class="brand-logo">UDABOL</span>
+            <div class="brand-title">
+                <h1>Campus Sacaba - Buscador de Aulas</h1>
+                <p>Aulas C1-C4, Bloque D, Planos Arquitectónicos y Rutas Peatonales</p>
+            </div>
         </div>
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Ej. Aula S1, Cajas, Biblioteca...">
-            <button class="btn-buscar" onclick="buscarDestino()">Ir</button>
-            <button class="btn-limpiar" id="btnLimpiar" onclick="restablecerMapa()">Ver todo</button>
+        <div class="top-actions">
+            <button class="nav-btn active">🗺️ Plano Maestro</button>
+            <button class="nav-btn">❖ Cómo llegar</button>
+            <button class="nav-btn" onclick="centrarEnUsuario()">🎯 Mi Ubicación</button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- PANEL LATERAL IZQUIERDO -->
+        <aside class="sidebar">
+            <div class="sidebar-tabs">
+                <button class="tab-btn active">🏛️ Aulas C y D</button>
+                <button class="tab-btn">🏢 Edificios Campus</button>
+            </div>
+
+            <div class="sidebar-search">
+                <div class="search-input-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="Buscar aula (ej: C1, D4, Cómputo, Capilla)..." onkeyup="filtrarTarjetas()">
+                </div>
+                <div class="filter-chips">
+                    <button class="chip-btn active" onclick="filtrarBloque('todos')">田 Todas</button>
+                    <button class="chip-btn" onclick="filtrarBloque('bloque-c')">🏢 Bloque C (C1-C4)</button>
+                    <button class="chip-btn" onclick="filtrarBloque('bloque-d')">🎓 Bloque D (D1-D5)</button>
+                </div>
+            </div>
+
+            <div class="cards-list" id="cardsList">
+                <!-- Tarjeta Aula D-4 -->
+                <div class="aula-card" data-bloque="bloque-d" data-nombre="d4 d-4 magistral">
+                    <span class="card-tag" style="background:#8b5cf6;">Aula D-4</span>
+                    <span class="card-time">⏱️ 1.3 min a pie</span>
+                    <h3 class="card-title">Aula D-4 (Pabellón D - Magistral)</h3>
+                    <p class="card-subtitle">Bloque D - Sector Aulas</p>
+                    <p class="card-spec">🎓 Capacidad: 35 a 45 estudiantes</p>
+                    <p class="card-spec">📐 Dimensiones: 7.70 m de ancho x 9.00 m de fondo</p>
+                    <div class="card-buttons">
+                        <button class="btn-llegar" onclick="buscarDestinoEspecifico('D-4')">❖ ¿Cómo llegar?</button>
+                        <button class="btn-plano" onclick="focarPlano('D-4')">A Plano</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Aula D-5 -->
+                <div class="aula-card" data-bloque="bloque-d" data-nombre="d5 d-5">
+                    <span class="card-tag" style="background:#8b5cf6;">Aula D-5</span>
+                    <span class="card-time">⏱️ 1.4 min a pie</span>
+                    <h3 class="card-title">Aula D-5 (Pabellón D)</h3>
+                    <p class="card-subtitle">Bloque D - Sector Aulas</p>
+                    <p class="card-spec">🎓 Capacidad: 18 a 20 estudiantes</p>
+                    <p class="card-spec">📐 Dimensiones: 3.75 m de ancho x 9.00 m de fondo</p>
+                    <div class="card-buttons">
+                        <button class="btn-llegar" onclick="buscarDestinoEspecifico('D-5')">❖ ¿Cómo llegar?</button>
+                        <button class="btn-plano" onclick="focarPlano('D-5')">A Plano</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Aula C-1 -->
+                <div class="aula-card" data-bloque="bloque-c" data-nombre="c1 c-1">
+                    <span class="card-tag" style="background:#2563eb;">Aula C-1</span>
+                    <span class="card-time">⏱️ 1.1 min a pie</span>
+                    <h3 class="card-title">Aula C-1 (Pabellón C)</h3>
+                    <p class="card-subtitle">Bloque C - Sector Aulas</p>
+                    <p class="card-spec">🎓 Capacidad: 35 a 40 estudiantes</p>
+                    <div class="card-buttons">
+                        <button class="btn-llegar" onclick="buscarDestinoEspecifico('C-1')">❖ ¿Cómo llegar?</button>
+                        <button class="btn-plano" onclick="focarPlano('C-1')">A Plano</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAPA INTERACTIVO -->
+        <div id="map"></div>
+
+        <!-- BOTÓN GPS -->
+        <button class="btn-gps" onclick="centrarEnUsuario()" title="Mi Ubicación">🎯</button>
+
+        <!-- SELECTOR DE CAPAS -->
+        <div class="layer-selector">
+            <h4>Capa de Mapa</h4>
+            <div class="layer-opt active" onclick="cambiarCapa('satelite')">📙 Satélite</div>
+            <div class="layer-opt" onclick="cambiarCapa('plano')">🗺️ Plano</div>
+            <div class="layer-opt" onclick="cambiarCapa('limpio')">🔲 Limpio</div>
         </div>
     </div>
-
-    <!-- Botón Mi Ubicación GPS -->
-    <button class="btn-gps" onclick="centrarEnUsuario()" title="Mi Ubicación">🎯</button>
-
-    <div class="info-card" id="infoCard">
-        <h3 id="cardTitulo">Lugar Seleccionado</h3>
-        <p id="cardDetalle">Ubicación exacta identificada en el plano.</p>
-    </div>
-
-    <div id="map"></div>
 
     <!-- Leaflet & Omnivore JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -222,21 +510,30 @@
     <script>
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3918, -66.0692], 18);
 
-        // Capa Satelital Esri HD
-        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 21,
-            maxNativeZoom: 19,
-            attribution: '© ESRI World Imagery — UDABOL'
-        }).addTo(map);
+        // Capas Base
+        const sateliteTile = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', { maxZoom: 21, maxNativeZoom: 19 });
+        const planoTile = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 21 });
+        
+        sateliteTile.addTo(map); // Por defecto Satélite
+
+        function cambiarCapa(tipo) {
+            document.querySelectorAll('.layer-opt').forEach(el => el.classList.remove('active'));
+            if (tipo === 'satelite') {
+                map.removeLayer(planoTile);
+                sateliteTile.addTo(map);
+                event.currentTarget.classList.add('active');
+            } else if (tipo === 'plano') {
+                map.removeLayer(sateliteTile);
+                planoTile.addTo(map);
+                event.currentTarget.classList.add('active');
+            }
+        }
 
         let elementosEstructura = [];
         let elementosRutas = [];
-        let userMarker = null;
-        let userCircle = null;
-        let userLatLng = null;
-        let GPS_ACTIVADO = false;
+        let userMarker = null, userCircle = null, userLatLng = null;
 
-        // Cargar archivo KML
+        // Cargar KML
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
@@ -244,25 +541,31 @@
                 kmlLayer.eachLayer(function(layer) {
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
 
-                    // Polígonos / Aulas / Bloques
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
-                            color: '#38bdf8',
-                            fillColor: '#800000',
-                            fillOpacity: 0.55,
+                            color: '#eab308',
+                            fillColor: '#002244',
+                            fillOpacity: 0.5,
                             weight: 2
                         });
 
+                        // Configurar Popup al hacer clic como la imagen
                         if (nombre) {
-                            layer.bindTooltip(nombre, {
-                                permanent: true,
-                                direction: 'center',
-                                className: 'etiqueta-ambiente'
-                            });
+                            const popupContent = `
+                                <div class="popup-custom">
+                                    <span class="popup-header">Aula ${nombre}</span>
+                                    <div class="popup-title">Aula ${nombre} (Pabellón C/D)</div>
+                                    <div class="popup-sub">Bloque Sector Aulas</div>
+                                    <div class="popup-btns">
+                                        <button class="popup-btn-llegar" onclick="buscarDestinoEspecifico('${nombre}')">❖ ¿Cómo llegar?</button>
+                                        <button class="popup-btn-plano" onclick="focarPlano('${nombre}')">A Plano</button>
+                                    </div>
+                                </div>
+                            `;
+                            layer.bindPopup(popupContent);
                         }
                         elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
                     } 
-                    // Rutas / Líneas peatonales
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
                             color: '#00F5FF',
@@ -277,132 +580,67 @@
             })
             .addTo(map);
 
-        // --- GEOLOCALIZACIÓN GPS ESTABILIZADA ---
-        function obtenerUbicacionEstable() {
-            map.locate({ 
-                setView: false, 
-                maxZoom: 19, 
-                enableHighAccuracy: true,
-                timeout: 10000 
-            });
-        }
-
-        map.on('locationfound', function(e) {
-            // Filtrar saltos o imprecisiones mayores a 25 metros
-            if (e.accuracy > 25 && GPS_ACTIVADO) {
-                return;
-            }
-
-            userLatLng = e.latlng;
-            const radius = Math.min(e.accuracy / 2, 15);
-
-            if (userMarker) {
-                userMarker.setLatLng(e.latlng);
-                userCircle.setLatLng(e.latlng).setRadius(radius);
-            } else {
-                const userIcon = L.divIcon({
-                    className: 'user-location-marker',
-                    iconSize: [16, 16],
-                    iconAnchor: [8, 8]
-                });
-                userMarker = L.marker(e.latlng, { icon: userIcon }).addTo(map).bindPopup("¡Estás aquí!");
-                userCircle = L.circle(e.latlng, { radius: radius, color: '#007aff', opacity: 0.3, fillColor: '#007aff', fillOpacity: 0.15 }).addTo(map);
-            }
-
-            GPS_ACTIVADO = true;
-        });
-
-        map.on('locationerror', function(e) {
-            console.log("GPS no disponible o acceso denegado por el usuario.");
-        });
-
-        function centrarEnUsuario() {
-            if (userLatLng) {
-                map.setView(userLatLng, 19, { animate: true });
-                if (userMarker) userMarker.openPopup();
-            } else {
-                obtenerUbicacionEstable();
-                alert("Obteniendo señal GPS... Asegúrate de permitir el acceso a tu ubicación en el celular.");
-            }
-        }
-
-        // BÚSQUEDA Y AISLAMIENTO DE AMBIENTE
-        function buscarDestino() {
-            const query = document.getElementById('searchInput').value.toLowerCase().trim();
-            if (!query) return;
-
-            let hallado = false;
-            let destinoLatLng = null;
-
-            // Ocultar rutas anteriores
+        // BUSCADOR ESPECÍFICO DE AULAS
+        function buscarDestinoEspecifico(queryStr) {
+            const query = queryStr.toLowerCase().trim();
             elementosRutas.forEach(item => map.removeLayer(item.layer));
 
-            // Filtrar y resaltar la zona seleccionada
             elementosEstructura.forEach(item => {
                 if (item.nombre.includes(query)) {
-                    hallado = true;
-                    destinoLatLng = item.layer.getBounds().getCenter();
-
-                    item.layer.setStyle({
-                        color: '#00FF66',     // Borde verde neón
-                        fillColor: '#00FF66',
-                        fillOpacity: 0.75,
-                        weight: 3
-                    });
-
+                    item.layer.setStyle({ color: '#00FF66', fillColor: '#00FF66', fillOpacity: 0.75, weight: 3 });
                     map.fitBounds(item.layer.getBounds(), { padding: [80, 80] });
-
-                    // Calcular distancia si la ubicación GPS está disponible
-                    let textoDetalle = "Visualizando únicamente este espacio en el mapa.";
-                    if (userLatLng && destinoLatLng) {
-                        const metros = Math.round(userLatLng.distanceTo(destinoLatLng));
-                        textoDetalle = `Estás a aprox. <strong>${metros} metros</strong> de este lugar.`;
-                    }
-
-                    document.getElementById('infoCard').style.display = 'block';
-                    document.getElementById('cardTitulo').innerText = `Ubicación: ${item.layer.feature.properties.name}`;
-                    document.getElementById('cardDetalle').innerHTML = textoDetalle;
+                    item.layer.openPopup();
                 } else {
-                    // Atenuar los demás bloques
                     item.layer.setStyle({ fillOpacity: 0.15, weight: 1 });
                 }
             });
 
-            // Mostrar la ruta trazada si coincide con la búsqueda
             elementosRutas.forEach(item => {
-                if (item.nombre.includes(query)) {
-                    map.addLayer(item.layer);
+                if (item.nombre.includes(query)) map.addLayer(item.layer);
+            });
+        }
+
+        function focarPlano(queryStr) {
+            buscarDestinoEspecifico(queryStr);
+        }
+
+        // FILTROS DEL PANEL LATERAL
+        function filtrarTarjetas() {
+            const val = document.getElementById('searchInput').value.toLowerCase();
+            document.querySelectorAll('.aula-card').forEach(card => {
+                const name = card.getAttribute('data-nombre');
+                card.style.display = name.includes(val) ? 'block' : 'none';
+            });
+        }
+
+        function filtrarBloque(bloque) {
+            document.querySelectorAll('.chip-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.aula-card').forEach(card => {
+                if (bloque === 'todos') {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = card.getAttribute('data-bloque') === bloque ? 'block' : 'none';
                 }
             });
+        }
 
-            if (hallado) {
-                document.getElementById('btnLimpiar').style.display = 'inline-block';
+        // GPS
+        map.locate({ setView: false, watch: true, enableHighAccuracy: true });
+        map.on('locationfound', function(e) {
+            userLatLng = e.latlng;
+            if (!userMarker) {
+                userMarker = L.marker(e.latlng).addTo(map).bindPopup("Tu ubicación");
             } else {
-                alert('No se encontró el ambiente. Asegúrate de haber escrito bien el nombre o que esté dibujado en tu mapa.kml');
+                userMarker.setLatLng(e.latlng);
             }
+        });
+
+        function centrarEnUsuario() {
+            if (userLatLng) map.setView(userLatLng, 19);
+            else alert("Activa el GPS de tu celular.");
         }
-
-        // RESTABLECER MAPA GENERAL
-        function restablecerMapa() {
-            elementosRutas.forEach(item => map.removeLayer(item.layer));
-            elementosEstructura.forEach(item => {
-                item.layer.setStyle({
-                    color: '#38bdf8',
-                    fillColor: '#800000',
-                    fillOpacity: 0.55,
-                    weight: 2
-                });
-            });
-
-            document.getElementById('infoCard').style.display = 'none';
-            document.getElementById('btnLimpiar').style.display = 'none';
-            document.getElementById('searchInput').value = '';
-
-            map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
-        }
-
-        // Intentar obtener la primera lectura de ubicación
-        obtenerUbicacionEstable();
     </script>
 </body>
 </html>
