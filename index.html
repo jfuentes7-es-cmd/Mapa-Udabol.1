@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Interactivo UDABOL - Cochabamba</title>
+    <title>Mapa Interactivo Campus UDABOL</title>
 
     <!-- Hojas de estilo de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -19,41 +19,43 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            background: #0f172a;
         }
 
         #map {
             width: 100%;
             height: 100vh;
-            background: #111;
         }
 
-        /* Buscador flotante elegante */
+        /* Buscador Moderno */
         .search-container {
             position: absolute;
-            top: 15px;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             width: 90%;
-            max-width: 440px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 14px;
-            border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            backdrop-filter: blur(8px);
+            max-width: 460px;
+            background: rgba(15, 23, 42, 0.92);
+            padding: 12px 16px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .search-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .search-header h2 {
-            font-size: 16px;
-            color: #800000;
-            font-weight: 700;
+            font-size: 15px;
+            color: #f8fafc;
+            font-weight: 600;
+            letter-spacing: 0.3px;
         }
 
         .search-box {
@@ -64,77 +66,93 @@
         input[type="text"] {
             flex: 1;
             padding: 10px 14px;
-            border: 1.5px solid #ddd;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
             font-size: 14px;
+            color: #fff;
             outline: none;
-            transition: border-color 0.2s;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]::placeholder {
+            color: #94a3b8;
         }
 
         input[type="text"]:focus {
-            border-color: #800000;
+            border-color: #38bdf8;
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .btn-buscar {
-            background: #800000;
+            background: linear-gradient(135deg, #800000, #b22222);
             color: white;
             border: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            font-weight: bold;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 600;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-buscar:active {
+            transform: scale(0.96);
         }
 
         .btn-limpiar {
-            background: #f0f0f0;
-            color: #444;
-            border: 1px solid #ccc;
-            padding: 10px 12px;
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 14px;
+            border-radius: 10px;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
             display: none;
         }
 
-        /* Etiquetas en el mapa */
-        .etiqueta-mapa {
-            background: rgba(128, 0, 0, 0.9);
-            color: #ffffff;
-            border: 1px solid #ffffff;
+        /* Etiquetas fijas sobre los ambientes */
+        .etiqueta-ambiente {
+            background: rgba(15, 23, 42, 0.88);
+            color: #f8fafc;
+            border: 1px solid #38bdf8;
             border-radius: 6px;
-            padding: 3px 8px;
+            padding: 2px 7px;
             font-size: 11px;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            white-space: nowrap;
         }
 
-        /* Panel Informativo de la Ruta Activa */
-        .info-panel {
+        /* Card Inferior Informativa */
+        .info-card {
             position: absolute;
             bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             width: 90%;
-            max-width: 440px;
-            background: white;
-            padding: 16px;
-            border-radius: 14px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            max-width: 460px;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 16px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(12px);
+            border-left: 4px solid #38bdf8;
+            color: #fff;
             display: none;
-            border-left: 5px solid #00E5FF;
         }
 
-        .info-panel h3 {
-            color: #800000;
+        .info-card h3 {
+            color: #38bdf8;
             font-size: 16px;
             margin-bottom: 4px;
         }
 
-        .info-panel p {
-            color: #555;
+        .info-card p {
+            color: #cbd5e1;
             font-size: 13px;
         }
     </style>
@@ -143,18 +161,18 @@
 
     <div class="search-container">
         <div class="search-header">
-            <h2>📍 Campus UDABOL Sacaba</h2>
+            <h2>🎓 UDABOL Campus Sacaba</h2>
         </div>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="¿A dónde quieres ir? (ej. Cajas, CC-4)">
+            <input type="text" id="searchInput" placeholder="Ej. Aula S1, Cajas, Biblioteca...">
             <button class="btn-buscar" onclick="buscarDestino()">Ir</button>
-            <button class="btn-limpiar" id="btnLimpiar" onclick="limpiarRutas()">Borrar ruta</button>
+            <button class="btn-limpiar" id="btnLimpiar" onclick="restablecerMapa()">Ver todo</button>
         </div>
     </div>
 
-    <div class="info-panel" id="infoPanel">
-        <h3 id="rutaTitulo">Destino seleccionado</h3>
-        <p id="rutaDetalle">Sigue la línea azul para llegar desde el ingreso principal.</p>
+    <div class="info-card" id="infoCard">
+        <h3 id="cardTitulo">Lugar Seleccionado</h3>
+        <p id="cardDetalle">Ubicación exacta identificada en el plano.</p>
     </div>
 
     <div id="map"></div>
@@ -163,33 +181,32 @@
     <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
 
     <script>
-        // Inicializar mapa centrado en el campus con zoom HD
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3918, -66.0692], 18);
 
-        // Capa Satelital Esri HD
+        // Capa Satelital ESRI HD limpia
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 21,
             maxNativeZoom: 19,
-            attribution: '© Esri Satelital — UDABOL'
+            attribution: '© ESRI World Imagery — UDABOL'
         }).addTo(map);
 
-        let capasEstructuras = [];
-        let capasRutas = [];
+        let elementosEstructura = [];
+        let elementosRutas = [];
 
-        // Cargar KML
+        // Cargar archivo KML
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
-                map.fitBounds(kmlLayer.getBounds());
+                map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
 
                 kmlLayer.eachLayer(function(layer) {
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
 
-                    // Si es un Edificio / Polígono
+                    // AULAS / ESPACIOS / POLÍGONOS
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
-                            color: '#FFD700',
-                            fillColor: '#800000',
-                            fillOpacity: 0.5,
+                            color: '#38bdf8',      // Borde azul celeste estético
+                            fillColor: '#800000',  // Relleno guindo UDABOL
+                            fillOpacity: 0.55,
                             weight: 2
                         });
 
@@ -197,80 +214,100 @@
                             layer.bindTooltip(nombre, {
                                 permanent: true,
                                 direction: 'center',
-                                className: 'etiqueta-mapa'
+                                className: 'etiqueta-ambiente'
                             });
                         }
-                        capasEstructuras.push(layer);
+                        elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
                     } 
-                    // Si es una Ruta / Línea
+                    // RUTAS / LÍNEAS PEATONALES
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
-                            color: '#00E5FF',
-                            weight: 6,
+                            color: '#00F5FF',      // Cian Neón
+                            weight: 5,
                             opacity: 0.9,
-                            dashArray: '8, 10'
+                            dashArray: '6, 8'
                         });
 
-                        // OCULTAR la ruta al iniciar
+                        // Ocultar rutas al inicio
                         map.removeLayer(layer);
-                        capasRutas.push({ layer: layer, nombre: nombre.toLowerCase() });
+                        elementosRutas.push({ layer: layer, nombre: nombre.toLowerCase() });
                     }
                 });
             })
             .addTo(map);
 
-        // Función de Búsqueda y Filtrado Exclusivo de Rutas
+        // BÚSQUEDA Y AISLAMIENTO DE AMBIENTE
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
 
-            let rutaEncontrada = false;
+            let hallado = false;
 
-            // 1. Ocultar todas las rutas activas previas
-            capasRutas.forEach(r => map.removeLayer(r.layer));
+            // 1. Ocultar todas las rutas activas
+            elementosRutas.forEach(item => map.removeLayer(item.layer));
 
-            // 2. Mostrar SOLAMENTE la ruta que coincida con la búsqueda
-            capasRutas.forEach(r => {
-                if (r.nombre.includes(query)) {
-                    map.addLayer(r.layer);
-                    map.fitBounds(r.layer.getBounds(), { padding: [50, 50] });
-                    rutaEncontrada = true;
+            // 2. Filtrar ambientes y resaltar SOLO el coincidente
+            elementosEstructura.forEach(item => {
+                if (item.nombre.includes(query)) {
+                    hallado = true;
 
-                    // Actualizar interfaz
-                    document.getElementById('infoPanel').style.display = 'block';
-                    document.getElementById('btnLimpiar').style.display = 'inline-block';
-                    document.getElementById('rutaTitulo').innerText = `Ruta hacia: ${document.getElementById('searchInput').value}`;
-                    document.getElementById('rutaDetalle').innerText = `Visualizando únicamente el camino seleccionado.`;
+                    // Estilo de Resaltado para la zona encontrada
+                    item.layer.setStyle({
+                        color: '#00FF66',     // Borde verde neón brillante
+                        fillColor: '#00FF66',
+                        fillOpacity: 0.75,
+                        weight: 3
+                    });
+
+                    map.fitBounds(item.layer.getBounds(), { padding: [80, 80] });
+
+                    // Mostrar Card informativa
+                    document.getElementById('infoCard').style.display = 'block';
+                    document.getElementById('cardTitulo').innerText = `Ubicación: ${item.layer.feature.properties.name}`;
+                    document.getElementById('cardDetalle').innerText = `Visualizando únicamente este espacio en el mapa.`;
+                } else {
+                    // Atenuar los demás ambientes para no distraer
+                    item.layer.setStyle({
+                        fillOpacity: 0.2,
+                        weight: 1
+                    });
                 }
             });
 
-            // Si no se encuentra como nombre de ruta, buscar en los bloques/aulas
-            if (!rutaEncontrada) {
-                capasEstructuras.forEach(layer => {
-                    const nombreLayer = layer.feature.properties.name ? layer.feature.properties.name.toLowerCase() : "";
-                    if (nombreLayer.includes(query)) {
-                        map.fitBounds(layer.getBounds(), { padding: [50, 50] });
-                        rutaEncontrada = true;
-                        document.getElementById('infoPanel').style.display = 'block';
-                        document.getElementById('btnLimpiar').style.display = 'inline-block';
-                        document.getElementById('rutaTitulo').innerText = `Ubicación: ${layer.feature.properties.name}`;
-                        document.getElementById('rutaDetalle').innerText = `Ubicación destacada en el mapa.`;
-                    }
-                });
-            }
+            // 3. Encender la ruta correspondiente si existe
+            elementosRutas.forEach(item => {
+                if (item.nombre.includes(query)) {
+                    map.addLayer(item.layer);
+                }
+            });
 
-            if (!rutaEncontrada) {
-                alert('No se encontró una ruta o ambiente con ese nombre. Revisa cómo la nombraste en Google Earth.');
+            if (hallado) {
+                document.getElementById('btnLimpiar').style.display = 'inline-block';
+            } else {
+                alert('No se encontró el ambiente. Verifica que esté dibujado como un polígono con ese nombre en tu KML.');
             }
         }
 
-        // Función para limpiar la pantalla y volver al mapa general
-        function limpiarRutas() {
-            capasRutas.forEach(r => map.removeLayer(r.layer));
-            document.getElementById('infoPanel').style.display = 'none';
+        // RESTABLECER VISTA GENERAL
+        function restablecerMapa() {
+            // Ocultar rutas
+            elementosRutas.forEach(item => map.removeLayer(item.layer));
+
+            // Restaurar estilo normal de todos los ambientes
+            elementosEstructura.forEach(item => {
+                item.layer.setStyle({
+                    color: '#38bdf8',
+                    fillColor: '#800000',
+                    fillOpacity: 0.55,
+                    weight: 2
+                });
+            });
+
+            document.getElementById('infoCard').style.display = 'none';
             document.getElementById('btnLimpiar').style.display = 'none';
             document.getElementById('searchInput').value = '';
-            map.fitBounds(kmlLayer.getBounds());
+
+            map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
         }
     </script>
 </body>
