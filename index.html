@@ -22,7 +22,7 @@
             background: #0f172a;
         }
 
-        /* BARRA SUPERIOR AZUL INSTITUCIONAL */
+        /* BARRA SUPERIOR INSTITUCIONAL */
         .top-navbar {
             height: 56px;
             background: #002244;
@@ -147,24 +147,31 @@
             display: none;
         }
 
+        .sidebar-content {
+            padding: 15px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
         /* CONTENEDOR DEL MAPA */
         #map {
             flex: 1;
             height: 100%;
-            background: #0f172a;
+            background: #e2e8f0;
         }
 
-        /* ETIQUETA UNIFICADA SOBRE AMBIENTES */
+        /* ETIQUETA VECTORIAL SOBRE AMBIENTES */
         .etiqueta-ambiente {
-            background: rgba(0, 34, 68, 0.92);
+            background: rgba(0, 34, 68, 0.95);
             color: #ffffff;
-            border: 1px solid #38bdf8;
+            border: 1.5px solid #ffffff;
             border-radius: 6px;
-            padding: 2px 7px;
+            padding: 3px 8px;
             font-size: 11px;
             font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             white-space: nowrap;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
         /* BOTÓN GPS */
@@ -205,7 +212,7 @@
             background: rgba(255, 255, 255, 0.1);
             color: #cbd5e1;
             border: 1px solid transparent;
-            padding: 6px 10px;
+            padding: 6px 12px;
             border-radius: 8px;
             font-size: 12px;
             font-weight: 600;
@@ -261,13 +268,13 @@
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR AZUL INSTITUCIONAL -->
+    <!-- BARRA SUPERIOR INSTITUCIONAL -->
     <header class="top-navbar">
         <div class="brand-section">
             <span class="brand-logo">UDABOL</span>
             <div class="brand-title">
                 <h1>Campus Sacaba - Mapa Interactivo</h1>
-                <p>Navegación Peatonal y Ubicación de Aulas</p>
+                <p>Navegación Peatonal Vectorial 2D/3D</p>
             </div>
         </div>
         <div class="top-actions">
@@ -286,8 +293,10 @@
                     <button class="btn-reset" id="btnReset" onclick="restablecerMapa()">✖</button>
                 </div>
             </div>
-            <div style="padding: 15px; color: #64748b; font-size: 13px;">
-                <p>📌 Busca un ambiente para aislarlo en <strong>verde neón</strong> y mostrar su ruta única de llegada.</p>
+            <div class="sidebar-content">
+                <p style="color: #64748b; font-size: 13px; line-height: 1.5;">
+                    📌 Busca o selecciona cualquier aula para desplegar el aislamiento en <strong>verde neón</strong> y trazar la ruta de llegada en <strong>cian neón</strong>.
+                </p>
             </div>
         </aside>
 
@@ -299,8 +308,8 @@
 
         <!-- SELECTOR DE CAPAS -->
         <div class="layer-selector">
-            <button class="layer-btn active" id="btnCapaPlano" onclick="activarCapa('plano')">🗺️ Plano 2D</button>
-            <button class="layer-btn" id="btnCapaSatelite" onclick="activarCapa('satelite')">🛰️ Satelital</button>
+            <button class="layer-btn active" id="btnCapaPlano" onclick="activarCapa('plano')">📐 Plano Vectorial</button>
+            <button class="layer-btn" id="btnCapaSatelite" onclick="activarCapa('satelite')">🛰️ Satelital HD</button>
         </div>
 
         <!-- CARD INFORMATIVA INFERIOR -->
@@ -317,17 +326,14 @@
     <script>
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3918, -66.0692], 18);
 
-        // Capa 1: Imagen del Plano Ilustrado (Georreferenciada sobre el campus)
-        const limitesPlano = [
-            [-17.3932, -66.0705],
-            [-17.3905, -66.0678]
-        ];
-        const capaPlano = L.imageOverlay('plano.png', limitesPlano, {
-            opacity: 1,
-            maxZoom: 21
+        // Capa Base Clean Vectorial (CartoDB Positron)
+        const capaVectorial = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            maxZoom: 21,
+            maxNativeZoom: 19,
+            attribution: '© OpenStreetMap · CartoDB — UDABOL'
         }).addTo(map);
 
-        // Capa 2: Satelital Esri HD
+        // Capa Base Satelital HD (Esri World Imagery)
         const capaSatelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 21,
             maxNativeZoom: 19,
@@ -340,48 +346,67 @@
 
             if (tipo === 'plano') {
                 map.removeLayer(capaSatelite);
-                capaPlano.addTo(map);
+                capaVectorial.addTo(map);
                 document.getElementById('btnCapaPlano').classList.add('active');
             } else {
-                map.removeLayer(capaPlano);
+                map.removeLayer(capaVectorial);
                 capaSatelite.addTo(map);
                 document.getElementById('btnCapaSatelite').classList.add('active');
+            }
+        }
+
+        // PALETA CROMÁTICA ILUSTRADA ARQUITECTÓNICA POR ZONAS
+        function obtenerEstiloVectorial(nombre) {
+            const n = nombre.toLowerCase().trim();
+
+            if (n.startsWith('c-') || n.startsWith('aula c')) {
+                return { color: '#0284c7', fillColor: '#38bdf8', fillOpacity: 0.85, weight: 2 }; // Bloque C (Azul Cian)
+            } else if (n.startsWith('d-') || n.startsWith('aula d')) {
+                return { color: '#0369a1', fillColor: '#7dd3fc', fillOpacity: 0.85, weight: 2 }; // Bloque D (Celeste)
+            } else if (n.startsWith('cc-') || n.startsWith('aula cc')) {
+                return { color: '#c2410c', fillColor: '#fb923c', fillOpacity: 0.85, weight: 2 }; // CC (Naranja Salmón)
+            } else if (n.startsWith('a-') || n.startsWith('aula a')) {
+                return { color: '#15803d', fillColor: '#4ade80', fillOpacity: 0.85, weight: 2 }; // Bloque A (Verde Pastel)
+            } else if (n.includes('biblioteca') || n.includes('caja')) {
+                return { color: '#1d4ed8', fillColor: '#60a5fa', fillOpacity: 0.9, weight: 2 };  // Servicios (Azul Eléctrico)
+            } else if (n.includes('nuevo') || n.includes('petrolera')) {
+                return { color: '#7e22ce', fillColor: '#c084fc', fillOpacity: 0.85, weight: 2 }; // Edificios Grandes (Morado)
+            } else if (n.includes('cancha') || n.includes('polideportiva')) {
+                return { color: '#b45309', fillColor: '#fde047', fillOpacity: 0.75, weight: 2 }; // Canchas (Dorado)
+            } else {
+                return { color: '#002244', fillColor: '#003366', fillOpacity: 0.75, weight: 2 }; // Predeterminado
             }
         }
 
         let elementosEstructura = [];
         let elementosRutas = [];
         let nombresProcesados = new Set();
-        let userMarker = null, userCircle = null, userLatLng = null;
+        let userMarker = null, userLatLng = null;
 
-        // Cargar KML y filtrar duplicados
+        // Cargar KML y renderizar polígonos vectoriales
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
 
                 kmlLayer.eachLayer(function(layer) {
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
+                    const nombreL = nombre.toLowerCase().trim();
 
                     if (layer instanceof L.Polygon) {
-                        layer.setStyle({
-                            color: '#eab308',
-                            fillColor: '#800000',
-                            fillOpacity: 0.55,
-                            weight: 2
-                        });
+                        const estilo = obtenerEstiloVectorial(nombre);
+                        layer.setStyle(estilo);
 
-                        if (nombre) {
+                        if (nombre && !nombresProcesados.has(nombreL)) {
                             layer.bindTooltip(nombre, {
                                 permanent: true,
                                 direction: 'center',
                                 className: 'etiqueta-ambiente'
                             });
-                            nombresProcesados.add(nombre.toLowerCase().trim());
+                            nombresProcesados.add(nombreL);
                         }
-                        elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase().trim() });
+                        elementosEstructura.push({ layer: layer, nombre: nombreL, estiloBase: estilo });
                     } 
                     else if (layer instanceof L.Marker) {
-                        const nombreL = nombre.toLowerCase().trim();
                         if (nombresProcesados.has(nombreL)) {
                             map.removeLayer(layer);
                         } else if (nombre) {
@@ -391,7 +416,7 @@
                                 className: 'etiqueta-ambiente'
                             });
                             layer.setOpacity(0);
-                            elementosEstructura.push({ layer: layer, nombre: nombreL });
+                            elementosEstructura.push({ layer: layer, nombre: nombreL, estiloBase: null });
                         }
                     }
                     else if (layer instanceof L.Polyline) {
@@ -402,13 +427,13 @@
                             dashArray: '6, 8'
                         });
                         map.removeLayer(layer);
-                        elementosRutas.push({ layer: layer, nombre: nombre.toLowerCase().trim() });
+                        elementosRutas.push({ layer: layer, nombre: nombreL });
                     }
                 });
             })
             .addTo(map);
 
-        // Búsqueda de alta precisión
+        // BÚSQUEDA Y AISLAMIENTO NEÓN DE ALTA PRECISIÓN
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
@@ -432,21 +457,24 @@
                         map.setView(destinoLatLng, 20);
                     }
 
+                    // Iluminar en VERDE NEÓN
                     if (item.layer.setStyle) {
                         item.layer.setStyle({
                             color: '#00FF66',
                             fillColor: '#00FF66',
-                            fillOpacity: 0.8,
-                            weight: 3
+                            fillOpacity: 0.9,
+                            weight: 4
                         });
                     }
                 } else {
+                    // Atenuar el resto de estructuras
                     if (item.layer.setStyle) {
                         item.layer.setStyle({ fillOpacity: 0.15, weight: 1 });
                     }
                 }
             });
 
+            // Trazar únicamente la ruta correspondiente
             elementosRutas.forEach(item => {
                 if (item.nombre === `ruta a ${query}` || item.nombre === `ruta ${query}` || item.nombre.includes(query)) {
                     map.addLayer(item.layer);
@@ -471,13 +499,8 @@
         function restablecerMapa() {
             elementosRutas.forEach(item => map.removeLayer(item.layer));
             elementosEstructura.forEach(item => {
-                if (item.layer.setStyle) {
-                    item.layer.setStyle({
-                        color: '#eab308',
-                        fillColor: '#800000',
-                        fillOpacity: 0.55,
-                        weight: 2
-                    });
+                if (item.layer.setStyle && item.estiloBase) {
+                    item.layer.setStyle(item.estiloBase);
                 }
             });
 
