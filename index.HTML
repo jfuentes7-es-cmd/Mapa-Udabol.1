@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo UDABOL - Cochabamba</title>
+
+    <!-- Hojas de estilo de Leaflet (Mapa interactivo) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #map {
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* Panel flotante de búsqueda */
+        .search-container {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 420px;
+            background: white;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .search-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .search-header h2 {
+            font-size: 16px;
+            color: #800000; /* Color guindo UDABOL */
+        }
+
+        .search-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        button {
+            background: #800000;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #600000;
+        }
+
+        /* Indicaciones del trayecto */
+        .info-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 420px;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+        }
+
+        .info-panel h3 {
+            color: #333;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+
+        .info-panel p {
+            color: #666;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Panel de búsqueda flotante -->
+    <div class="search-container">
+        <div class="search-header">
+            📍 <h2>UDABOL Campus Sacaba</h2>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="¿A dónde quieres ir? (ej. CC-4, Cajas)">
+            <button onclick="buscarDestino()">Ir</button>
+        </div>
+    </div>
+
+    <!-- Panel con indicaciones -->
+    <div class="info-panel" id="infoPanel">
+        <h3 id="rutaTitulo">Ruta trazada</h3>
+        <p id="rutaDetalle">Sigue la línea marcada en el mapa para llegar a tu destino.</p>
+    </div>
+
+    <!-- Contenedor del mapa -->
+    <div id="map"></div>
+
+    <!-- Scripts de Leaflet y lector de KML (omnivore) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
+
+    <script>
+        // 1. Inicializar el mapa centrado en UDABOL Sacaba
+        const map = L.map('map').setView([-17.3918, -66.0692], 18);
+
+        // 2. Capa base de mapas (OpenStreetMap / Mapa claro)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 20,
+            attribution: '© UDABOL Mapa Interactivo'
+        }).addTo(map);
+
+        // 3. Cargar automáticamente tu archivo KML de Google Earth Pro
+        // Asegúrate de nombrar tu archivo subido como "mapa.kml"
+        const kmlLayer = omnivore.kml('mapa.kml')
+            .on('ready', function() {
+                // Ajustar la cámara automáticamente para encuadrar todo lo que dibujaste en Google Earth
+                map.fitBounds(kmlLayer.getBounds());
+                
+                // Darle estilo a los polígonos y pasillos dibujados
+                kmlLayer.eachLayer(function(layer) {
+                    if (layer instanceof L.Polygon) {
+                        layer.setStyle({
+                            color: '#800000',
+                            fillColor: '#b30000',
+                            fillOpacity: 0.4,
+                            weight: 2
+                        });
+                    } else if (layer instanceof L.Polyline) {
+                        layer.setStyle({
+                            color: '#0066ff',
+                            weight: 4,
+                            dashArray: '5, 10'
+                        });
+                    }
+                });
+            })
+            .addTo(map);
+
+        // 4. Función básica para buscar aula u oficina
+        function buscarDestino() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            if (!query) return;
+
+            let encontrado = false;
+
+            kmlLayer.eachLayer(function(layer) {
+                if (layer.feature && layer.feature.properties && layer.feature.properties.name) {
+                    const nombre = layer.feature.properties.name.toLowerCase();
+                    if (nombre.includes(query)) {
+                        encontrado = true;
+                        
+                        // Centrar mapa en el lugar buscado
+                        if (layer.getBounds) {
+                            map.fitBounds(layer.getBounds());
+                        } else if (layer.getLatLng) {
+                            map.setView(layer.getLatLng(), 19);
+                        }
+
+                        // Abrir globo informativo del lugar
+                        layer.bindPopup(`<b>${layer.feature.properties.name}</b><br>Haz llegado a tu destino.`).openPopup();
+
+                        // Mostrar panel inferior
+                        document.getElementById('infoPanel').style.display = 'block';
+                        document.getElementById('rutaTitulo').innerText = `Destino: ${layer.feature.properties.name}`;
+                        document.getElementById('rutaDetalle').innerText = `Sigue el camino azul resaltado desde la entrada principal.`;
+                    }
+                }
+            });
+
+            if (!encontrado) {
+                alert('No encontramos ese lugar. Prueba buscando: CC-4, Cajas, Biblioteca, etc.');
+            }
+        }
+    </script>
+</body>
+</html>
