@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body, html {
@@ -24,10 +24,10 @@
         #map {
             width: 100%;
             height: 100vh;
-            background: #111; /* Fondo oscuro por si carga */
+            background: #111;
         }
 
-        /* Buscador flotante */
+        /* Buscador flotante elegante */
         .search-container {
             position: absolute;
             top: 15px;
@@ -35,24 +35,25 @@
             transform: translateX(-50%);
             z-index: 1000;
             width: 90%;
-            max-width: 420px;
+            max-width: 440px;
             background: rgba(255, 255, 255, 0.95);
-            padding: 12px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
+            padding: 14px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            backdrop-filter: blur(8px);
         }
 
         .search-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
+            justify-content: space-between;
+            margin-bottom: 10px;
         }
 
         .search-header h2 {
             font-size: 16px;
             color: #800000;
+            font-weight: 700;
         }
 
         .search-box {
@@ -62,14 +63,19 @@
 
         input[type="text"] {
             flex: 1;
-            padding: 10px 12px;
-            border: 1px solid #ccc;
+            padding: 10px 14px;
+            border: 1.5px solid #ddd;
             border-radius: 8px;
             font-size: 14px;
             outline: none;
+            transition: border-color 0.2s;
         }
 
-        button {
+        input[type="text"]:focus {
+            border-color: #800000;
+        }
+
+        .btn-buscar {
             background: #800000;
             color: white;
             border: none;
@@ -79,48 +85,56 @@
             cursor: pointer;
         }
 
-        button:hover {
-            background: #600000;
+        .btn-limpiar {
+            background: #f0f0f0;
+            color: #444;
+            border: 1px solid #ccc;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            display: none;
         }
 
-        /* Etiquetas fijas con el nombre de cada aula/ambiente */
+        /* Etiquetas en el mapa */
         .etiqueta-mapa {
-            background: rgba(128, 0, 0, 0.85);
+            background: rgba(128, 0, 0, 0.9);
             color: #ffffff;
             border: 1px solid #ffffff;
             border-radius: 6px;
-            padding: 3px 7px;
-            font-size: 12px;
+            padding: 3px 8px;
+            font-size: 11px;
             font-weight: bold;
             text-align: center;
-            white-space: nowrap;
             box-shadow: 0 2px 6px rgba(0,0,0,0.4);
         }
 
-        /* Panel de información inferior */
+        /* Panel Informativo de la Ruta Activa */
         .info-panel {
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             width: 90%;
-            max-width: 420px;
+            max-width: 440px;
             background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            padding: 16px;
+            border-radius: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             display: none;
+            border-left: 5px solid #00E5FF;
         }
 
         .info-panel h3 {
             color: #800000;
-            font-size: 15px;
+            font-size: 16px;
             margin-bottom: 4px;
         }
 
         .info-panel p {
-            color: #444;
+            color: #555;
             font-size: 13px;
         }
     </style>
@@ -129,17 +143,18 @@
 
     <div class="search-container">
         <div class="search-header">
-            📍 <h2>UDABOL Campus Sacaba</h2>
+            <h2>📍 Campus UDABOL Sacaba</h2>
         </div>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="¿A dónde vas? (ej. Cafetería, CC-4, Cajas)">
-            <button onclick="buscarDestino()">Ir</button>
+            <input type="text" id="searchInput" placeholder="¿A dónde quieres ir? (ej. Cajas, CC-4)">
+            <button class="btn-buscar" onclick="buscarDestino()">Ir</button>
+            <button class="btn-limpiar" id="btnLimpiar" onclick="limpiarRutas()">Borrar ruta</button>
         </div>
     </div>
 
     <div class="info-panel" id="infoPanel">
-        <h3 id="rutaTitulo">Ubicación seleccionada</h3>
-        <p id="rutaDetalle">Sigue las indicaciones en pantalla.</p>
+        <h3 id="rutaTitulo">Destino seleccionado</h3>
+        <p id="rutaDetalle">Sigue la línea azul para llegar desde el ingreso principal.</p>
     </div>
 
     <div id="map"></div>
@@ -148,87 +163,114 @@
     <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
 
     <script>
-        // Inicializar mapa centrado en UDABOL con zoom máximo ampliado a 21
-        const map = L.map('map', {
-            maxZoom: 21
-        }).setView([-17.3918, -66.0692], 18);
+        // Inicializar mapa centrado en el campus con zoom HD
+        const map = L.map('map', { maxZoom: 21 }).setView([-17.3918, -66.0692], 18);
 
-        // Capa Satelital Esri HD (Permite ver los edificios y aulas reales sin desaparecer al zoom)
-        const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        // Capa Satelital Esri HD
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 21,
             maxNativeZoom: 19,
             attribution: '© Esri Satelital — UDABOL'
         }).addTo(map);
 
-        // Cargar KML y agregar etiquetas fijas sobre las aulas
+        let capasEstructuras = [];
+        let capasRutas = [];
+
+        // Cargar KML
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds());
-                
-                kmlLayer.eachLayer(function(layer) {
-                    const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : null;
 
-                    // Estilo de los bloques y aulas (polígonos)
+                kmlLayer.eachLayer(function(layer) {
+                    const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
+
+                    // Si es un Edificio / Polígono
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
-                            color: '#FFD700',      // Borde amarillo brillante
-                            fillColor: '#800000',  // Relleno Guindo UDABOL
+                            color: '#FFD700',
+                            fillColor: '#800000',
                             fillOpacity: 0.5,
                             weight: 2
                         });
+
+                        if (nombre) {
+                            layer.bindTooltip(nombre, {
+                                permanent: true,
+                                direction: 'center',
+                                className: 'etiqueta-mapa'
+                            });
+                        }
+                        capasEstructuras.push(layer);
                     } 
-                    // Estilo de los pasillos/rutas (líneas)
+                    // Si es una Ruta / Línea
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
-                            color: '#00FFFF',      // Azul cian brillante para ver los pasillos claro sobre el satélite
-                            weight: 5,
-                            dashArray: '6, 8'
+                            color: '#00E5FF',
+                            weight: 6,
+                            opacity: 0.9,
+                            dashArray: '8, 10'
                         });
-                    }
 
-                    // Agregar etiqueta visible permanentemente con el nombre del ambiente
-                    if (nombre) {
-                        layer.bindTooltip(nombre, {
-                            permanent: true,
-                            direction: 'center',
-                            className: 'etiqueta-mapa'
-                        });
+                        // OCULTAR la ruta al iniciar
+                        map.removeLayer(layer);
+                        capasRutas.push({ layer: layer, nombre: nombre.toLowerCase() });
                     }
                 });
             })
             .addTo(map);
 
-        // Búsqueda inteligente de ambiente o aula
+        // Función de Búsqueda y Filtrado Exclusivo de Rutas
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
 
-            let encontrado = false;
+            let rutaEncontrada = false;
 
-            kmlLayer.eachLayer(function(layer) {
-                if (layer.feature && layer.feature.properties && layer.feature.properties.name) {
-                    const nombre = layer.feature.properties.name.toLowerCase();
-                    if (nombre.includes(query)) {
-                        encontrado = true;
-                        
-                        if (layer.getBounds) {
-                            map.fitBounds(layer.getBounds());
-                        } else if (layer.getLatLng) {
-                            map.setView(layer.getLatLng(), 20);
-                        }
+            // 1. Ocultar todas las rutas activas previas
+            capasRutas.forEach(r => map.removeLayer(r.layer));
 
-                        layer.openTooltip();
+            // 2. Mostrar SOLAMENTE la ruta que coincida con la búsqueda
+            capasRutas.forEach(r => {
+                if (r.nombre.includes(query)) {
+                    map.addLayer(r.layer);
+                    map.fitBounds(r.layer.getBounds(), { padding: [50, 50] });
+                    rutaEncontrada = true;
 
-                        document.getElementById('infoPanel').style.display = 'block';
-                        document.getElementById('rutaTitulo').innerText = `Ubicación: ${layer.feature.properties.name}`;
-                        document.getElementById('rutaDetalle').innerText = `Haz hecho zoom sobre este ambiente en el mapa.`;
-                    }
+                    // Actualizar interfaz
+                    document.getElementById('infoPanel').style.display = 'block';
+                    document.getElementById('btnLimpiar').style.display = 'inline-block';
+                    document.getElementById('rutaTitulo').innerText = `Ruta hacia: ${document.getElementById('searchInput').value}`;
+                    document.getElementById('rutaDetalle').innerText = `Visualizando únicamente el camino seleccionado.`;
                 }
             });
 
-            if (!encontrado) {
-                alert('No se encontró ese punto. Asegúrate de haberlo dibujado y nombrado en Google Earth Pro.');
+            // Si no se encuentra como nombre de ruta, buscar en los bloques/aulas
+            if (!rutaEncontrada) {
+                capasEstructuras.forEach(layer => {
+                    const nombreLayer = layer.feature.properties.name ? layer.feature.properties.name.toLowerCase() : "";
+                    if (nombreLayer.includes(query)) {
+                        map.fitBounds(layer.getBounds(), { padding: [50, 50] });
+                        rutaEncontrada = true;
+                        document.getElementById('infoPanel').style.display = 'block';
+                        document.getElementById('btnLimpiar').style.display = 'inline-block';
+                        document.getElementById('rutaTitulo').innerText = `Ubicación: ${layer.feature.properties.name}`;
+                        document.getElementById('rutaDetalle').innerText = `Ubicación destacada en el mapa.`;
+                    }
+                });
             }
+
+            if (!rutaEncontrada) {
+                alert('No se encontró una ruta o ambiente con ese nombre. Revisa cómo la nombraste en Google Earth.');
+            }
+        }
+
+        // Función para limpiar la pantalla y volver al mapa general
+        function limpiarRutas() {
+            capasRutas.forEach(r => map.removeLayer(r.layer));
+            document.getElementById('infoPanel').style.display = 'none';
+            document.getElementById('btnLimpiar').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            map.fitBounds(kmlLayer.getBounds());
         }
     </script>
 </body>
