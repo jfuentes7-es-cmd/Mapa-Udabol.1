@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UDABOL Campus Sacaba - Buscador de Aulas</title>
+    <title>Mapa Interactivo Campus UDABOL</title>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -22,201 +22,122 @@
             background: #0f172a;
         }
 
-        /* BARRA SUPERIOR AZUL INSTITUCIONAL */
-        .top-navbar {
-            height: 56px;
-            background: #002244;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 16px;
-            color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            z-index: 2000;
-            position: relative;
-        }
-
-        .brand-section {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .brand-logo {
-            background: #eab308;
-            color: #002244;
-            font-weight: 900;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        .brand-title h1 {
-            font-size: 15px;
-            font-weight: 700;
-        }
-
-        .brand-title p {
-            font-size: 11px;
-            color: #94a3b8;
-        }
-
-        .top-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .nav-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.2s;
-        }
-
-        .nav-btn.active, .nav-btn:hover {
-            background: #eab308;
-            color: #002244;
-            border-color: #eab308;
-        }
-
-        /* LAYOUT PRINCIPAL */
-        .main-container {
-            display: flex;
-            height: calc(100vh - 56px);
-            position: relative;
-        }
-
-        /* PANEL LATERAL IZQUIERDO */
-        .sidebar {
-            width: 360px;
-            background: #ffffff;
-            height: 100%;
-            z-index: 1500;
-            box-shadow: 4px 0 15px rgba(0,0,0,0.15);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-
-        .sidebar-search {
-            padding: 14px;
-            border-bottom: 1px solid #f1f5f9;
-            background: #f8fafc;
-        }
-
-        .search-box {
-            display: flex;
-            gap: 6px;
-        }
-
-        .search-box input {
-            flex: 1;
-            padding: 10px 12px;
-            border: 1.5px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 13px;
-            outline: none;
-        }
-
-        .btn-buscar-main {
-            background: #002244;
-            color: white;
-            border: none;
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .btn-reset {
-            background: #ef4444;
-            color: white;
-            border: none;
-            padding: 10px 10px;
-            border-radius: 8px;
-            font-weight: 700;
-            cursor: pointer;
-            display: none;
-        }
-
-        /* CONTENEDOR DEL MAPA */
         #map {
-            flex: 1;
-            height: 100%;
-            background: #0f172a;
+            width: 100%;
+            height: 100vh;
         }
 
-        /* ETIQUETAS VISIBLES PERMANENTES EN EL MAPA */
-        .etiqueta-ambiente {
-            background: rgba(0, 34, 68, 0.92);
-            color: #ffffff;
-            border: 1px solid #38bdf8;
-            border-radius: 6px;
-            padding: 2px 7px;
-            font-size: 11px;
-            font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            white-space: nowrap;
-        }
-
-        /* BOTÓN GPS */
-        .btn-gps {
+        /* Buscador Moderno */
+        .search-container {
             position: absolute;
             top: 20px;
-            right: 20px;
-            z-index: 1000;
-            background: #ffffff;
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        /* CARD DE INFORMACIÓN INFERIOR */
-        .info-card {
-            position: absolute;
-            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
             width: 90%;
-            max-width: 440px;
-            background: rgba(0, 34, 68, 0.95);
-            padding: 14px 18px;
-            border-radius: 14px;
+            max-width: 460px;
+            background: rgba(15, 23, 42, 0.92);
+            padding: 12px 16px;
+            border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            border-left: 4px solid #00FF66;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .search-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .search-header h2 {
+            font-size: 15px;
+            color: #f8fafc;
+            font-weight: 600;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-size: 14px;
             color: #fff;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]::placeholder {
+            color: #94a3b8;
+        }
+
+        input[type="text"]:focus {
+            border-color: #38bdf8;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-buscar {
+            background: linear-gradient(135deg, #800000, #b22222);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-buscar:active {
+            transform: scale(0.96);
+        }
+
+        .btn-limpiar {
+            background: rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
             display: none;
         }
 
-        .info-card h3 {
-            color: #00FF66;
-            font-size: 15px;
-            margin-bottom: 2px;
+        /* Botón GPS Flotante */
+        .btn-gps {
+            position: absolute;
+            bottom: 110px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            color: #38bdf8;
+            border: 1.5px solid #38bdf8;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            transition: transform 0.2s;
         }
 
-        .info-card p {
-            color: #cbd5e1;
-            font-size: 12.5px;
+        .btn-gps:active {
+            transform: scale(0.92);
         }
 
-        /* PUNTO DE UBICACIÓN GPS */
+        /* Estilos del Punto Azul de Ubicación GPS */
         .user-location-marker {
             width: 16px;
             height: 16px;
@@ -225,52 +146,74 @@
             border-radius: 50%;
             box-shadow: 0 0 12px rgba(0, 122, 255, 0.8);
         }
+
+        /* Etiquetas fijas sobre los ambientes */
+        .etiqueta-ambiente {
+            background: rgba(15, 23, 42, 0.88);
+            color: #f8fafc;
+            border: 1px solid #38bdf8;
+            border-radius: 6px;
+            padding: 2px 7px;
+            font-size: 11px;
+            font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            white-space: nowrap;
+        }
+
+        /* Card Inferior Informativa */
+        .info-card {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 460px;
+            background: rgba(15, 23, 42, 0.95);
+            padding: 16px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(12px);
+            border-left: 4px solid #38bdf8;
+            color: #fff;
+            display: none;
+        }
+
+        .info-card h3 {
+            color: #38bdf8;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .info-card p {
+            color: #cbd5e1;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR AZUL INSTITUCIONAL -->
-    <header class="top-navbar">
-        <div class="brand-section">
-            <span class="brand-logo">UDABOL</span>
-            <div class="brand-title">
-                <h1>Campus Sacaba - Mapa Interactivo</h1>
-                <p>Navegación Peatonal y Ubicación de Aulas</p>
-            </div>
+    <div class="search-container">
+        <div class="search-header">
+            <h2>🎓 UDABOL Campus Sacaba</h2>
         </div>
-        <div class="top-actions">
-            <button class="nav-btn active" onclick="restablecerMapa()">🗺️ Ver Todo</button>
-            <button class="nav-btn" onclick="centrarEnUsuario()">🎯 Mi Ubicación</button>
-        </div>
-    </header>
-
-    <div class="main-container">
-        <!-- PANEL LATERAL DE BÚSQUEDA Y LISTA -->
-        <aside class="sidebar">
-            <div class="sidebar-search">
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Ej. Aula S1, Cajas, Biblioteca, CC-4...">
-                    <button class="btn-buscar-main" onclick="buscarDestino()">Ir</button>
-                    <button class="btn-reset" id="btnReset" onclick="restablecerMapa()">✖</button>
-                </div>
-            </div>
-            <div style="padding: 15px; color: #64748b; font-size: 13px;">
-                <p>💡 <strong>Instrucciones:</strong> Escrebe el nombre de un aula o área en el buscador superior y presiona <strong>Ir</strong> para ver su ruta y aislamiento visual.</p>
-            </div>
-        </aside>
-
-        <!-- CONTENEDOR DEL MAPA -->
-        <div id="map"></div>
-
-        <!-- BOTÓN GPS -->
-        <button class="btn-gps" onclick="centrarEnUsuario()" title="Mi Ubicación">🎯</button>
-
-        <!-- CARD INFORMATIVA INFERIOR -->
-        <div class="info-card" id="infoCard">
-            <h3 id="cardTitulo">Destino Seleccionado</h3>
-            <p id="cardDetalle">Visualizando únicamente el camino correspondiente.</p>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Ej. Aula S1, Cajas, Biblioteca...">
+            <button class="btn-buscar" onclick="buscarDestino()">Ir</button>
+            <button class="btn-limpiar" id="btnLimpiar" onclick="restablecerMapa()">Ver todo</button>
         </div>
     </div>
+
+    <!-- Botón Mi Ubicación GPS -->
+    <button class="btn-gps" onclick="centrarEnUsuario()" title="Mi Ubicación">🎯</button>
+
+    <div class="info-card" id="infoCard">
+        <h3 id="cardTitulo">Lugar Seleccionado</h3>
+        <p id="cardDetalle">Ubicación exacta identificada en el plano.</p>
+    </div>
+
+    <div id="map"></div>
 
     <!-- Leaflet & Omnivore JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -283,14 +226,17 @@
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 21,
             maxNativeZoom: 19,
-            attribution: '© Esri Satelital — UDABOL'
+            attribution: '© ESRI World Imagery — UDABOL'
         }).addTo(map);
 
         let elementosEstructura = [];
         let elementosRutas = [];
-        let userMarker = null, userCircle = null, userLatLng = null;
+        let userMarker = null;
+        let userCircle = null;
+        let userLatLng = null;
+        let GPS_ACTIVADO = false;
 
-        // Cargar KML y activar etiquetas flotantes + aislamiento
+        // Cargar archivo KML
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
@@ -298,16 +244,15 @@
                 kmlLayer.eachLayer(function(layer) {
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
 
-                    // POLÍGONOS / AULAS / BLOQUES
+                    // Polígonos / Aulas / Bloques
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
-                            color: '#eab308',      // Borde amarillo dorado
-                            fillColor: '#800000',  // Relleno guindo UDABOL
+                            color: '#38bdf8',
+                            fillColor: '#800000',
                             fillOpacity: 0.55,
                             weight: 2
                         });
 
-                        // Colocar ETIQUETA VISIBLE PERMANENTE
                         if (nombre) {
                             layer.bindTooltip(nombre, {
                                 permanent: true,
@@ -317,28 +262,14 @@
                         }
                         elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
                     } 
-                    // PUNTOS / MARCADORES (Convertir en etiquetas limpias sin icono azul grande)
-                    else if (layer instanceof L.Marker) {
-                        if (nombre) {
-                            layer.bindTooltip(nombre, {
-                                permanent: true,
-                                direction: 'top',
-                                className: 'etiqueta-ambiente'
-                            });
-                        }
-                        // Ocultar icono predeterminado gigante azul
-                        layer.setOpacity(0);
-                        elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
-                    }
-                    // RUTAS / LÍNEAS PEATONALES
+                    // Rutas / Líneas peatonales
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
-                            color: '#00F5FF',      // Cian Neón
-                            weight: 6,
-                            opacity: 0.95,
+                            color: '#00F5FF',
+                            weight: 5,
+                            opacity: 0.9,
                             dashArray: '6, 8'
                         });
-                        // Ocultar rutas al inicio (vista limpia)
                         map.removeLayer(layer);
                         elementosRutas.push({ layer: layer, nombre: nombre.toLowerCase() });
                     }
@@ -346,7 +277,56 @@
             })
             .addTo(map);
 
-        // BÚSQUEDA CON RESALTE EN VERDE NEÓN Y RUTA EXCLUSIVA
+        // --- GEOLOCALIZACIÓN GPS ESTABILIZADA ---
+        function obtenerUbicacionEstable() {
+            map.locate({ 
+                setView: false, 
+                maxZoom: 19, 
+                enableHighAccuracy: true,
+                timeout: 10000 
+            });
+        }
+
+        map.on('locationfound', function(e) {
+            // Filtrar saltos o imprecisiones mayores a 25 metros
+            if (e.accuracy > 25 && GPS_ACTIVADO) {
+                return;
+            }
+
+            userLatLng = e.latlng;
+            const radius = Math.min(e.accuracy / 2, 15);
+
+            if (userMarker) {
+                userMarker.setLatLng(e.latlng);
+                userCircle.setLatLng(e.latlng).setRadius(radius);
+            } else {
+                const userIcon = L.divIcon({
+                    className: 'user-location-marker',
+                    iconSize: [16, 16],
+                    iconAnchor: [8, 8]
+                });
+                userMarker = L.marker(e.latlng, { icon: userIcon }).addTo(map).bindPopup("¡Estás aquí!");
+                userCircle = L.circle(e.latlng, { radius: radius, color: '#007aff', opacity: 0.3, fillColor: '#007aff', fillOpacity: 0.15 }).addTo(map);
+            }
+
+            GPS_ACTIVADO = true;
+        });
+
+        map.on('locationerror', function(e) {
+            console.log("GPS no disponible o acceso denegado por el usuario.");
+        });
+
+        function centrarEnUsuario() {
+            if (userLatLng) {
+                map.setView(userLatLng, 19, { animate: true });
+                if (userMarker) userMarker.openPopup();
+            } else {
+                obtenerUbicacionEstable();
+                alert("Obteniendo señal GPS... Asegúrate de permitir el acceso a tu ubicación en el celular.");
+            }
+        }
+
+        // BÚSQUEDA Y AISLAMIENTO DE AMBIENTE
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
@@ -357,55 +337,48 @@
             // Ocultar rutas anteriores
             elementosRutas.forEach(item => map.removeLayer(item.layer));
 
-            // Resaltar solo la zona buscada
+            // Filtrar y resaltar la zona seleccionada
             elementosEstructura.forEach(item => {
-                if (item.nombre && item.nombre.includes(query)) {
+                if (item.nombre.includes(query)) {
                     hallado = true;
+                    destinoLatLng = item.layer.getBounds().getCenter();
 
-                    if (item.layer.getBounds) {
-                        destinoLatLng = item.layer.getBounds().getCenter();
-                        map.fitBounds(item.layer.getBounds(), { padding: [80, 80] });
-                    } else if (item.layer.getLatLng) {
-                        destinoLatLng = item.layer.getLatLng();
-                        map.setView(destinoLatLng, 20);
+                    item.layer.setStyle({
+                        color: '#00FF66',     // Borde verde neón
+                        fillColor: '#00FF66',
+                        fillOpacity: 0.75,
+                        weight: 3
+                    });
+
+                    map.fitBounds(item.layer.getBounds(), { padding: [80, 80] });
+
+                    // Calcular distancia si la ubicación GPS está disponible
+                    let textoDetalle = "Visualizando únicamente este espacio en el mapa.";
+                    if (userLatLng && destinoLatLng) {
+                        const metros = Math.round(userLatLng.distanceTo(destinoLatLng));
+                        textoDetalle = `Estás a aprox. <strong>${metros} metros</strong> de este lugar.`;
                     }
 
-                    // Resaltar en VERDE NEÓN
-                    if (item.layer.setStyle) {
-                        item.layer.setStyle({
-                            color: '#00FF66',
-                            fillColor: '#00FF66',
-                            fillOpacity: 0.8,
-                            weight: 3
-                        });
-                    }
+                    document.getElementById('infoCard').style.display = 'block';
+                    document.getElementById('cardTitulo').innerText = `Ubicación: ${item.layer.feature.properties.name}`;
+                    document.getElementById('cardDetalle').innerHTML = textoDetalle;
                 } else {
-                    // Atenuar los demás edificios
-                    if (item.layer.setStyle) {
-                        item.layer.setStyle({ fillOpacity: 0.15, weight: 1 });
-                    }
+                    // Atenuar los demás bloques
+                    item.layer.setStyle({ fillOpacity: 0.15, weight: 1 });
                 }
             });
 
-            // Encender la ruta correspondiente
+            // Mostrar la ruta trazada si coincide con la búsqueda
             elementosRutas.forEach(item => {
-                if (item.nombre && item.nombre.includes(query)) {
+                if (item.nombre.includes(query)) {
                     map.addLayer(item.layer);
                 }
             });
 
             if (hallado) {
-                let detalleText = "Ruta y ubicación aisladas en pantalla.";
-                if (userLatLng && destinoLatLng) {
-                    const metros = Math.round(userLatLng.distanceTo(destinoLatLng));
-                    detalleText = `Distancia aproximada: <strong>${metros} metros</strong>.`;
-                }
-                document.getElementById('infoCard').style.display = 'block';
-                document.getElementById('cardTitulo').innerText = `Destino: ${document.getElementById('searchInput').value}`;
-                document.getElementById('cardDetalle').innerHTML = detalleText;
-                document.getElementById('btnReset').style.display = 'block';
+                document.getElementById('btnLimpiar').style.display = 'inline-block';
             } else {
-                alert('No se encontró el ambiente. Asegúrate de ingresar el nombre exacto como figura en Google Earth.');
+                alert('No se encontró el ambiente. Asegúrate de haber escrito bien el nombre o que esté dibujado en tu mapa.kml');
             }
         }
 
@@ -413,43 +386,23 @@
         function restablecerMapa() {
             elementosRutas.forEach(item => map.removeLayer(item.layer));
             elementosEstructura.forEach(item => {
-                if (item.layer.setStyle) {
-                    item.layer.setStyle({
-                        color: '#eab308',
-                        fillColor: '#800000',
-                        fillOpacity: 0.55,
-                        weight: 2
-                    });
-                }
+                item.layer.setStyle({
+                    color: '#38bdf8',
+                    fillColor: '#800000',
+                    fillOpacity: 0.55,
+                    weight: 2
+                });
             });
 
             document.getElementById('infoCard').style.display = 'none';
-            document.getElementById('btnReset').style.display = 'none';
+            document.getElementById('btnLimpiar').style.display = 'none';
             document.getElementById('searchInput').value = '';
 
             map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
         }
 
-        // GEOLOCALIZACIÓN GPS
-        map.locate({ setView: false, watch: true, enableHighAccuracy: true });
-        map.on('locationfound', function(e) {
-            userLatLng = e.latlng;
-            if (!userMarker) {
-                const userIcon = L.divIcon({
-                    className: 'user-location-marker',
-                    iconSize: [16, 16],
-                    iconAnchor: [8, 8]
-                });
-                userMarker = L.marker(e.latlng, { icon: userIcon }).addTo(map).bindPopup("¡Estás aquí!");
-            } else {
-                userMarker.setLatLng(e.latlng);
-            }
-        });
-
-        function centrarEnUsuario() {
-            if (userLatLng) map.setView(userLatLng, 19);
-            else alert("Activa la ubicación de tu celular.");
-        }
+        // Intentar obtener la primera lectura de ubicación
+        obtenerUbicacionEstable();
     </script>
 </body>
 </html>
