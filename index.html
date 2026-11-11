@@ -326,11 +326,11 @@
     <script>
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3918, -66.0692], 18);
 
-        // Capa Base Clean Vectorial (CartoDB Positron)
-        const capaVectorial = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        // Capa Base Clean Vectorial Gratuita (OpenStreetMap Light)
+        const capaVectorial = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 21,
             maxNativeZoom: 19,
-            attribution: '© OpenStreetMap · CartoDB — UDABOL'
+            attribution: '© OpenStreetMap — UDABOL'
         }).addTo(map);
 
         // Capa Base Satelital HD (Esri World Imagery)
