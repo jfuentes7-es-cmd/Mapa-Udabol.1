@@ -71,10 +71,16 @@
             font-size: 14px;
             color: #fff;
             outline: none;
+            transition: all 0.3s ease;
         }
 
         input[type="text"]::placeholder {
             color: #94a3b8;
+        }
+
+        input[type="text"]:focus {
+            border-color: #38bdf8;
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .btn-buscar {
@@ -85,6 +91,12 @@
             border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-buscar:active {
+            transform: scale(0.96);
         }
 
         .btn-limpiar {
@@ -94,6 +106,7 @@
             padding: 10px 14px;
             border-radius: 10px;
             font-size: 13px;
+            font-weight: 500;
             cursor: pointer;
             display: none;
         }
@@ -117,6 +130,7 @@
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             backdrop-filter: blur(8px);
+            transition: transform 0.2s;
         }
 
         .btn-gps:active {
@@ -133,7 +147,7 @@
             box-shadow: 0 0 12px rgba(0, 122, 255, 0.8);
         }
 
-        /* Etiquetas fijas */
+        /* Etiquetas fijas sobre los ambientes */
         .etiqueta-ambiente {
             background: rgba(15, 23, 42, 0.88);
             color: #f8fafc;
@@ -142,6 +156,8 @@
             padding: 2px 7px;
             font-size: 11px;
             font-weight: 600;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
             white-space: nowrap;
         }
 
@@ -218,6 +234,7 @@
         let userMarker = null;
         let userCircle = null;
         let userLatLng = null;
+        let GPS_ACTIVADO = false;
 
         // Cargar archivo KML
         const kmlLayer = omnivore.kml('mapa.kml')
@@ -227,6 +244,7 @@
                 kmlLayer.eachLayer(function(layer) {
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
 
+                    // Polígonos / Aulas / Bloques
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
                             color: '#38bdf8',
@@ -244,6 +262,7 @@
                         }
                         elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
                     } 
+                    // Rutas / Líneas peatonales
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
                             color: '#00F5FF',
@@ -258,42 +277,56 @@
             })
             .addTo(map);
 
-        // --- LÓGICA DE GEOLOCALIZACIÓN GPS ---
-        map.locate({ setView: false, watch: true, enableHighAccuracy: true });
+        // --- GEOLOCALIZACIÓN GPS ESTABILIZADA ---
+        function obtenerUbicacionEstable() {
+            map.locate({ 
+                setView: false, 
+                maxZoom: 19, 
+                enableHighAccuracy: true,
+                timeout: 10000 
+            });
+        }
 
         map.on('locationfound', function(e) {
+            // Filtrar saltos o imprecisiones mayores a 25 metros
+            if (e.accuracy > 25 && GPS_ACTIVADO) {
+                return;
+            }
+
             userLatLng = e.latlng;
-            const radius = e.accuracy / 2;
+            const radius = Math.min(e.accuracy / 2, 15);
 
             if (userMarker) {
                 userMarker.setLatLng(e.latlng);
                 userCircle.setLatLng(e.latlng).setRadius(radius);
             } else {
-                // Crear el punto azul personalizado
                 const userIcon = L.divIcon({
                     className: 'user-location-marker',
                     iconSize: [16, 16],
                     iconAnchor: [8, 8]
                 });
                 userMarker = L.marker(e.latlng, { icon: userIcon }).addTo(map).bindPopup("¡Estás aquí!");
-                userCircle = L.circle(e.latlng, { radius: radius, color: '#007aff', opacity: 0.2, fillColor: '#007aff', fillOpacity: 0.1 }).addTo(map);
+                userCircle = L.circle(e.latlng, { radius: radius, color: '#007aff', opacity: 0.3, fillColor: '#007aff', fillOpacity: 0.15 }).addTo(map);
             }
+
+            GPS_ACTIVADO = true;
         });
 
         map.on('locationerror', function(e) {
-            console.log("Acceso a GPS no otorgado o no disponible.");
+            console.log("GPS no disponible o acceso denegado por el usuario.");
         });
 
         function centrarEnUsuario() {
             if (userLatLng) {
-                map.setView(userLatLng, 19);
+                map.setView(userLatLng, 19, { animate: true });
                 if (userMarker) userMarker.openPopup();
             } else {
-                alert("Activa el GPS de tu celular y permite el acceso a la ubicación en el navegador.");
+                obtenerUbicacionEstable();
+                alert("Obteniendo señal GPS... Asegúrate de permitir el acceso a tu ubicación en el celular.");
             }
         }
 
-        // BÚSQUEDA Y CÁLCULO DE DISTANCIA
+        // BÚSQUEDA Y AISLAMIENTO DE AMBIENTE
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
@@ -301,15 +334,17 @@
             let hallado = false;
             let destinoLatLng = null;
 
+            // Ocultar rutas anteriores
             elementosRutas.forEach(item => map.removeLayer(item.layer));
 
+            // Filtrar y resaltar la zona seleccionada
             elementosEstructura.forEach(item => {
                 if (item.nombre.includes(query)) {
                     hallado = true;
                     destinoLatLng = item.layer.getBounds().getCenter();
 
                     item.layer.setStyle({
-                        color: '#00FF66',
+                        color: '#00FF66',     // Borde verde neón
                         fillColor: '#00FF66',
                         fillOpacity: 0.75,
                         weight: 3
@@ -317,21 +352,23 @@
 
                     map.fitBounds(item.layer.getBounds(), { padding: [80, 80] });
 
-                    // Calcular distancia si la ubicación GPS está activa
-                    let textoDistancia = "Visualizando este espacio en el plano.";
+                    // Calcular distancia si la ubicación GPS está disponible
+                    let textoDetalle = "Visualizando únicamente este espacio en el mapa.";
                     if (userLatLng && destinoLatLng) {
                         const metros = Math.round(userLatLng.distanceTo(destinoLatLng));
-                        textoDistancia = `Estás a aprox. <strong>${metros} metros</strong> de este lugar.`;
+                        textoDetalle = `Estás a aprox. <strong>${metros} metros</strong> de este lugar.`;
                     }
 
                     document.getElementById('infoCard').style.display = 'block';
                     document.getElementById('cardTitulo').innerText = `Ubicación: ${item.layer.feature.properties.name}`;
-                    document.getElementById('cardDetalle').innerHTML = textoDistancia;
+                    document.getElementById('cardDetalle').innerHTML = textoDetalle;
                 } else {
-                    item.layer.setStyle({ fillOpacity: 0.2, weight: 1 });
+                    // Atenuar los demás bloques
+                    item.layer.setStyle({ fillOpacity: 0.15, weight: 1 });
                 }
             });
 
+            // Mostrar la ruta trazada si coincide con la búsqueda
             elementosRutas.forEach(item => {
                 if (item.nombre.includes(query)) {
                     map.addLayer(item.layer);
@@ -341,10 +378,11 @@
             if (hallado) {
                 document.getElementById('btnLimpiar').style.display = 'inline-block';
             } else {
-                alert('No se encontró el ambiente. Verifica el nombre ingresado.');
+                alert('No se encontró el ambiente. Asegúrate de haber escrito bien el nombre o que esté dibujado en tu mapa.kml');
             }
         }
 
+        // RESTABLECER MAPA GENERAL
         function restablecerMapa() {
             elementosRutas.forEach(item => map.removeLayer(item.layer));
             elementosEstructura.forEach(item => {
@@ -359,8 +397,12 @@
             document.getElementById('infoCard').style.display = 'none';
             document.getElementById('btnLimpiar').style.display = 'none';
             document.getElementById('searchInput').value = '';
+
             map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
         }
+
+        // Intentar obtener la primera lectura de ubicación
+        obtenerUbicacionEstable();
     </script>
 </body>
 </html>
