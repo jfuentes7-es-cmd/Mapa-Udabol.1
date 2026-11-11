@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UDABOL Campus Sacaba - Buscador de Aulas</title>
+    <title>UDABOL Campus Sacaba - Mapa Interactivo</title>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -96,7 +96,7 @@
 
         /* PANEL LATERAL IZQUIERDO */
         .sidebar {
-            width: 360px;
+            width: 350px;
             background: #ffffff;
             height: 100%;
             z-index: 1500;
@@ -154,7 +154,7 @@
             background: #0f172a;
         }
 
-        /* ETIQUETAS VISIBLES PERMANENTES EN EL MAPA */
+        /* ETIQUETA FRACTAL Y UNIFICADA SOBRE AMBIENTES */
         .etiqueta-ambiente {
             background: rgba(0, 34, 68, 0.92);
             color: #ffffff;
@@ -245,17 +245,17 @@
     </header>
 
     <div class="main-container">
-        <!-- PANEL LATERAL DE BÚSQUEDA Y LISTA -->
+        <!-- PANEL LATERAL DE BÚSQUEDA -->
         <aside class="sidebar">
             <div class="sidebar-search">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Ej. Aula S1, Cajas, Biblioteca, CC-4...">
+                    <input type="text" id="searchInput" placeholder="Ej. C-1, D-4, Cajas, Biblioteca...">
                     <button class="btn-buscar-main" onclick="buscarDestino()">Ir</button>
                     <button class="btn-reset" id="btnReset" onclick="restablecerMapa()">✖</button>
                 </div>
             </div>
             <div style="padding: 15px; color: #64748b; font-size: 13px;">
-                <p>💡 <strong>Instrucciones:</strong> Escrebe el nombre de un aula o área en el buscador superior y presiona <strong>Ir</strong> para ver su ruta y aislamiento visual.</p>
+                <p>📌 Busca un ambiente para aislarlo en <strong>verde neón</strong> y mostrar su ruta única de llegada.</p>
             </div>
         </aside>
 
@@ -288,9 +288,10 @@
 
         let elementosEstructura = [];
         let elementosRutas = [];
+        let nombresProcesados = new Set(); // Para filtrar elementos duplicados
         let userMarker = null, userCircle = null, userLatLng = null;
 
-        // Cargar KML y activar etiquetas flotantes + aislamiento
+        // Cargar KML y filtrar duplicados de marcadores
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
@@ -298,7 +299,7 @@
                 kmlLayer.eachLayer(function(layer) {
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
 
-                    // POLÍGONOS / AULAS / BLOQUES
+                    // SI ES UN POLÍGONO (AULA / BLOQUE)
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
                             color: '#eab308',      // Borde amarillo dorado
@@ -307,30 +308,34 @@
                             weight: 2
                         });
 
-                        // Colocar ETIQUETA VISIBLE PERMANENTE
+                        // Asignar etiqueta únicamente si el ambiente no se ha procesado
                         if (nombre) {
                             layer.bindTooltip(nombre, {
                                 permanent: true,
                                 direction: 'center',
                                 className: 'etiqueta-ambiente'
                             });
+                            nombresProcesados.add(nombre.toLowerCase().trim());
                         }
-                        elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
+                        elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase().trim() });
                     } 
-                    // PUNTOS / MARCADORES (Convertir en etiquetas limpias sin icono azul grande)
+                    // SI ES UN MARCADOR DE PUNTO (Ignoramos para evitar duplicados si ya existe el polígono)
                     else if (layer instanceof L.Marker) {
-                        if (nombre) {
+                        const nombreL = nombre.toLowerCase().trim();
+                        // Ocultar el punto azul de Google Earth si ya existe su polígono correspondiente
+                        if (nombresProcesados.has(nombreL)) {
+                            map.removeLayer(layer);
+                        } else if (nombre) {
                             layer.bindTooltip(nombre, {
                                 permanent: true,
                                 direction: 'top',
                                 className: 'etiqueta-ambiente'
                             });
+                            layer.setOpacity(0); // Ocultar pin azul y mantener solo el texto
+                            elementosEstructura.push({ layer: layer, nombre: nombreL });
                         }
-                        // Ocultar icono predeterminado gigante azul
-                        layer.setOpacity(0);
-                        elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
                     }
-                    // RUTAS / LÍNEAS PEATONALES
+                    // SI ES UNA LÍNEA (RUTA PEATONAL)
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
                             color: '#00F5FF',      // Cian Neón
@@ -340,13 +345,13 @@
                         });
                         // Ocultar rutas al inicio (vista limpia)
                         map.removeLayer(layer);
-                        elementosRutas.push({ layer: layer, nombre: nombre.toLowerCase() });
+                        elementosRutas.push({ layer: layer, nombre: nombre.toLowerCase().trim() });
                     }
                 });
             })
             .addTo(map);
 
-        // BÚSQUEDA CON RESALTE EN VERDE NEÓN Y RUTA EXCLUSIVA
+        // BÚSQUEDA DE ALTA PRECISIÓN (RESALTE EN VERDE Y RUTA EXCLUSIVA)
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
@@ -354,12 +359,14 @@
             let hallado = false;
             let destinoLatLng = null;
 
-            // Ocultar rutas anteriores
+            // 1. Ocultar todas las rutas activas
             elementosRutas.forEach(item => map.removeLayer(item.layer));
 
-            // Resaltar solo la zona buscada
+            // 2. Resaltar únicamente el ambiente coincidente
             elementosEstructura.forEach(item => {
-                if (item.nombre && item.nombre.includes(query)) {
+                const coincide = item.nombre === query || item.nombre.includes(query);
+
+                if (coincide && !hallado) {
                     hallado = true;
 
                     if (item.layer.getBounds) {
@@ -370,7 +377,7 @@
                         map.setView(destinoLatLng, 20);
                     }
 
-                    // Resaltar en VERDE NEÓN
+                    // Iluminar en VERDE NEÓN
                     if (item.layer.setStyle) {
                         item.layer.setStyle({
                             color: '#00FF66',
@@ -387,25 +394,25 @@
                 }
             });
 
-            // Encender la ruta correspondiente
+            // 3. Encender ÚNICAMENTE la ruta que coincida específicamente con el destino
             elementosRutas.forEach(item => {
-                if (item.nombre && item.nombre.includes(query)) {
+                if (item.nombre === `ruta a ${query}` || item.nombre === `ruta ${query}` || item.nombre.includes(query)) {
                     map.addLayer(item.layer);
                 }
             });
 
             if (hallado) {
-                let detalleText = "Ruta y ubicación aisladas en pantalla.";
+                let detalleText = "Espacio aislado y ruta trazada en el mapa.";
                 if (userLatLng && destinoLatLng) {
                     const metros = Math.round(userLatLng.distanceTo(destinoLatLng));
-                    detalleText = `Distancia aproximada: <strong>${metros} metros</strong>.`;
+                    detalleText = `Distancia aproximada: <strong>${metros} metros</strong> desde tu posición.`;
                 }
                 document.getElementById('infoCard').style.display = 'block';
-                document.getElementById('cardTitulo').innerText = `Destino: ${document.getElementById('searchInput').value}`;
+                document.getElementById('cardTitulo').innerText = `Ubicación: ${document.getElementById('searchInput').value.toUpperCase()}`;
                 document.getElementById('cardDetalle').innerHTML = detalleText;
                 document.getElementById('btnReset').style.display = 'block';
             } else {
-                alert('No se encontró el ambiente. Asegúrate de ingresar el nombre exacto como figura en Google Earth.');
+                alert('No se encontró el ambiente. Revisa si el nombre está escrito exactamente como en Google Earth.');
             }
         }
 
@@ -430,7 +437,7 @@
             map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
         }
 
-        // GEOLOCALIZACIÓN GPS
+        // GEOLOCALIZACIÓN GPS ESTABILIZADA
         map.locate({ setView: false, watch: true, enableHighAccuracy: true });
         map.on('locationfound', function(e) {
             userLatLng = e.latlng;
@@ -448,7 +455,7 @@
 
         function centrarEnUsuario() {
             if (userLatLng) map.setView(userLatLng, 19);
-            else alert("Activa la ubicación de tu celular.");
+            else alert("Activa el acceso a la ubicación en tu navegador o celular.");
         }
     </script>
 </body>
