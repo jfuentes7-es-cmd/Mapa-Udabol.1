@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Interactivo Campus UDABOL</title>
 
-    <!-- Hojas de estilo de Leaflet -->
+    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         * {
@@ -55,7 +55,6 @@
             font-size: 15px;
             color: #f8fafc;
             font-weight: 600;
-            letter-spacing: 0.3px;
         }
 
         .search-box {
@@ -72,16 +71,10 @@
             font-size: 14px;
             color: #fff;
             outline: none;
-            transition: all 0.3s ease;
         }
 
         input[type="text"]::placeholder {
             color: #94a3b8;
-        }
-
-        input[type="text"]:focus {
-            border-color: #38bdf8;
-            background: rgba(255, 255, 255, 0.15);
         }
 
         .btn-buscar {
@@ -92,12 +85,6 @@
             border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
-            transition: transform 0.2s;
-        }
-
-        .btn-buscar:active {
-            transform: scale(0.96);
         }
 
         .btn-limpiar {
@@ -107,12 +94,46 @@
             padding: 10px 14px;
             border-radius: 10px;
             font-size: 13px;
-            font-weight: 500;
             cursor: pointer;
             display: none;
         }
 
-        /* Etiquetas fijas sobre los ambientes */
+        /* Botón GPS Flotante */
+        .btn-gps {
+            position: absolute;
+            bottom: 110px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.9);
+            color: #38bdf8;
+            border: 1.5px solid #38bdf8;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+        }
+
+        .btn-gps:active {
+            transform: scale(0.92);
+        }
+
+        /* Estilos del Punto Azul de Ubicación GPS */
+        .user-location-marker {
+            width: 16px;
+            height: 16px;
+            background-color: #007aff;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgba(0, 122, 255, 0.8);
+        }
+
+        /* Etiquetas fijas */
         .etiqueta-ambiente {
             background: rgba(15, 23, 42, 0.88);
             color: #f8fafc;
@@ -121,8 +142,6 @@
             padding: 2px 7px;
             font-size: 11px;
             font-weight: 600;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
             white-space: nowrap;
         }
 
@@ -170,6 +189,9 @@
         </div>
     </div>
 
+    <!-- Botón Mi Ubicación GPS -->
+    <button class="btn-gps" onclick="centrarEnUsuario()" title="Mi Ubicación">🎯</button>
+
     <div class="info-card" id="infoCard">
         <h3 id="cardTitulo">Lugar Seleccionado</h3>
         <p id="cardDetalle">Ubicación exacta identificada en el plano.</p>
@@ -177,13 +199,14 @@
 
     <div id="map"></div>
 
+    <!-- Leaflet & Omnivore JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
 
     <script>
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3918, -66.0692], 18);
 
-        // Capa Satelital ESRI HD limpia
+        // Capa Satelital Esri HD
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 21,
             maxNativeZoom: 19,
@@ -192,6 +215,9 @@
 
         let elementosEstructura = [];
         let elementosRutas = [];
+        let userMarker = null;
+        let userCircle = null;
+        let userLatLng = null;
 
         // Cargar archivo KML
         const kmlLayer = omnivore.kml('mapa.kml')
@@ -201,11 +227,10 @@
                 kmlLayer.eachLayer(function(layer) {
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
 
-                    // AULAS / ESPACIOS / POLÍGONOS
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
-                            color: '#38bdf8',      // Borde azul celeste estético
-                            fillColor: '#800000',  // Relleno guindo UDABOL
+                            color: '#38bdf8',
+                            fillColor: '#800000',
                             fillOpacity: 0.55,
                             weight: 2
                         });
@@ -219,16 +244,13 @@
                         }
                         elementosEstructura.push({ layer: layer, nombre: nombre.toLowerCase() });
                     } 
-                    // RUTAS / LÍNEAS PEATONALES
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
-                            color: '#00F5FF',      // Cian Neón
+                            color: '#00F5FF',
                             weight: 5,
                             opacity: 0.9,
                             dashArray: '6, 8'
                         });
-
-                        // Ocultar rutas al inicio
                         map.removeLayer(layer);
                         elementosRutas.push({ layer: layer, nombre: nombre.toLowerCase() });
                     }
@@ -236,24 +258,58 @@
             })
             .addTo(map);
 
-        // BÚSQUEDA Y AISLAMIENTO DE AMBIENTE
+        // --- LÓGICA DE GEOLOCALIZACIÓN GPS ---
+        map.locate({ setView: false, watch: true, enableHighAccuracy: true });
+
+        map.on('locationfound', function(e) {
+            userLatLng = e.latlng;
+            const radius = e.accuracy / 2;
+
+            if (userMarker) {
+                userMarker.setLatLng(e.latlng);
+                userCircle.setLatLng(e.latlng).setRadius(radius);
+            } else {
+                // Crear el punto azul personalizado
+                const userIcon = L.divIcon({
+                    className: 'user-location-marker',
+                    iconSize: [16, 16],
+                    iconAnchor: [8, 8]
+                });
+                userMarker = L.marker(e.latlng, { icon: userIcon }).addTo(map).bindPopup("¡Estás aquí!");
+                userCircle = L.circle(e.latlng, { radius: radius, color: '#007aff', opacity: 0.2, fillColor: '#007aff', fillOpacity: 0.1 }).addTo(map);
+            }
+        });
+
+        map.on('locationerror', function(e) {
+            console.log("Acceso a GPS no otorgado o no disponible.");
+        });
+
+        function centrarEnUsuario() {
+            if (userLatLng) {
+                map.setView(userLatLng, 19);
+                if (userMarker) userMarker.openPopup();
+            } else {
+                alert("Activa el GPS de tu celular y permite el acceso a la ubicación en el navegador.");
+            }
+        }
+
+        // BÚSQUEDA Y CÁLCULO DE DISTANCIA
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
 
             let hallado = false;
+            let destinoLatLng = null;
 
-            // 1. Ocultar todas las rutas activas
             elementosRutas.forEach(item => map.removeLayer(item.layer));
 
-            // 2. Filtrar ambientes y resaltar SOLO el coincidente
             elementosEstructura.forEach(item => {
                 if (item.nombre.includes(query)) {
                     hallado = true;
+                    destinoLatLng = item.layer.getBounds().getCenter();
 
-                    // Estilo de Resaltado para la zona encontrada
                     item.layer.setStyle({
-                        color: '#00FF66',     // Borde verde neón brillante
+                        color: '#00FF66',
                         fillColor: '#00FF66',
                         fillOpacity: 0.75,
                         weight: 3
@@ -261,20 +317,21 @@
 
                     map.fitBounds(item.layer.getBounds(), { padding: [80, 80] });
 
-                    // Mostrar Card informativa
+                    // Calcular distancia si la ubicación GPS está activa
+                    let textoDistancia = "Visualizando este espacio en el plano.";
+                    if (userLatLng && destinoLatLng) {
+                        const metros = Math.round(userLatLng.distanceTo(destinoLatLng));
+                        textoDistancia = `Estás a aprox. <strong>${metros} metros</strong> de este lugar.`;
+                    }
+
                     document.getElementById('infoCard').style.display = 'block';
                     document.getElementById('cardTitulo').innerText = `Ubicación: ${item.layer.feature.properties.name}`;
-                    document.getElementById('cardDetalle').innerText = `Visualizando únicamente este espacio en el mapa.`;
+                    document.getElementById('cardDetalle').innerHTML = textoDistancia;
                 } else {
-                    // Atenuar los demás ambientes para no distraer
-                    item.layer.setStyle({
-                        fillOpacity: 0.2,
-                        weight: 1
-                    });
+                    item.layer.setStyle({ fillOpacity: 0.2, weight: 1 });
                 }
             });
 
-            // 3. Encender la ruta correspondiente si existe
             elementosRutas.forEach(item => {
                 if (item.nombre.includes(query)) {
                     map.addLayer(item.layer);
@@ -284,16 +341,12 @@
             if (hallado) {
                 document.getElementById('btnLimpiar').style.display = 'inline-block';
             } else {
-                alert('No se encontró el ambiente. Verifica que esté dibujado como un polígono con ese nombre en tu KML.');
+                alert('No se encontró el ambiente. Verifica el nombre ingresado.');
             }
         }
 
-        // RESTABLECER VISTA GENERAL
         function restablecerMapa() {
-            // Ocultar rutas
             elementosRutas.forEach(item => map.removeLayer(item.layer));
-
-            // Restaurar estilo normal de todos los ambientes
             elementosEstructura.forEach(item => {
                 item.layer.setStyle({
                     color: '#38bdf8',
@@ -306,7 +359,6 @@
             document.getElementById('infoCard').style.display = 'none';
             document.getElementById('btnLimpiar').style.display = 'none';
             document.getElementById('searchInput').value = '';
-
             map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
         }
     </script>
