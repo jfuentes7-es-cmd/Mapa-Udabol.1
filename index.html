@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa Interactivo UDABOL - Cochabamba</title>
 
-    <!-- Hojas de estilo de Leaflet (Mapa interactivo) -->
+    <!-- Hojas de estilo de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         * {
@@ -24,9 +24,10 @@
         #map {
             width: 100%;
             height: 100vh;
+            background: #111; /* Fondo oscuro por si carga */
         }
 
-        /* Panel flotante de búsqueda */
+        /* Buscador flotante */
         .search-container {
             position: absolute;
             top: 15px;
@@ -35,10 +36,11 @@
             z-index: 1000;
             width: 90%;
             max-width: 420px;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             padding: 12px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
         }
 
         .search-header {
@@ -50,7 +52,7 @@
 
         .search-header h2 {
             font-size: 16px;
-            color: #800000; /* Color guindo UDABOL */
+            color: #800000;
         }
 
         .search-box {
@@ -81,7 +83,21 @@
             background: #600000;
         }
 
-        /* Indicaciones del trayecto */
+        /* Etiquetas fijas con el nombre de cada aula/ambiente */
+        .etiqueta-mapa {
+            background: rgba(128, 0, 0, 0.85);
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            padding: 3px 7px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        /* Panel de información inferior */
         .info-panel {
             position: absolute;
             bottom: 20px;
@@ -93,86 +109,96 @@
             background: white;
             padding: 15px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
             display: none;
         }
 
         .info-panel h3 {
-            color: #333;
+            color: #800000;
             font-size: 15px;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
         .info-panel p {
-            color: #666;
+            color: #444;
             font-size: 13px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Panel de búsqueda flotante -->
     <div class="search-container">
         <div class="search-header">
             📍 <h2>UDABOL Campus Sacaba</h2>
         </div>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="¿A dónde quieres ir? (ej. CC-4, Cajas)">
+            <input type="text" id="searchInput" placeholder="¿A dónde vas? (ej. Cafetería, CC-4, Cajas)">
             <button onclick="buscarDestino()">Ir</button>
         </div>
     </div>
 
-    <!-- Panel con indicaciones -->
     <div class="info-panel" id="infoPanel">
-        <h3 id="rutaTitulo">Ruta trazada</h3>
-        <p id="rutaDetalle">Sigue la línea marcada en el mapa para llegar a tu destino.</p>
+        <h3 id="rutaTitulo">Ubicación seleccionada</h3>
+        <p id="rutaDetalle">Sigue las indicaciones en pantalla.</p>
     </div>
 
-    <!-- Contenedor del mapa -->
     <div id="map"></div>
 
-    <!-- Scripts de Leaflet y lector de KML (omnivore) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
 
     <script>
-        // 1. Inicializar el mapa centrado en UDABOL Sacaba
-        const map = L.map('map').setView([-17.3918, -66.0692], 18);
+        // Inicializar mapa centrado en UDABOL con zoom máximo ampliado a 21
+        const map = L.map('map', {
+            maxZoom: 21
+        }).setView([-17.3918, -66.0692], 18);
 
-        // 2. Capa base de mapas (OpenStreetMap / Mapa claro)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 20,
-            attribution: '© UDABOL Mapa Interactivo'
+        // Capa Satelital Esri HD (Permite ver los edificios y aulas reales sin desaparecer al zoom)
+        const satelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 21,
+            maxNativeZoom: 19,
+            attribution: '© Esri Satelital — UDABOL'
         }).addTo(map);
 
-        // 3. Cargar automáticamente tu archivo KML de Google Earth Pro
-        // Asegúrate de nombrar tu archivo subido como "mapa.kml"
+        // Cargar KML y agregar etiquetas fijas sobre las aulas
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
-                // Ajustar la cámara automáticamente para encuadrar todo lo que dibujaste en Google Earth
                 map.fitBounds(kmlLayer.getBounds());
                 
-                // Darle estilo a los polígonos y pasillos dibujados
                 kmlLayer.eachLayer(function(layer) {
+                    const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : null;
+
+                    // Estilo de los bloques y aulas (polígonos)
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
-                            color: '#800000',
-                            fillColor: '#b30000',
-                            fillOpacity: 0.4,
+                            color: '#FFD700',      // Borde amarillo brillante
+                            fillColor: '#800000',  // Relleno Guindo UDABOL
+                            fillOpacity: 0.5,
                             weight: 2
                         });
-                    } else if (layer instanceof L.Polyline) {
+                    } 
+                    // Estilo de los pasillos/rutas (líneas)
+                    else if (layer instanceof L.Polyline) {
                         layer.setStyle({
-                            color: '#0066ff',
-                            weight: 4,
-                            dashArray: '5, 10'
+                            color: '#00FFFF',      // Azul cian brillante para ver los pasillos claro sobre el satélite
+                            weight: 5,
+                            dashArray: '6, 8'
+                        });
+                    }
+
+                    // Agregar etiqueta visible permanentemente con el nombre del ambiente
+                    if (nombre) {
+                        layer.bindTooltip(nombre, {
+                            permanent: true,
+                            direction: 'center',
+                            className: 'etiqueta-mapa'
                         });
                     }
                 });
             })
             .addTo(map);
 
-        // 4. Función básica para buscar aula u oficina
+        // Búsqueda inteligente de ambiente o aula
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
@@ -185,26 +211,23 @@
                     if (nombre.includes(query)) {
                         encontrado = true;
                         
-                        // Centrar mapa en el lugar buscado
                         if (layer.getBounds) {
                             map.fitBounds(layer.getBounds());
                         } else if (layer.getLatLng) {
-                            map.setView(layer.getLatLng(), 19);
+                            map.setView(layer.getLatLng(), 20);
                         }
 
-                        // Abrir globo informativo del lugar
-                        layer.bindPopup(`<b>${layer.feature.properties.name}</b><br>Haz llegado a tu destino.`).openPopup();
+                        layer.openTooltip();
 
-                        // Mostrar panel inferior
                         document.getElementById('infoPanel').style.display = 'block';
-                        document.getElementById('rutaTitulo').innerText = `Destino: ${layer.feature.properties.name}`;
-                        document.getElementById('rutaDetalle').innerText = `Sigue el camino azul resaltado desde la entrada principal.`;
+                        document.getElementById('rutaTitulo').innerText = `Ubicación: ${layer.feature.properties.name}`;
+                        document.getElementById('rutaDetalle').innerText = `Haz hecho zoom sobre este ambiente en el mapa.`;
                     }
                 }
             });
 
             if (!encontrado) {
-                alert('No encontramos ese lugar. Prueba buscando: CC-4, Cajas, Biblioteca, etc.');
+                alert('No se encontró ese punto. Asegúrate de haberlo dibujado y nombrado en Google Earth Pro.');
             }
         }
     </script>
