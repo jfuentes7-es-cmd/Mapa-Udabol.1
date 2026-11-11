@@ -1656,7 +1656,6 @@
 		<name>Campus UDABOL Sacaba</name>
 		<open>1</open>
 		<description>Mapa interactivo.</description>
-		<gx:balloonVisibility>1</gx:balloonVisibility>
 		<Placemark>
 			<name>Edificio Nuevo</name>
 			<styleUrl>#msn_ylw-pushpin22</styleUrl>
