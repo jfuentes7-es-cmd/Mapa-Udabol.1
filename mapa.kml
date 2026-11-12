@@ -1,0 +1,4803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>mapa.kml</name>
+	<StyleMap id="m_ylw-pushpin4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl6</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin5">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin5</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin6">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin6</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl5</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="m_ylw-pushpin7">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q516">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q516</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q5164</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q5160">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q5163</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q5162</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q5161">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q5162</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q5163</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q5162">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q5161</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q5161</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q5163">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q5165</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q5166</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q5164">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q5160</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q5160</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q5165">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q5164</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q5165</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_Gemini_Generated_Image_q516k9q516k9q5166">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_Gemini_Generated_Image_q516k9q516k9q5166</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_Gemini_Generated_Image_q516k9q516k9q516</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_I">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_I</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_I</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_arrow">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_arrow2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_arrow2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_arrow0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_arrow0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_arrow0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_arrow1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_arrow</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_arrow</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_arrow2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_arrow3</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_arrow3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_arrow3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_arrow1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_arrow1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_arrow4">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_arrow4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_arrow4</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_blu-circle">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blu-circle</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blu-circle</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_blue-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_blue-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_blue-pushpin1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_cabs0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_cabs0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_cabs0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-blank">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-blank</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-blank</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-diamond">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-diamond</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-diamond</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin40</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin7</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin10">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin30</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin20</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin20">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin40</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin30">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin20</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin31</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin40">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin01</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin10</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin8">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin11</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin01</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ltblu-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ltblu-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ltblu-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ltblu-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ltblu-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ltblu-pushpin1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_man">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_man</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_man</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_movies">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_movies</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_movies</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_parks0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_parks00</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_parks1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_parks00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_parks0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_parks0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_pink-diamond">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_pink-diamond</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_pink-diamond</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_purple-pushpin2">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_purple-pushpin2</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_purple-pushpin2</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_red-diamond">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_red-diamond</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_red-diamond</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_red-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_red-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_red-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_toilets">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_toilets</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_toilets</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_truck0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_truck0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_truck0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-diamond">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-diamond</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-diamond0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-diamond0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-diamond0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-diamond</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin01">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin01</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin36</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin101">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin120</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin260</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin112">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin290</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin290</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin113">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin260</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin300</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin120">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin61</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin211</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin130">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin101</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin112</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin140">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin340</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin81</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin150">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin140</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin160</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin160">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin270</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin280</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin170">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin190</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin230</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin180">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin180</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin220</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin190">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin200</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin240</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin200">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin37</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin330</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin211">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin81</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin180</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin212">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin51</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin113</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin220">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin41</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin51</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin230">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin91</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin41</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin240">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin130</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin150</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin250">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin150</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin190</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin260">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin211</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin37</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin270">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin230</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin140</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin280">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin280</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin310</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin290">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin240</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin250</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin300">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin212</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin91</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin310">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin320</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin320</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin320">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin330</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin340</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin330">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin250</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin170</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin340">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin36</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin101</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin36">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin113</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin01</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin37">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin310</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin270</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin41">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin170</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin200</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin51">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin220</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin212</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin61">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin112</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin120</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin71">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin300</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin71</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin81">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin160</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin130</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin91">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin71</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin61</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin4">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin5">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin6">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff55ff</color>
+			<width>3.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin7">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>66ffaaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl4">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl5">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff55ff</color>
+			<width>3.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl6">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl7">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<PolyStyle>
+			<color>66ffaaff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q516">
+		<IconStyle>
+			<color>bf7faa55</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q5160">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q5161">
+		<IconStyle>
+			<color>bf7faa55</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q5162">
+		<IconStyle>
+			<color>bfffff55</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q5163">
+		<IconStyle>
+			<color>bfffff55</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q5164">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q5165">
+		<IconStyle>
+			<color>b57faa55</color>
+			<scale>1.3</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_Gemini_Generated_Image_q516k9q516k9q5166">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sh_I">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/I.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/I-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_arrow">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_arrow0">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_arrow1">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_arrow2">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_arrow3">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_arrow4">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_blu-circle">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_blue-pushpin1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_cabs0">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/cabs.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_grn-blank">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_grn-diamond">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_grn-pushpin01">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_grn-pushpin10">
+		<IconStyle>
+			<scale>0.709091</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_grn-pushpin20">
+		<IconStyle>
+			<scale>0.709091</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_grn-pushpin31">
+		<IconStyle>
+			<scale>0.945455</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_grn-pushpin40">
+		<IconStyle>
+			<scale>0.945455</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_grn-pushpin7">
+		<IconStyle>
+			<scale>0.945455</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_ltblu-pushpin0">
+		<IconStyle>
+			<scale>1.18182</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ltblu-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_ltblu-pushpin1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ltblu-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_man">
+		<IconStyle>
+			<color>ff7faaff</color>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/man.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_movies">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/movies.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_parks0">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_parks1">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_pink-diamond">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/pink-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/pink-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_purple-pushpin2">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/purple-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_red-diamond">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/red-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/red-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_red-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_toilets">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/toilets.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	</Style>
+	<Style id="sh_truck0">
+		<IconStyle>
+			<scale>1.4</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/truck.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_ylw-diamond">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_ylw-diamond0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin01">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dff55ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin101">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dffffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin112">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00aa00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin113">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d0000ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin120">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff55</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin130">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff00</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin140">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ff5500</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin150">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0055</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin160">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dffff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin170">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin180">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d7fff00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin190">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>667fff00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin200">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin211">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin212">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ffffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin220">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ffff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin230">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d0000aa</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin240">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4a00ff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin250">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0055</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin260">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin270">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ffff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin280">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d000055</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin290">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dff0055</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin300">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin310">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4a00ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin320">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ff00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin330">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ff00ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin340">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>667fffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin36">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4aff00ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin37">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin41">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin51">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d7f00aa</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin61">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dff55ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin71">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin81">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin91">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q516">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q5160">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q5161">
+		<IconStyle>
+			<color>bf7faa55</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q5162">
+		<IconStyle>
+			<color>bfffff55</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q5163">
+		<IconStyle>
+			<color>bfffff55</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q5164">
+		<IconStyle>
+			<color>b57faa55</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q5165">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_Gemini_Generated_Image_q516k9q516k9q5166">
+		<IconStyle>
+			<color>bf7faa55</color>
+			<scale>1.1</scale>
+			<Icon>
+				<href>C:/Users/USSER/Downloads/Gemini_Generated_Image_q516k9q516k9q516.jpg</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+	<Style id="sn_I">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/I.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/I-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_arrow">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_arrow0">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_arrow1">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_arrow2">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_arrow3">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_arrow4">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/arrow.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_blu-circle">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/blu-circle-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_blue-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/blue-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_cabs0">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/cabs.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_grn-blank">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-blank-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_grn-diamond">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/grn-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_grn-pushpin01">
+		<IconStyle>
+			<scale>0.6</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_grn-pushpin11">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_grn-pushpin20">
+		<IconStyle>
+			<scale>0.8</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_grn-pushpin30">
+		<IconStyle>
+			<scale>0.6</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_grn-pushpin40">
+		<IconStyle>
+			<scale>0.8</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_grn-pushpin7">
+		<IconStyle>
+			<scale>0.8</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ltblu-pushpin0">
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ltblu-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ltblu-pushpin1">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ltblu-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_man">
+		<IconStyle>
+			<color>ff7faaff</color>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/man.png</href>
+			</Icon>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_movies">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/movies.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_parks0">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_parks00">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/parks.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_pink-diamond">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/pink-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/pink-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_purple-pushpin2">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/purple-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_red-diamond">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/red-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/red-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_red-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/red-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_toilets">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/toilets.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+	</Style>
+	<Style id="sn_truck0">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/truck.png</href>
+			</Icon>
+			<hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ylw-diamond">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_ylw-diamond0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond.png</href>
+			</Icon>
+			<hotSpot x="32" y="1" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<ListStyle>
+			<ItemIcon>
+				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond-lv.png</href>
+			</ItemIcon>
+		</ListStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin01">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4aff00ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin101">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00aa00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin112">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff55</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin113">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dff55ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin120">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin130">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0055</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin140">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dffff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin150">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>667fff00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin160">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffffff00</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin170">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin180">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ffff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin190">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d0000aa</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin200">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4a00ff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin211">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00aa00</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin212">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin220">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ffffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin230">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ff5500</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin240">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff0055</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin250">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin260">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ffff00ff</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin270">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d000055</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin280">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4a00ffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin290">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dff0055</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin300">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin310">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ffff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin320">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ff00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin330">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>667fffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin340">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2.4</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin36">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dffffff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin37">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>66ff00ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin41">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffff00</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d7f00aa</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin51">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d0000ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin61">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ff55</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin71">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4dff55ff</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin81">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d7fff00</color>
+		</PolyStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin91">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>05ffffff</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>4d00ffff</color>
+		</PolyStyle>
+	</Style>
+	<Folder>
+		<name>mapa</name>
+		<open>1</open>
+		<Placemark>
+			<name>AREA DE LA ENTRADA UNIVERCIDAD</name>
+			<styleUrl>#msn_ylw-pushpin190</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06906205281629,-17.39071229748023,0 -66.06902585987156,-17.39071931390009,0 -66.06900575493073,-17.39063477813864,0 -66.06903839031426,-17.39062623886784,0 -66.06906205281629,-17.39071229748023,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>ENTRADA ALA UNIVERCIDAD</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.55.49 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06902723116528</longitude>
+				<latitude>-17.39092530176865</latitude>
+				<altitude>57.63070207140226</altitude>
+				<heading>6.833600287995798</heading>
+				<tilt>30.00002183105209</tilt>
+				<roll>-1.216171249490003</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_man</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06903259973218,-17.39066465394563,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ACADEMICO</name>
+			<open>1</open>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.18.19 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06862596499643</longitude>
+				<latitude>-17.39125593263324</latitude>
+				<altitude>99.23231491163702</altitude>
+				<heading>0.7123164645054048</heading>
+				<tilt>29.08711697938968</tilt>
+				<roll>-0.6196951008499398</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06896825593304,-17.39082080913151,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE MARKETING</name>
+			<styleUrl>#m_ylw-pushpin4</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06886805582347,-17.39080700142106,0 -66.06893186867815,-17.3909225946511,0 -66.06883862728583,-17.39097315472668,0 -66.06877085162616,-17.39086102129833,0 -66.06886805582347,-17.39080700142106,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE AULA-A2</name>
+			<styleUrl>#msn_ylw-pushpin120</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06894860064781,-17.3907628032417,0 -66.06901092532819,-17.39087888685487,0 -66.0689320575152,-17.39092214958845,0 -66.06886791381562,-17.39080640534156,0 -66.06894860064781,-17.3907628032417,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE AULA-A1</name>
+			<styleUrl>#msn_ylw-pushpin91</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06901875638853,-17.39072520251367,0 -66.06908564226296,-17.39083907289677,0 -66.06901265473823,-17.39087879488132,0 -66.068949456949,-17.39076306176114,0 -66.06901875638853,-17.39072520251367,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>MARKETING E INFORMACION</name>
+			<styleUrl>#msn_ylw-pushpin140</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905314622816,-17.39068271664894,0 -66.06879512043713,-17.3908376832202,0 -66.06886502339972,-17.39094635794899,0 -66.06889804982806,-17.39092850207718,0 -66.06889222023553,-17.3909188552687,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>AULA-A2</name>
+			<styleUrl>#msn_ylw-pushpin140</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905216924527,-17.39068261592667,0 -66.06901039455936,-17.3907094381978,0 -66.06907655052058,-17.39082965394527,0 -66.06896679342199,-17.39089132981709,0 -66.06896054730517,-17.39088038497047,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>AULA-A1</name>
+			<styleUrl>#msn_ylw-pushpin140</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905130175265,-17.39068294894864,0 -66.06901033743409,-17.39070945798396,0 -66.06907611150649,-17.39082871049845,0 -66.06903222811768,-17.39085414575232,0 -66.06902652229394,-17.39084504379903,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>MARKETING E INFORMACIONES</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-09 at 4.39.10 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM (5).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06886041918376</longitude>
+				<latitude>-17.39078681475628</latitude>
+				<altitude>0</altitude>
+				<heading>21.98502039708202</heading>
+				<tilt>28.87977475615267</tilt>
+				<range>75.62912683136446</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_movies</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06889135949109,-17.39091787878312,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-A2</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-09 at 4.39.10 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.56 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.56 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.56 PM (2).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM (4).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06890363908154</longitude>
+				<latitude>-17.39074086852078</latitude>
+				<altitude>0</altitude>
+				<heading>21.98510504189363</heading>
+				<tilt>29.34030473252189</tilt>
+				<range>85.00261048007108</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5161</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06896141285493,-17.3908802543763,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-A1</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-09 at 4.39.10 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM (2).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.57 PM (3).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.56 PM (2).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 4.23.56 PM (3).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06889940484146</longitude>
+				<latitude>-17.39069108691892</latitude>
+				<altitude>0</altitude>
+				<heading>21.98510757006692</heading>
+				<tilt>30.00046487277097</tilt>
+				<range>100.8802096472196</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5160</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06902691518489,-17.39084621041123,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ACADEMICO</name>
+			<open>1</open>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.24.16 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06838755300394</longitude>
+				<latitude>-17.39093438676972</latitude>
+				<altitude>97.39734556201242</altitude>
+				<heading>0.7122452089801447</heading>
+				<tilt>29.08711697938972</tilt>
+				<roll>-0.6196951008499048</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow4</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06880917500098,-17.39039039499536,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C1</name>
+			<styleUrl>#msn_ylw-pushpin36</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.0689095132625,-17.39040899482944,0 -66.0688497152187,-17.39029755579752,0 -66.06891865913478,-17.39026174805908,0 -66.06898041559505,-17.39037000127325,0 -66.0689095132625,-17.39040899482944,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C2</name>
+			<styleUrl>#msn_ylw-pushpin230</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06884970175354,-17.39044348413019,0 -66.06878763330815,-17.39033156104937,0 -66.0688500487279,-17.39029731296604,0 -66.06890903138596,-17.39040813767859,0 -66.06884970175354,-17.39044348413019,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C3</name>
+			<styleUrl>#msn_ylw-pushpin211</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06884811909354,-17.39044197471229,0 -66.06878368461584,-17.39047803419714,0 -66.06870949096245,-17.39036186350662,0 -66.06872989484133,-17.39034925059331,0 -66.06873785037625,-17.39036092478846,0 -66.06878754042306,-17.39033199214503,0 -66.06884811909354,-17.39044197471229,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C4</name>
+			<styleUrl>#msn_ylw-pushpin170</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06873402155389,-17.39050677251828,0 -66.06866089229072,-17.39038941561407,0 -66.06871003894751,-17.39036215603355,0 -66.0687843519253,-17.39047884563666,0 -66.06873402155389,-17.39050677251828,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-C1</name>
+			<styleUrl>#msn_ylw-pushpin61</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904917974177,-17.39067201693653,0 -66.06888990600869,-17.39077002701332,0 -66.06872117796202,-17.39050108594673,0 -66.06893946226414,-17.39037945896324,0 -66.06893543750155,-17.39037109745535,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-C2</name>
+			<styleUrl>#msn_ylw-pushpin61</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904912599221,-17.39067157739134,0 -66.06888991574229,-17.39076979170101,0 -66.06872118520339,-17.39050135860814,0 -66.06887529395651,-17.39041459390875,0 -66.06887069413087,-17.39040731168364,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-C3</name>
+			<styleUrl>#msn_ylw-pushpin61</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904931096248,-17.39067199003068,0 -66.06889065725812,-17.39077056775315,0 -66.06872111041064,-17.39050118626838,0 -66.0688103999246,-17.39045008629122,0 -66.06880589939821,-17.39044198744106,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-C4</name>
+			<styleUrl>#msn_ylw-pushpin61</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904939298033,-17.39067169822396,0 -66.06889033592637,-17.390770802119,0 -66.068720767445,-17.39050066469814,0 -66.06874896322326,-17.39048482544593,0 -66.06874467014357,-17.39047816977234,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C1</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.25 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.21 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.22 PM (2).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06892069490185</longitude>
+				<latitude>-17.39031690823981</latitude>
+				<altitude>0</altitude>
+				<heading>22.75456623977914</heading>
+				<tilt>29.49671727302894</tilt>
+				<range>80.11548816071205</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5164</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06893597019263,-17.39037084635439,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C4</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.25 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.21 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.21 PM (1).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06874378330744</longitude>
+				<latitude>-17.3904439978331</latitude>
+				<altitude>0</altitude>
+				<heading>22.75451336409248</heading>
+				<tilt>29.49671631338049</tilt>
+				<range>79.8984072691664</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5163</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06874562708722,-17.39047873671013,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C3</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.25 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.21 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.22 PM.jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06879851990726</longitude>
+				<latitude>-17.39040886444086</latitude>
+				<altitude>0</altitude>
+				<heading>22.75452972395361</heading>
+				<tilt>29.49671669937907</tilt>
+				<range>79.98571863408152</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q516</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06880680393246,-17.39044298318667,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-C2</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.25 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.21 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.19.22 PM (1).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.0688492628157</longitude>
+				<latitude>-17.39036823971176</latitude>
+				<altitude>0</altitude>
+				<heading>22.75454489010019</heading>
+				<tilt>29.49671695969901</tilt>
+				<range>80.04460146436807</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5163</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06887022133131,-17.39040764287539,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>EDIFICIO NUEVO</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 6.59.41 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.18.24 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.0684262509089</longitude>
+				<latitude>-17.39078372405926</latitude>
+				<altitude>71.29677737267221</altitude>
+				<heading>6.520036130016394</heading>
+				<tilt>24.55776885793775</tilt>
+				<roll>-1.395903699367856</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06835292434653,-17.39032524084464,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PLANTA BAJA - AULAS SIMULACION TS-101 A 110</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.40.10 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.40.10 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06835144725403</longitude>
+				<latitude>-17.39068076450243</latitude>
+				<altitude>60.37557749328023</altitude>
+				<heading>6.833070834509743</heading>
+				<tilt>30.0001021820209</tilt>
+				<roll>-1.217677089299328</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin40</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06853997647872,-17.39038599579835,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 1- AULAS TS-1 A 10</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.42.28 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.42.29 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06835144725403</longitude>
+				<latitude>-17.39068076450243</latitude>
+				<altitude>60.37557749328023</altitude>
+				<heading>6.833070834509743</heading>
+				<tilt>30.0001021820209</tilt>
+				<roll>-1.217677089299328</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin40</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.0685346140979,-17.39037112427449,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 2-TS-11 A TS-20</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.51.26 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.51.25 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06839768157806</longitude>
+				<latitude>-17.39065540860813</latitude>
+				<altitude>62.06253424578003</altitude>
+				<heading>6.798374154913637</heading>
+				<tilt>29.20350880521524</tilt>
+				<roll>-1.247900434337316</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin10</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06852794033797,-17.39035473088441,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 3-AULAS TS-21 A TS-30</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.44.29 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.44.28 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06839768157806</longitude>
+				<latitude>-17.39065540860813</latitude>
+				<altitude>62.06253424578003</altitude>
+				<heading>6.798374154913637</heading>
+				<tilt>29.20350880521524</tilt>
+				<roll>-1.247900434337316</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin40</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06851999870139,-17.39033691142804,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 4-AULAS TS-31 A TS-40</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.46.11 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.46.11 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06837221864956</longitude>
+				<latitude>-17.39064419348473</latitude>
+				<altitude>62.11348478026866</altitude>
+				<heading>6.798366544452019</heading>
+				<tilt>29.20350880521436</tilt>
+				<roll>-1.247900434362178</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin40</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06851255159616,-17.39032120661229,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 5-AULAS TS-41 A TS-50</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.47.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.47.31 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06846166812174</longitude>
+				<latitude>-17.39070480344912</latitude>
+				<altitude>56.21137318690318</altitude>
+				<heading>7.033232107607846</heading>
+				<tilt>35.46518581128016</tilt>
+				<roll>-1.048827084438724</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin40</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06850290399824,-17.39030780632059,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 6 AUDITORIA</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.48.50 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.48.50 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06846166812174</longitude>
+				<latitude>-17.39070480344912</latitude>
+				<altitude>56.21137318690318</altitude>
+				<heading>7.033232107607846</heading>
+				<tilt>35.46518581128016</tilt>
+				<roll>-1.048827084438724</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin40</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06848652755534,-17.39028681273393,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>RUTA A EDIFICIO NUEVO</name>
+			<styleUrl>#msn_ylw-pushpin290</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904872706203,-17.39067117021845,0 -66.06889164850969,-17.39076861505526,0 -66.0686508766929,-17.39039256425858,0 -66.06860926655891,-17.39041630445981,0 -66.06859493124794,-17.39039579855469,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>ACADEMICO</name>
+			<open>1</open>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.00.15 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.18.20 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06828586801377</longitude>
+				<latitude>-17.39097009663373</latitude>
+				<altitude>90.64636894863089</altitude>
+				<heading>0.6302313544224463</heading>
+				<tilt>25.78978890660161</tilt>
+				<roll>-0.6925606296835531</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow2</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06839340877883,-17.39069348344457,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 1</name>
+			<Camera>
+				<longitude>-66.0683289000127</longitude>
+				<latitude>-17.39105482016729</latitude>
+				<altitude>61.76423422836236</altitude>
+				<heading>6.901680130706836</heading>
+				<tilt>31.69162530547138</tilt>
+				<roll>-1.15744719296843</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ltblu-pushpin1</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.0683654305615,-17.39073885842117,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-12</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.54.44 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.54.44 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06811208126246</longitude>
+				<latitude>-17.39094051732256</latitude>
+				<altitude>67.65185721322101</altitude>
+				<heading>0.731875637734524</heading>
+				<tilt>29.99990242920047</tilt>
+				<roll>-0.6026297299091785</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-pushpin41</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06829443843078,-17.39065566997893,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-17</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.02.22 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06811208126246</longitude>
+				<latitude>-17.39094051732256</latitude>
+				<altitude>67.65185721322101</altitude>
+				<heading>0.731875637734524</heading>
+				<tilt>29.99990242920047</tilt>
+				<roll>-0.6026297299091785</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-pushpin41</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06829685715567,-17.39067021943604,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-18</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.02.22 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06811208126246</longitude>
+				<latitude>-17.39094051732256</latitude>
+				<altitude>67.65185721322101</altitude>
+				<heading>0.731875637734524</heading>
+				<tilt>29.99990242920047</tilt>
+				<roll>-0.6026297299091785</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-pushpin41</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06829951790067,-17.39068651822179,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-19</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.03.51 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06811208126246</longitude>
+				<latitude>-17.39094051732256</latitude>
+				<altitude>67.65185721322101</altitude>
+				<heading>0.731875637734524</heading>
+				<tilt>29.99990242920047</tilt>
+				<roll>-0.6026297299091785</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-pushpin41</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06827410280394,-17.39068196869182,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-16</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.52.30 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.59.39 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.03.50 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06811208126246</longitude>
+				<latitude>-17.39094051732256</latitude>
+				<altitude>67.65185721322101</altitude>
+				<heading>0.731875637734524</heading>
+				<tilt>29.99990242920047</tilt>
+				<roll>-0.6026297299091785</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-pushpin41</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06826985660943,-17.39066219192146,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO 2</name>
+			<Camera>
+				<longitude>-66.06811208126246</longitude>
+				<latitude>-17.39094051732256</latitude>
+				<altitude>67.65185721322101</altitude>
+				<heading>0.731875637734524</heading>
+				<tilt>29.99990242920047</tilt>
+				<roll>-0.6026297299091785</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_purple-pushpin2</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06829181273164,-17.39063732914799,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-15</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.31.34 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06839113683908</longitude>
+				<latitude>-17.3909953421884</latitude>
+				<altitude>52.04566459679214</altitude>
+				<heading>0.7320005456085414</heading>
+				<tilt>30.00004044989668</tilt>
+				<roll>-0.6027278402048349</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin30</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06837471566675,-17.39080978582992,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-10</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.31.34 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06839113683908</longitude>
+				<latitude>-17.3909953421884</latitude>
+				<altitude>52.04566459679214</altitude>
+				<heading>0.7320005456085414</heading>
+				<tilt>30.00004044989668</tilt>
+				<roll>-0.6027278402048349</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin30</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06836890677032,-17.39079537148099,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-4</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.31.32 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06832440128028</longitude>
+				<latitude>-17.39108813903966</latitude>
+				<altitude>57.14752368482704</altitude>
+				<heading>6.901679613249171</heading>
+				<tilt>31.69162808206307</tilt>
+				<roll>-1.15744341235286</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin20</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06838828546233,-17.39079796616538,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-2</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.31.32 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06822631570222</longitude>
+				<latitude>-17.3910591066342</latitude>
+				<altitude>57.23362502904241</altitude>
+				<heading>6.901650296688154</heading>
+				<tilt>31.69162808206309</tilt>
+				<roll>-1.157443412352825</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin20</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06837114693548,-17.39076076436617,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-3</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.31.31 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06832440128028</longitude>
+				<latitude>-17.39108813903966</latitude>
+				<altitude>57.14752368482704</altitude>
+				<heading>6.901679613249171</heading>
+				<tilt>31.69162808206307</tilt>
+				<roll>-1.15744341235286</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin20</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06838031409266,-17.39078009672527,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-5</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.27.52 PM (2).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06832440128028</longitude>
+				<latitude>-17.39108813903966</latitude>
+				<altitude>57.14752368482704</altitude>
+				<heading>6.901679613249171</heading>
+				<tilt>31.69162808206307</tilt>
+				<roll>-1.15744341235286</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin20</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06839510328108,-17.39081583970601,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-9</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.19.23 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.19.19 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.27.52 PM (3).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06831608723014</longitude>
+				<latitude>-17.3909900851766</latitude>
+				<altitude>52.17593134674141</altitude>
+				<heading>0.7319781141171956</heading>
+				<tilt>30.00004044989668</tilt>
+				<roll>-0.6027278402048414</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin30</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06833549495789,-17.3907708362011,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-8</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.19.23 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.19.19 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.27.52 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06839113683908</longitude>
+				<latitude>-17.3909953421884</latitude>
+				<altitude>52.04566459679214</altitude>
+				<heading>0.7320005456085414</heading>
+				<tilt>30.00004044989668</tilt>
+				<roll>-0.6027278402048349</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin30</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06836164212915,-17.3907796618266,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA G-6 y G7</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.19.23 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.19.19 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.27.52 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06839113683908</longitude>
+				<latitude>-17.3909953421884</latitude>
+				<altitude>52.04566459679214</altitude>
+				<heading>0.7320005456085414</heading>
+				<tilt>30.00004044989668</tilt>
+				<roll>-0.6027278402048349</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin30</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06835371684537,-17.39076343505555,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA BIBLIOTECA</name>
+			<styleUrl>#msn_ylw-pushpin180</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06853543874216,-17.3909712955917,0 -66.06845219841428,-17.39102113998576,0 -66.06834539205015,-17.39086041284346,0 -66.06843478977139,-17.39080764548959,0 -66.06853543874216,-17.3909712955917,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA CAJA</name>
+			<styleUrl>#msn_ylw-pushpin200</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06856312097116,-17.39083294843419,0 -66.06848427739534,-17.39088290156474,0 -66.0684614462951,-17.39084984187423,0 -66.06854412527473,-17.39079759151897,0 -66.06856312097116,-17.39083294843419,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>CAJAS</name>
+			<Camera>
+				<longitude>-66.0686084294973</longitude>
+				<latitude>-17.3910728136023</latitude>
+				<altitude>67.5664321252454</altitude>
+				<heading>6.833458017139753</heading>
+				<tilt>30.00000228839836</tilt>
+				<roll>-1.217160562853587</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin8</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06852408251299,-17.39084038240947,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>BIBLIOTECA</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.36.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.36.33 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06843597513314</longitude>
+				<latitude>-17.39125040875976</latitude>
+				<altitude>96.92342700306855</altitude>
+				<heading>6.833405869012847</heading>
+				<tilt>30.00000115139696</tilt>
+				<roll>-1.217213854282537</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_toilets</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06844955735858,-17.39089640330889,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>EDIFICIO ANTIGUO</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 6.58.18 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 6.59.40 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.0683730931797</longitude>
+				<latitude>-17.39170839682067</latitude>
+				<altitude>141.3855987684855</altitude>
+				<heading>6.779941760562573</heading>
+				<tilt>29.87844609417286</tilt>
+				<roll>-1.164899071099307</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06806841621388,-17.39082164069245,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE EDIFICIO ANTIGUO</name>
+			<styleUrl>#msn_ylw-pushpin01</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.0683248255621,-17.39108876310728,0 -66.0682109708806,-17.39116312675843,0 -66.06818758998158,-17.39115061952886,0 -66.0680682749628,-17.39097660889356,0 -66.06806577691599,-17.39096978337628,0 -66.0679470918365,-17.39078793445867,0 -66.06804180632052,-17.39071392727081,0 -66.06806285575772,-17.39073804793262,0 -66.06808080181398,-17.39073001714868,0 -66.06809271796344,-17.39072709670655,0 -66.0683248255621,-17.39108876310728,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>PLANTA-BAJA</name>
+			<description><![CDATA[PLANTA BAJA — EDIFICIO PRINCIPAL
+IZQUIERDA
+- Laboratorio Química Farmacología
+- Laboratorio de Histología
+- Laboratorio Parasitología
+- Fisiología
+- Patología
+DERECHA
+- Central Laboratorio
+- Laboratorio Microbiología
+- Laboratorio Morfología
+- Anfiteatro 1
+- Anfiteatro 2
+- Sala de Anatomía
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.00.32 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06803781665107</longitude>
+				<latitude>-17.39141142664675</latitude>
+				<altitude>86.82729536736156</altitude>
+				<heading>6.749278627842108</heading>
+				<tilt>29.14690257263093</tilt>
+				<roll>-1.19123405384476</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-blank</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06821702845842,-17.39114759201683,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO-1</name>
+			<description><![CDATA[PISO 1 — EDIFICIO PRINCIPAL
+IZQUIERDA
+Quirófano 1
+Quirófano 2
+Quirófano 3
+Quirófano
+Cirugía
+Odontología
+Sala de Espera
+Vest. Docentes
+DERECHA
+Vestuario Casilleros
+Caja
+Baños
+Jefatura
+Destil. de H2O
+Insumos
+Clínica Odontológica
+<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/Gemini_Generated_Image_m865am865am865am.jpg">]]></description>
+			<Camera>
+				<longitude>-66.06803781665107</longitude>
+				<latitude>-17.39141142664675</latitude>
+				<altitude>86.82729536736156</altitude>
+				<heading>6.749278627842108</heading>
+				<tilt>29.14690257263093</tilt>
+				<roll>-1.19123405384476</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_blu-circle</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06818793428477,-17.39111443622688,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO-2</name>
+			<description><![CDATA[PLANTA 2º PISO — EDIFICIO PRINCIPAL
+IZQUIERDA
+GABINETE MÉDICO
+AULA CS-4
+FOTOCOPIA
+AULA CS-3
+LABORATORIO MICROBIOLOGÍA
+DERECHA
+DEPÓSITO
+BAÑO MUJERES
+BAÑO HOMBRES
+DEPÓSITO
+AULA CS-6
+LABORATORIO DE EMBRIOLOGÍA - 1
+ALMACENES
+ADMINISTRACIÓN (Almacenes, RR.HH., Central Telefónica, Activos Fijos, Asist. de Administrador)
+RECURSOS HUMANOS
+<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/Gemini_Generated_Image_hgpvhjhgpvhjhgpv.jpg">]]></description>
+			<Camera>
+				<longitude>-66.06815855128725</longitude>
+				<latitude>-17.39164303010695</latitude>
+				<altitude>109.2909717519116</altitude>
+				<heading>6.784787859709912</heading>
+				<tilt>30.00000561053968</tilt>
+				<roll>-1.160352677960972</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-diamond0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06817204864544,-17.39107517281857,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO-3</name>
+			<description><![CDATA[PLANTA 3º PISO — EDIFICIO PRINCIPAL
+IZQUIERDA
+SALA DOCENTES
+AUXILIAR MANTENIMIENTO
+GABINETE FISIOTERAPIA
+AULA CB-1
+AULA CS-9
+DERECHA
+DEPÓSITO
+DEPÓSITO DE FUNDICIÓN
+BAÑO MUJERES
+BAÑO HOMBRES
+LABORATORIO PRÓTESIS DENTAL
+AULA
+AULA CS-10
+AULA CS-11
+GABINETE PSICOLÓGICO
+<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.00.32 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06821838477276</longitude>
+				<latitude>-17.39185265245717</latitude>
+				<altitude>197.8702801577384</altitude>
+				<heading>6.656715599936417</heading>
+				<tilt>27.11640449550837</tilt>
+				<roll>-1.273199258580891</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_red-diamond</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.0681451318388,-17.39102315742011,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO-4</name>
+			<description><![CDATA[PLANTA 4º PISO — EDIFICIO PRINCIPAL
+IZQUIERDA
+SOCIEDAD CIENTÍFICA
+LABORATORIO EMBRIOLOGÍA
+AULA - 422
+LAB. ANATOMÍA DENTAL
+AULA CS - 14
+AULA CS - 13
+DERECHA
+DUCHAS
+DUCHAS
+BAÑO MUJERES
+BAÑO HOMBRES
+AULA CS - 2
+AULA CS - 15
+GABINETE DE ENFERMERÍA
+AULA CS - 16
+LABORATORIO ENFERMERÍA
+GABINETE FISIOTERAPIA
+<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.00.31 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06810828404336</longitude>
+				<latitude>-17.39158002112649</latitude>
+				<altitude>137.4741487325061</altitude>
+				<heading>6.730744918261323</heading>
+				<tilt>28.71774098620479</tilt>
+				<roll>-1.207717900576917</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_pink-diamond</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06811838055393,-17.39098543846513,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PISO-5</name>
+			<description><![CDATA[PLANTA 5º PISO — EDIFICIO PRINCIPAL
+IZQUIERDA
+AULA - 527
+AULA - 528
+AULA - 22
+AULA - 23
+AULA CS - 21
+AULA CS - 24
+DERECHA
+DUCHAS
+DUCHAS
+BAÑO MUJERES
+BAÑO HOMBRES
+AULA CS - 30
+AULA CS - 25
+AULA CS - 29
+AULA CS - 26
+AULA CS - 28
+AULA CS - 27
+<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.00.15 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06804235945827</longitude>
+				<latitude>-17.39143482047447</latitude>
+				<altitude>114.4421479962536</altitude>
+				<heading>6.766419268123769</heading>
+				<tilt>29.55284968520095</tilt>
+				<roll>-1.176518856090164</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-diamond</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06809071186801,-17.3909414020888,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AUA</name>
+			<description><![CDATA[AUDITORIA-2<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.00.31 PM (2).jpeg">AUDITORIA-1<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.00.31 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06784071387297</longitude>
+				<latitude>-17.39125885058152</latitude>
+				<altitude>90.96163191727344</altitude>
+				<heading>0.6300983023561676</heading>
+				<tilt>25.78978890660161</tilt>
+				<roll>-0.6925606296834864</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_I</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06807085820266,-17.39090136382174,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ENTRADA DE AUTOS</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.06.48 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06883204382449</longitude>
+				<latitude>-17.39136519039471</latitude>
+				<altitude>91.1259098499219</altitude>
+				<heading>6.83360107731097</heading>
+				<tilt>29.99998578996315</tilt>
+				<roll>-1.216651059018377</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_truck0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06913403481454,-17.39099634056688,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>CAMPO VERDE</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.07.03 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.07.02 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.05.50 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06859847491349</longitude>
+				<latitude>-17.39163503325949</latitude>
+				<altitude>125.3750770511655</altitude>
+				<heading>0.7456512293841777</heading>
+				<tilt>30.66229565296434</tilt>
+				<roll>-0.5908334819143931</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_parks00</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06852002411539,-17.39107342939781,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>CAMPO VERDE</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.07.04 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06864293125678</longitude>
+				<latitude>-17.39120635352057</latitude>
+				<altitude>90.01734363460336</altitude>
+				<heading>6.833544552631119</heading>
+				<tilt>29.99998578996313</tilt>
+				<roll>-1.216651059018393</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_parks0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06864171428894,-17.39076559359717,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>CAMPO VERDE</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.07.03 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06884421831207</longitude>
+				<latitude>-17.39111755017962</latitude>
+				<altitude>89.8386991060711</altitude>
+				<heading>6.833604714199361</heading>
+				<tilt>29.99998578996312</tilt>
+				<roll>-1.216651059018311</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_parks0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06893627281229,-17.39057766392345,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ESTACION DE AUTOS</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.08.27 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 11.05.51 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06807633617731</longitude>
+				<latitude>-17.39150531345494</latitude>
+				<altitude>90.69694581729497</altitude>
+				<heading>6.833375202206885</heading>
+				<tilt>29.99998578996317</tilt>
+				<roll>-1.216651059018308</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_cabs0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06801721059485,-17.39109137251586,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ACADEMICO</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 6.59.42 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.0684905490107</longitude>
+				<latitude>-17.39092115709901</latitude>
+				<altitude>81.59833685979002</altitude>
+				<heading>0.6180936922324786</heading>
+				<tilt>25.35582484705599</tilt>
+				<roll>-0.7035611863358586</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow3</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06857521854313,-17.39051294377543,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA-AULA-D1</name>
+			<styleUrl>#msn_ylw-pushpin270</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06849356781193,-17.39064502666298,0 -66.06842882609607,-17.39053661598001,0 -66.06845981810267,-17.39051666362737,0 -66.06852598225413,-17.39062682752261,0 -66.06849356781193,-17.39064502666298,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA-AULA-D2</name>
+			<styleUrl>#msn_ylw-pushpin51</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06849048508995,-17.39049672589944,0 -66.0685565528385,-17.39060708002398,0 -66.06852552023723,-17.39062565513842,0 -66.06845923968746,-17.39051636877972,0 -66.06849048508995,-17.39049672589944,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA-AULA-D3</name>
+			<styleUrl>#msn_ylw-pushpin250</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06855633458416,-17.39060757701476,0 -66.06849020237762,-17.39049720239974,0 -66.06852908916153,-17.39047376439802,0 -66.06859336497749,-17.39058599101064,0 -66.06855633458416,-17.39060757701476,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA-AULA-D4</name>
+			<styleUrl>#msn_ylw-pushpin37</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06859299528163,-17.39058576429543,0 -66.06852820701444,-17.3904742700983,0 -66.06859075830583,-17.39043431644021,0 -66.06865666559507,-17.39054816669514,0 -66.06859299528163,-17.39058576429543,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA-AULA-D5</name>
+			<styleUrl>#msn_ylw-pushpin320</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06863247036679,-17.39041030655701,0 -66.06869684470831,-17.39052443951198,0 -66.06865649982953,-17.39054857974105,0 -66.06859044726497,-17.3904339886739,0 -66.06863247036679,-17.39041030655701,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-D1</name>
+			<styleUrl>#msn_ylw-pushpin113</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904854509249,-17.39067231310076,0 -66.06889091275832,-17.39076972780037,0 -66.06872178213305,-17.39050235060714,0 -66.06850598209462,-17.3906316639302,0 -66.06850305868298,-17.39062691068744,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-D2</name>
+			<styleUrl>#msn_ylw-pushpin113</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904894964721,-17.3906714706666,0 -66.06889040621479,-17.39076999161613,0 -66.0687211786738,-17.39050282242245,0 -66.06853810965266,-17.39061236364296,0 -66.06853465926204,-17.39060751180102,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-D3</name>
+			<styleUrl>#msn_ylw-pushpin113</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904867475242,-17.39067237152155,0 -66.06889037077534,-17.39076915027133,0 -66.0687214929352,-17.39050244543177,0 -66.06857072849974,-17.39059258802422,0 -66.06856699963492,-17.39058596836965,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-D4</name>
+			<styleUrl>#msn_ylw-pushpin113</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904913071797,-17.39067066227496,0 -66.06889050735212,-17.39077035454482,0 -66.0687213428799,-17.3905026635294,0 -66.06862225550125,-17.39056173844586,0 -66.06861825352321,-17.39055524658951,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-AULA-D5</name>
+			<styleUrl>#msn_ylw-pushpin113</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904927075402,-17.3906720485231,0 -66.06888938940651,-17.39077026150305,0 -66.06872130158735,-17.3905025199421,0 -66.0686744723053,-17.39053032692124,0 -66.06866988364783,-17.39052259348118,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>AULA-D1</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.22 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.20 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.20 PM.jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.0685107123935</longitude>
+				<latitude>-17.39054812178088</latitude>
+				<altitude>0</altitude>
+				<heading>21.54242473908008</heading>
+				<tilt>29.62992218868462</tilt>
+				<range>50.87221936522305</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5162</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.0685031964712,-17.39062744740453,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-D2</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.22 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.20 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.21 PM (2).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06853120164303</longitude>
+				<latitude>-17.39054107897533</latitude>
+				<altitude>0</altitude>
+				<heading>21.54243086300308</heading>
+				<tilt>29.62992227043501</tilt>
+				<range>50.89062368588333</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5162</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06853487554444,-17.39060761990467,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-D3</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.22 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.20 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.21 PM (1).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06854273370185</longitude>
+				<latitude>-17.39053108056239</latitude>
+				<altitude>0</altitude>
+				<heading>21.54243430976107</heading>
+				<tilt>29.62992237013887</tilt>
+				<range>50.91310375547367</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5162</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06856663027335,-17.39058617243355,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-D4</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.22 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.20 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.21 PM.jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.0685578170214</longitude>
+				<latitude>-17.3905134258126</latitude>
+				<altitude>0</altitude>
+				<heading>21.54243881780988</heading>
+				<tilt>29.62992246046763</tilt>
+				<range>50.93344760977057</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5166</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06861844679503,-17.39055566188595,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-D5</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.22 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.20 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.31.22 PM (1).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06862506658908</longitude>
+				<latitude>-17.39048943487984</latitude>
+				<altitude>0</altitude>
+				<heading>21.53962646667763</heading>
+				<tilt>30.00025430994861</tilt>
+				<range>56.2854872697927</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_Gemini_Generated_Image_q516k9q516k9q5165</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06866964760511,-17.39052300306304,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>ACADEMICO</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.26.35 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06846227892072</longitude>
+				<latitude>-17.39135807251182</latitude>
+				<altitude>103.8843787715934</altitude>
+				<heading>0.695266768053202</heading>
+				<tilt>28.34299149463432</tilt>
+				<roll>-0.6346195078482798</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow4</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06874978136332,-17.39100247322725,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA FOTOCOPIADORA</name>
+			<styleUrl>#msn_ylw-pushpin150</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06875198905016,-17.39084844639364,0 -66.0688517267254,-17.39100445480952,0 -66.06881616696097,-17.39102756360179,0 -66.06871695748993,-17.39087134079344,0 -66.06875198905016,-17.39084844639364,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA CAPILLA AUDIOVISUAL</name>
+			<styleUrl>#msn_ylw-pushpin220</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06881578294565,-17.39102691226902,0 -66.06873043135765,-17.39108031729156,0 -66.06862716277449,-17.39092493922608,0 -66.06871570578441,-17.39087120050971,0 -66.06881578294565,-17.39102691226902,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-FOTOCOPIADORA</name>
+			<styleUrl>#msn_ylw-pushpin240</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905085953176,-17.39067975056095,0 -66.06873566105064,-17.39086763795084,0 -66.06874074610637,-17.39087560071997,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA-CAPILLA AUDIOVISUAL</name>
+			<styleUrl>#msn_ylw-pushpin290</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905172202545,-17.39067936762506,0 -66.06867695755864,-17.3909026011127,0 -66.06868141282787,-17.39090959987168,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>FOTOCOPIADORA</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.46.53 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.46.51 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.46.41 PM.jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06871992415908</longitude>
+				<latitude>-17.39080410165681</latitude>
+				<altitude>0</altitude>
+				<heading>21.54272631960657</heading>
+				<tilt>30.00036910006681</tilt>
+				<range>74.17578069492664</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ltblu-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06875300418122,-17.39089181477595,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>CAPILLA AUDIOVISUAL</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.46.53 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.46.51 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.46.53 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 6.46.51 PM (1).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06871020867142</longitude>
+				<latitude>-17.39080118595617</latitude>
+				<altitude>0</altitude>
+				<heading>21.54272397058678</heading>
+				<tilt>30.0003429320813</tilt>
+				<range>68.18307896691013</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_ltblu-pushpin0</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06869902464855,-17.39092786154632,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE CANCHA</name>
+			<styleUrl>#msn_ylw-pushpin280</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06787986103626,-17.39078264184077,0 -66.06779272730739,-17.39056462386291,0 -66.06792800641682,-17.39051884172839,0 -66.06802578830073,-17.3907236549087,0 -66.06787986103626,-17.39078264184077,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>CANCHA DEPORTIVA</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.18.22 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 6.59.42 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06792463959813</longitude>
+				<latitude>-17.39119166074914</latitude>
+				<altitude>117.8424703532366</altitude>
+				<heading>6.833282380130913</heading>
+				<tilt>29.9999380677997</tilt>
+				<roll>-1.216263961982539</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_blue-pushpin1</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06790637346205,-17.39065378453618,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA PLANTA BAJA</name>
+			<styleUrl>#msn_ylw-pushpin310</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.0685771902407,-17.39076822851413,0 -66.06846092596194,-17.390844212714,0 -66.06843505175135,-17.39080319565138,0 -66.06835214134641,-17.39084900353457,0 -66.06833499574695,-17.39082700476862,0 -66.06826297556778,-17.39086661508359,0 -66.0682697036987,-17.39088568489614,0 -66.06821603873405,-17.39091871495086,0 -66.06803865302609,-17.3906305441519,0 -66.06824404490197,-17.39055191275595,0 -66.06827322411809,-17.39060855494215,0 -66.06831919351855,-17.39058027829008,0 -66.0684203168061,-17.39052566851944,0 -66.0685771902407,-17.39076822851413,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>CENTRO DE COMPUTO</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.18.24 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06862701237651</longitude>
+				<latitude>-17.39099533107474</latitude>
+				<altitude>75.0248830004421</altitude>
+				<heading>0.9810104906982996</heading>
+				<tilt>25.29650829660687</tilt>
+				<roll>-0.7679834228627234</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_arrow1</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.068784270138,-17.3906672888719,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE CC1</name>
+			<styleUrl>#msn_ylw-pushpin130</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.0688725683348,-17.39076632518884,0 -66.06875259487614,-17.39083075357726,0 -66.06871461221937,-17.39076976097599,0 -66.06883393275562,-17.39070311549455,0 -66.0688725683348,-17.39076632518884,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE CC2</name>
+			<styleUrl>#msn_ylw-pushpin112</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06883349185958,-17.39070317278762,0 -66.06871527237999,-17.3907698608719,0 -66.06868041188635,-17.39071438157536,0 -66.06879851553084,-17.39064318560779,0 -66.06883349185958,-17.39070317278762,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE CC3</name>
+			<styleUrl>#msn_ylw-pushpin340</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06864527356589,-17.39065383040596,0 -66.06876282870091,-17.39058556523041,0 -66.06879745927164,-17.39064333396684,0 -66.06867987650621,-17.39071422903253,0 -66.06864527356589,-17.39065383040596,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE CC4</name>
+			<styleUrl>#msn_ylw-pushpin160</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06876182567092,-17.39058505923341,0 -66.06864527356589,-17.39065383040596,0 -66.06860436278525,-17.39058205246656,0 -66.06872049112356,-17.39051424985148,0 -66.06876182567092,-17.39058505923341,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>AULA-CC1</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.53 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.52 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.29.03 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06866946649822</longitude>
+				<latitude>-17.39105796596807</latitude>
+				<altitude>56.87482380522405</altitude>
+				<heading>1.282974108079367</heading>
+				<tilt>39.87007389388161</tilt>
+				<roll>-0.5130232989678305</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-diamond</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06877619642809,-17.39078473967926,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-CC2</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.53 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.52 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.29.02 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06866946649822</longitude>
+				<latitude>-17.39105796596807</latitude>
+				<altitude>56.87482380522405</altitude>
+				<heading>1.282974108079367</heading>
+				<tilt>39.87007389388161</tilt>
+				<roll>-0.5130232989678305</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-diamond</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06874031348876,-17.39073194411238,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-CC3</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.53 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.52 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.29.02 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06866946649822</longitude>
+				<latitude>-17.39105796596807</latitude>
+				<altitude>56.87482380522405</altitude>
+				<heading>1.282974108079367</heading>
+				<tilt>39.87007389388161</tilt>
+				<roll>-0.5130232989678305</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-diamond</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06870339952251,-17.39067012984378,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AULA-CC4</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.53 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.28.52 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 7.29.00 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06866946649822</longitude>
+				<latitude>-17.39105796596807</latitude>
+				<altitude>56.87482380522405</altitude>
+				<heading>1.282974108079367</heading>
+				<tilt>39.87007389388161</tilt>
+				<roll>-0.5130232989678305</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_ylw-diamond</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06866359747568,-17.39060900843711,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Ruta CC1</name>
+			<styleUrl>#msn_ylw-pushpin101</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905160904655,-17.39068015171844,0 -66.06879224814817,-17.39083313239138,0 -66.06876810875971,-17.39079338595048,0 -66.06877625326833,-17.39078859288067,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Ruta CC2</name>
+			<styleUrl>#msn_ylw-pushpin300</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905020422842,-17.39067849862127,0 -66.06879161177473,-17.39083294119506,0 -66.06873278576182,-17.39073787677883,0 -66.06874074316981,-17.3907326273246,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Ruta CC3</name>
+			<styleUrl>#msn_ylw-pushpin300</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.0690511673708,-17.39067978996188,0 -66.06879170253637,-17.3908329843532,0 -66.06869487067985,-17.39067667747936,0 -66.06870372019009,-17.39067129120988,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Ruta CC4</name>
+			<styleUrl>#msn_ylw-pushpin101</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905239532958,-17.39067976264967,0 -66.06879281920342,-17.39083296410592,0 -66.06865483219467,-17.39061341952678,0 -66.06866419728364,-17.39060619611066,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>AREA DE GEFATURA</name>
+			<styleUrl>#msn_ylw-pushpin212</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06833473854819,-17.39056263170808,0 -66.06821023855647,-17.39063552658721,0 -66.0681726907539,-17.39058866204862,0 -66.06831005829748,-17.39051676691765,0 -66.06833473854819,-17.39056263170808,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>GEFATURA DE CARRERA</name>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-11 at 8.00.19 PM.jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06827847840356</longitude>
+				<latitude>-17.39095215117947</latitude>
+				<altitude>67.29501041447681</altitude>
+				<heading>0.7319253715074202</heading>
+				<tilt>29.99990242922122</tilt>
+				<roll>-0.6026297299393414</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin01</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06826914176305,-17.3905742283271,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>PLANTA-BAJA</name>
+			<description>PLANTA BAJA — EDIFICIO ACADÉMICO BLOQUE &quot;B&quot;
+IZQUIERDA
+MANTENIMIENTO
+AULA - G 11
+FICHEROS
+BIBLIOTECA
+LABORATORIO DE COMPUTACIÓN
+LABORATORIO DE COMPUTACIÓN
+BIBLIOTECA LECTURA
+AUDICENTRO - 6
+BIBLIOTECA VIRTUAL
+DIREC. REGIONAL DE LENGUA
+ALMACENES
+DEPÓSITO - 1
+DEPÓSITO - 2
+DEPÓSITO
+DERECHA
+LABORATORIO FÍSICA
+DEPÓSITO
+DEP. FÍSICA
+DEP. ELECTR.
+DEPÓSITO
+LABORATORIO QUÍMICA
+LABORATORIO ELECTRICIDAD
+DEPÓSITO
+SALA DE REUNIONES
+JEFATURAS DE CARRERAS
+TESORERÍA REGIONAL
+CONTABILIDAD
+CAJAS
+CAJAS
+SALA DE ESPERA</description>
+			<Camera>
+				<longitude>-66.06843679556397</longitude>
+				<latitude>-17.39107689457942</latitude>
+				<altitude>71.39479276744827</altitude>
+				<heading>0.7319768308629455</heading>
+				<tilt>29.99999966160224</tilt>
+				<roll>-0.6027262987614332</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_red-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.0685054219572,-17.39075036634344,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>RUTA A EDIFICIO ANTIGUO</name>
+			<styleUrl>#msn_ylw-pushpin260</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905174791822,-17.39067767105573,0 -66.06864452987986,-17.3909193048281,0 -66.06876348971726,-17.39110476738957,0 -66.06817796047174,-17.3912239770093,0 -66.06802488894513,-17.39100071156863,0 -66.06804197678041,-17.39099032638343,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA A GEFATURA DE CARRERA</name>
+			<styleUrl>#msn_ylw-pushpin330</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905129976091,-17.39067880582085,0 -66.06879284484994,-17.39083300597897,0 -66.06862187009237,-17.39056206528437,0 -66.06862083985423,-17.39055895618616,0 -66.06847605815469,-17.39064814985894,0 -66.06838325239238,-17.39050261935,0 -66.06833629566914,-17.39053358874811,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA A BLIOTECA Y CAJAS</name>
+			<styleUrl>#msn_ylw-pushpin71</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06905132848399,-17.39067889783407,0 -66.06864568421275,-17.39091790821491,0 -66.06856678808458,-17.39080381839536,0 -66.0684800869207,-17.39086034300719,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>RUTA A CANCHA DEPORTIVA</name>
+			<styleUrl>#msn_ylw-pushpin81</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904974109209,-17.39068002131224,0 -66.06864690254241,-17.39091800946835,0 -66.06876432216183,-17.39110303142117,0 -66.06817776515459,-17.39122250460855,0 -66.06789940189853,-17.39080633529668,0 -66.06786177338066,-17.39082258455969,0 -66.06782999098111,-17.39072720925715,0 -66.0678444940586,-17.3907256358176,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Cafeteria Antigua</name>
+			<styleUrl>#m_ylw-pushpin7</styleUrl>
+			<Polygon>
+				<tessellate>1</tessellate>
+				<outerBoundaryIs>
+					<LinearRing>
+						<coordinates>
+							-66.06794581559815,-17.39050815783187,0 -66.0677597628127,-17.39054988861859,0 -66.06772871140436,-17.39043019091091,0 -66.06791710143747,-17.39039105411527,0 -66.06794581559815,-17.39050815783187,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>CAFETERIA ANTIGUA</name>
+			<LookAt>
+				<longitude>-66.06796730820228</longitude>
+				<latitude>-17.39064231145296</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0001170963506587587</heading>
+				<tilt>28.59167776263988</tilt>
+				<range>74.4848900220052</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin5</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06785077722886,-17.39048613185716,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>CAFETERIA ANTIGUA</name>
+			<styleUrl>#m_ylw-pushpin6</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904579137894,-17.39067841401503,0 -66.06888584689024,-17.39077468943551,0 -66.06864682199389,-17.39039990157642,0 -66.06842989651668,-17.39053566483369,0 -66.06838405526523,-17.39047526967007,0 -66.06804696411245,-17.39062564790094,0 -66.06793344609612,-17.39044726913269,0 -66.06785056044804,-17.39047989228203,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.7.1327"></atom:link>
+	</Folder>
+</Document>
+</kml>
