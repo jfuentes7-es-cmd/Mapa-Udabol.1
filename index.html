@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UDABOL Campus Sacaba - Mapa Interactivo</title>
+    <title>UDABOL Campus Sacaba - Mapa Interactivo GPS</title>
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -70,14 +70,14 @@
             background: rgba(255, 255, 255, 0.1);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 6px 14px;
+            padding: 6px 12px;
             border-radius: 8px;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             transition: all 0.2s;
         }
 
@@ -96,7 +96,7 @@
 
         /* PANEL LATERAL IZQUIERDO */
         .sidebar {
-            width: 340px;
+            width: 350px;
             background: #ffffff;
             height: 100%;
             z-index: 1500;
@@ -104,12 +104,14 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .sidebar-search {
             padding: 14px;
             border-bottom: 1px solid #e2e8f0;
             background: #f8fafc;
+            position: relative;
         }
 
         .search-box {
@@ -149,6 +151,41 @@
             font-weight: 700;
             cursor: pointer;
             display: none;
+        }
+
+        /* LISTA DE AUTOCOMPLETADO */
+        .autocomplete-list {
+            position: absolute;
+            top: 58px;
+            left: 14px;
+            right: 14px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-height: 240px;
+            overflow-y: auto;
+            z-index: 2500;
+            display: none;
+        }
+
+        .autocomplete-item {
+            padding: 10px 12px;
+            border-bottom: 1px solid #f1f5f9;
+            cursor: pointer;
+            font-size: 13px;
+            color: #0f172a;
+        }
+
+        .autocomplete-item:hover {
+            background: #f1f5f9;
+        }
+
+        .autocomplete-sub {
+            display: block;
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 2px;
         }
 
         .sidebar-content {
@@ -214,6 +251,29 @@
             white-space: nowrap;
         }
 
+        /* MARCADOR DE ENTRADA PRINCIPAL */
+        .entrada-badge {
+            background: #eab308;
+            color: #002244;
+            font-weight: 800;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 12px;
+            border: 2px solid #002244;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            white-space: nowrap;
+        }
+
+        /* ANIMACIÓN DE FLUJO DE RUTA GPS */
+        @keyframes flujoRuta {
+            to {
+                stroke-dashoffset: -32;
+            }
+        }
+        .ruta-animada {
+            animation: flujoRuta 1s linear infinite;
+        }
+
         /* BOTÓN GPS FLOTANTE */
         .btn-gps {
             position: absolute;
@@ -233,6 +293,19 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
+        /* BOTÓN TOGGLE MENÚ MÓVIL */
+        .btn-toggle-menu {
+            display: none;
+            background: #eab308;
+            color: #002244;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
         /* CARD DE INFORMACIÓN INFERIOR */
         .info-card {
             position: absolute;
@@ -241,8 +314,8 @@
             transform: translateX(-50%);
             z-index: 1000;
             width: 92%;
-            max-width: 480px;
-            max-height: 220px;
+            max-width: 500px;
+            max-height: 260px;
             overflow-y: auto;
             background: rgba(0, 34, 68, 0.96);
             padding: 14px 18px;
@@ -266,6 +339,17 @@
             line-height: 1.45;
         }
 
+        .piso-badge {
+            display: inline-block;
+            background: #eab308;
+            color: #002244;
+            font-weight: 800;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-bottom: 6px;
+        }
+
         .desc-box {
             margin-top: 8px;
             padding-top: 8px;
@@ -273,6 +357,21 @@
             font-size: 12px;
             color: #cbd5e1;
             white-space: pre-line;
+        }
+
+        .galeria-fotos {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            margin-top: 10px;
+            padding-bottom: 4px;
+        }
+
+        .galeria-fotos img {
+            height: 90px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
+            object-fit: cover;
         }
 
         /* PUNTO DE UBICACIÓN GPS */
@@ -287,20 +386,20 @@
 
         /* ADAPTABILIDAD MÓVIL */
         @media (max-width: 768px) {
-            .main-container {
-                flex-direction: column;
-            }
+            .brand-title p { display: none; }
+            .btn-toggle-menu { display: inline-block; }
+            .main-container { flex-direction: column; }
             .sidebar {
                 width: 100%;
                 height: auto;
-                max-height: 185px;
+                max-height: 220px;
             }
-            .sidebar-content {
-                padding: 8px 14px;
+            .sidebar.colapsado .sidebar-content {
+                display: none;
             }
             .info-card {
                 bottom: 12px;
-                max-height: 170px;
+                max-height: 190px;
             }
         }
     </style>
@@ -312,25 +411,27 @@
         <div class="brand-section">
             <span class="brand-logo">UDABOL</span>
             <div class="brand-title">
-                <h1>Campus Sacaba - Mapa Interactivo</h1>
-                <p>Navegación Satelital y Ubicación de Aulas</p>
+                <h1>Campus Sacaba - Mapa GPS</h1>
+                <p>Ubicación de Aulas, Pisos y Laboratorios</p>
             </div>
         </div>
         <div class="top-actions">
-            <button class="nav-btn active" onclick="restablecerMapa()">🗺️ Ver Todo</button>
-            <button class="nav-btn" onclick="centrarEnUsuario()">🎯 Mi Ubicación</button>
+            <button class="btn-toggle-menu" onclick="toggleSidebar()">📋 Menú</button>
+            <button class="nav-btn active" onclick="restablecerMapa()">🗺️ Todo</button>
+            <button class="nav-btn" onclick="centrarEnUsuario()">🎯 GPS</button>
         </div>
     </header>
 
     <div class="main-container">
         <!-- PANEL LATERAL DE BÚSQUEDA Y DIRECTORIO -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebarPanel">
             <div class="sidebar-search">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Ej. C-1, D-4, CC2, Cajas, Piso-2..." onkeypress="if(event.key === 'Enter') buscarDestino()">
+                    <input type="text" id="searchInput" placeholder="Busca aula, lab (ej. CS-14, Quirófano)..." oninput="filtrarSugerencias()" onkeypress="if(event.key === 'Enter') buscarDestino()">
                     <button class="btn-buscar-main" onclick="buscarDestino()">Ir</button>
                     <button class="btn-reset" id="btnReset" onclick="restablecerMapa()">✖</button>
                 </div>
+                <div class="autocomplete-list" id="autocompleteList"></div>
             </div>
             <div class="sidebar-content">
                 <div class="cat-title">Aulas Bloque A y C</div>
@@ -389,9 +490,11 @@
 
         <!-- CARD INFORMATIVA INFERIOR -->
         <div class="info-card" id="infoCard">
+            <span class="piso-badge" id="cardPisoBadge" style="display:none;"></span>
             <h3 id="cardTitulo">Destino Seleccionado</h3>
             <p id="cardDetalle">Visualizando únicamente el camino correspondiente.</p>
             <div class="desc-box" id="cardDescripcion" style="display:none;"></div>
+            <div class="galeria-fotos" id="cardGaleria" style="display:none;"></div>
         </div>
     </div>
 
@@ -402,20 +505,33 @@
     <script>
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3907, -66.0685], 19);
 
-        // Capa Satelital Esri HD (Única capa base)
+        // Capa Satelital Esri HD
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 21,
             maxNativeZoom: 19,
             attribution: '© Esri Satelital — UDABOL Campus Sacaba'
         }).addTo(map);
 
+        // Marcador fijo en Entrada Principal (Inicio de todas las rutas)
+        const iconoEntrada = L.divIcon({
+            className: '',
+            html: '<div class="entrada-badge">🚪 Entrada Principal</div>',
+            iconSize: [130, 26],
+            iconAnchor: [65, 13]
+        });
+        L.marker([-17.390672, -66.069049], { icon: iconoEntrada, zIndexOffset: 1000 }).addTo(map);
+
         let elementosPoligonos = [];
         let elementosPuntos = [];
         let elementosRutas = [];
+        let indiceBuscador = [];
         let etiquetasMostradas = new Set();
         let userMarker = null, userLatLng = null;
 
-        // Función para normalizar textos (quita guiones, tildes y corrige variantes como Gefatura/Blioteca)
+        function toggleSidebar() {
+            document.getElementById('sidebarPanel').classList.toggle('colapsado');
+        }
+
         function normalizarTexto(txt) {
             return (txt || "")
                 .toLowerCase()
@@ -428,13 +544,23 @@
                 .trim();
         }
 
-        // Limpiar etiquetas HTML <img> locales (C:/Users/...) de la descripción KML para mostrar solo el texto útil
+        function extraerFotos(desc) {
+            if (!desc) return [];
+            const regex = /src="([^"]+)"/gi;
+            let fotos = [], match;
+            while ((match = regex.exec(desc)) !== null) {
+                const nombreArchivo = match[1].split('/').pop();
+                if (nombreArchivo) fotos.push(`fotos/${nombreArchivo}`);
+            }
+            return fotos;
+        }
+
         function limpiarDescripcion(desc) {
             if (!desc) return "";
             return desc.replace(/<img[^>]*>/gi, "").trim();
         }
 
-        // Cargar KML actualizado
+        // Cargar KML y construir índice profundo de aulas y pisos
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
@@ -444,17 +570,17 @@
                     const nombreOrig = (props.name || "").trim();
                     const nombreNorm = normalizarTexto(nombreOrig);
                     const descLimpia = limpiarDescripcion(props.description);
+                    const fotos = extraerFotos(props.description);
 
-                    // 1. POLÍGONOS (Áreas y bloques)
+                    // 1. POLÍGONOS
                     if (layer instanceof L.Polygon) {
                         layer.setStyle({
-                            color: '#eab308',      // Borde dorado
-                            fillColor: '#800000',  // Guindo institucional
+                            color: '#eab308',
+                            fillColor: '#800000',
                             fillOpacity: 0.42,
                             weight: 2
                         });
 
-                        // Nombre limpio para etiqueta (sin "AREA DE ")
                         let etiquetaCorta = nombreOrig
                             .replace(/^AREA\s+DE\s+/i, "")
                             .replace(/^AREA[-\s]+/i, "")
@@ -474,23 +600,27 @@
                             layer.on('click', function() {
                                 seleccionarRapido(etiquetaCorta || nombreOrig);
                             });
+                            indiceBuscador.push({
+                                titulo: etiquetaCorta || nombreOrig,
+                                subtitulo: "Bloque / Área del Campus",
+                                query: etiquetaCorta || nombreOrig
+                            });
                         }
 
                         elementosPoligonos.push({
                             layer: layer,
                             nombreOrig: nombreOrig,
                             nombreNorm: nombreNorm,
-                            claveBase: normalizarTexto(etiquetaCorta),
-                            descripcion: descLimpia
+                            claveBase: claveEtiq,
+                            descripcion: descLimpia,
+                            fotos: fotos
                         });
                     }
-                    // 2. PUNTOS (Pisos, aulas internas, marcadores)
+                    // 2. PUNTOS (Pisos y aulas internas)
                     else if (layer instanceof L.Marker) {
-                        // Ocultar iconos externos rotos (C:/Users/...)
                         layer.setOpacity(0);
 
-                        // Evitar etiquetas duplicadas genéricas como "ACADEMICO" o "CAMPO VERDE"
-                        const ignorarEtiqueta = ["academico", "campo verde", "planta baja"].includes(nombreNorm);
+                        const ignorarEtiqueta = ["academico", "campo verde", "planta baja", "entrada ala univercidad"].includes(nombreNorm);
                         if (nombreOrig && !etiquetasMostradas.has(nombreNorm) && !ignorarEtiqueta) {
                             layer.bindTooltip(nombreOrig, {
                                 permanent: true,
@@ -500,20 +630,47 @@
                             etiquetasMostradas.add(nombreNorm);
                         }
 
+                        if (nombreOrig && !ignorarEtiqueta) {
+                            indiceBuscador.push({
+                                titulo: nombreOrig,
+                                subtitulo: descLimpia ? descLimpia.split('\n')[0] : "Ubicación en Campus",
+                                query: nombreOrig
+                            });
+                        }
+
+                        // Indexar cada línea interna de los pisos (ej. "AULA CS - 14", "Quirófano 1")
+                        if (descLimpia) {
+                            const lineas = descLimpia.split('\n').map(l => l.trim()).filter(l => l.length > 2);
+                            const encabezado = lineas[0] || nombreOrig;
+                            lineas.slice(1).forEach(linea => {
+                                const lNorm = normalizarTexto(linea);
+                                if (!["izquierda", "derecha", "bano mujeres", "bano hombres", "deposito", "duchas"].includes(lNorm)) {
+                                    indiceBuscador.push({
+                                        titulo: linea.replace(/^-\s*/, ""),
+                                        subtitulo: `${encabezado}`,
+                                        query: linea.replace(/^-\s*/, "")
+                                    });
+                                }
+                            });
+                        }
+
                         elementosPuntos.push({
                             layer: layer,
                             nombreOrig: nombreOrig,
                             nombreNorm: nombreNorm,
-                            descripcion: descLimpia
+                            descripcion: descLimpia,
+                            descNorm: normalizarTexto(descLimpia),
+                            fotos: fotos
                         });
                     }
-                    // 3. LÍNEAS (Rutas peatonales)
+                    // 3. LÍNEAS (Rutas con clase animada)
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
-                            color: '#00F5FF',      // Cian Neón
+                            color: '#00F5FF',
                             weight: 6,
                             opacity: 0.95,
-                            dashArray: '8, 8'
+                            dashArray: '10, 10',
+                            className: 'ruta-animada'
                         });
                         map.removeLayer(layer);
                         elementosRutas.push({
@@ -526,13 +683,55 @@
             })
             .addTo(map);
 
+        // AUTOCOMPLETADO EN VIVO
+        function filtrarSugerencias() {
+            const val = normalizarTexto(document.getElementById('searchInput').value);
+            const lista = document.getElementById('autocompleteList');
+            lista.innerHTML = "";
+
+            if (val.length < 2) {
+                lista.style.display = "none";
+                return;
+            }
+
+            const vistos = new Set();
+            const coincidencias = indiceBuscador.filter(item => {
+                const n = normalizarTexto(item.titulo);
+                if (n.includes(val) && !vistos.has(n)) {
+                    vistos.add(n);
+                    return true;
+                }
+                return false;
+            }).slice(0, 8);
+
+            if (coincidencias.length === 0) {
+                lista.style.display = "none";
+                return;
+            }
+
+            coincidencias.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'autocomplete-item';
+                div.innerHTML = `<strong>${item.titulo}</strong><span class="autocomplete-sub">${item.subtitulo}</span>`;
+                div.onclick = () => {
+                    lista.style.display = "none";
+                    seleccionarRapido(item.query);
+                };
+                lista.appendChild(div);
+            });
+
+            lista.style.display = "block";
+        }
+
         function seleccionarRapido(texto) {
+            document.getElementById('autocompleteList').style.display = "none";
             document.getElementById('searchInput').value = texto;
             buscarDestino();
         }
 
-        // BÚSQUEDA INTELIGENTE Y AISLAMIENTO NEÓN
+        // BÚSQUEDA PROFUNDA (POLÍGONOS + PISOS + AULAS INTERNAS)
         function buscarDestino() {
+            document.getElementById('autocompleteList').style.display = "none";
             const rawQuery = document.getElementById('searchInput').value;
             const queryNorm = normalizarTexto(rawQuery);
             if (!queryNorm) return;
@@ -540,12 +739,15 @@
             let hallado = false;
             let destinoLatLng = null;
             let tituloMostrar = rawQuery.toUpperCase();
+            let pisoUbicacion = "";
             let descripcionMostrar = "";
+            let fotosMostrar = [];
+            let edificioAsociado = "";
 
-            // 1. Apagar todas las rutas
+            // 1. Apagar rutas
             elementosRutas.forEach(item => map.removeLayer(item.layer));
 
-            // 2. Buscar coincidencia en Polígonos
+            // 2. Buscar en Polígonos directos
             elementosPoligonos.forEach(item => {
                 const coincide = item.claveBase === queryNorm ||
                                  item.nombreNorm.includes(queryNorm) ||
@@ -555,6 +757,7 @@
                     hallado = true;
                     tituloMostrar = item.nombreOrig.replace(/^AREA\s+DE\s+/i, "").replace(/^AREA[-\s]+/i, "").toUpperCase();
                     if (item.descripcion) descripcionMostrar = item.descripcion;
+                    if (item.fotos.length) fotosMostrar = item.fotos;
 
                     destinoLatLng = item.layer.getBounds().getCenter();
                     map.fitBounds(item.layer.getBounds(), { padding: [90, 90] });
@@ -575,23 +778,52 @@
                 }
             });
 
-            // 3. Buscar en Puntos (para pisos PISO-1..5, aulas TS, etc., o complementar descripción)
+            // 3. Buscar en Puntos y en el contenido interno de los pisos
             elementosPuntos.forEach(item => {
-                const coincidePunto = item.nombreNorm === queryNorm || item.nombreNorm.includes(queryNorm);
-                if (coincidePunto) {
+                const coincideNombre = item.nombreNorm === queryNorm || item.nombreNorm.includes(queryNorm);
+                const coincideInterno = item.descNorm.includes(queryNorm);
+
+                if (coincideNombre || coincideInterno) {
                     if (!descripcionMostrar && item.descripcion) {
                         descripcionMostrar = item.descripcion;
                     }
+                    if (!fotosMostrar.length && item.fotos.length) {
+                        fotosMostrar = item.fotos;
+                    }
+
+                    // Detectar edificio contenedor si es un aula interna
+                    if (item.descNorm.includes("edificio principal") || item.descNorm.includes("bloque b")) {
+                        edificioAsociado = "edificio antiguo";
+                        pisoUbicacion = `🏢 Edificio Principal (Antiguo) • ${item.nombreOrig}`;
+                    } else if (item.nombreNorm.includes("ts") || item.nombreNorm.includes("auditoria")) {
+                        edificioAsociado = "edificio nuevo";
+                        pisoUbicacion = `🏢 Edificio Nuevo • ${item.nombreOrig}`;
+                    }
+
                     if (!hallado) {
                         hallado = true;
-                        tituloMostrar = item.nombreOrig.toUpperCase();
+                        tituloMostrar = rawQuery.toUpperCase();
                         destinoLatLng = item.layer.getLatLng();
                         map.setView(destinoLatLng, 20);
                     }
                 }
             });
 
-            // 4. Encender la ruta correspondiente (soporta "RUTA-AULA-C1", "Ruta CC1", "AULA-A1", "CAFETERIA ANTIGUA", etc.)
+            // Si el aula pertenece al Edificio Antiguo, iluminar su polígono automáticamente
+            if (edificioAsociado === "edificio antiguo") {
+                elementosPoligonos.forEach(p => {
+                    if (p.claveBase.includes("edificio antiguo")) {
+                        p.layer.setStyle({
+                            color: '#00FF66',
+                            fillColor: '#00FF66',
+                            fillOpacity: 0.65,
+                            weight: 4
+                        });
+                    }
+                });
+            }
+
+            // 4. Encender ruta correspondiente
             const claveRuta = queryNorm.replace(/^aula\s+/, "").trim();
             elementosRutas.forEach(ruta => {
                 const rNorm = ruta.nombreNorm;
@@ -601,6 +833,7 @@
                     rNorm === `ruta a ${queryNorm}` ||
                     rNorm.endsWith(` ${claveRuta}`) ||
                     rNorm.includes(queryNorm) ||
+                    (edificioAsociado && rNorm.includes(edificioAsociado)) ||
                     (queryNorm.includes("biblioteca") && rNorm.includes("biblioteca")) ||
                     (queryNorm.includes("caja") && rNorm.includes("caja")) ||
                     (queryNorm.includes("marketing") && rNorm.includes("marketing"));
@@ -611,10 +844,18 @@
             });
 
             if (hallado) {
-                let detalleText = "Espacio aislado en verde neón y ruta trazada en cian.";
+                let detalleText = "Espacio aislado en verde neón y ruta animada trazada en cian.";
                 if (userLatLng && destinoLatLng) {
                     const metros = Math.round(userLatLng.distanceTo(destinoLatLng));
                     detalleText = `Distancia aproximada: <strong>${metros} metros</strong> desde tu posición.`;
+                }
+
+                const badgeEl = document.getElementById('cardPisoBadge');
+                if (pisoUbicacion) {
+                    badgeEl.style.display = 'inline-block';
+                    badgeEl.innerText = pisoUbicacion;
+                } else {
+                    badgeEl.style.display = 'none';
                 }
 
                 document.getElementById('infoCard').style.display = 'block';
@@ -629,9 +870,27 @@
                     descEl.style.display = 'none';
                 }
 
+                // Renderizar galería si existen las fotos en carpeta /fotos
+                const galEl = document.getElementById('cardGaleria');
+                galEl.innerHTML = "";
+                if (fotosMostrar.length > 0) {
+                    fotosMostrar.forEach(src => {
+                        const img = document.createElement('img');
+                        img.src = src;
+                        img.onerror = function() { this.style.display = 'none'; };
+                        img.onload = function() { galEl.style.display = 'flex'; };
+                        galEl.appendChild(img);
+                    });
+                } else {
+                    galEl.style.display = 'none';
+                }
+
                 document.getElementById('btnReset').style.display = 'block';
+                if (window.innerWidth <= 768) {
+                    document.getElementById('sidebarPanel').classList.add('colapsado');
+                }
             } else {
-                alert('No se encontró ese destino. Prueba seleccionándolo en el directorio lateral.');
+                alert('No se encontró ese destino. Prueba escribiendo el nombre del aula, piso o laboratorio.');
             }
         }
 
@@ -649,8 +908,10 @@
 
             document.getElementById('infoCard').style.display = 'none';
             document.getElementById('cardDescripcion').style.display = 'none';
+            document.getElementById('cardGaleria').style.display = 'none';
             document.getElementById('btnReset').style.display = 'none';
             document.getElementById('searchInput').value = '';
+            document.getElementById('autocompleteList').style.display = 'none';
 
             map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
         }
