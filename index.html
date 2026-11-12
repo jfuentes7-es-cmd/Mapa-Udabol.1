@@ -22,6 +22,167 @@
             background: #0f172a;
         }
 
+        /* PANTALLA / MODAL DE BIENVENIDA */
+        .welcome-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(8px);
+            z-index: 5000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            animation: fadeIn 0.35s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .welcome-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 480px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+            border: 2px solid #eab308;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(25px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .welcome-header {
+            background: linear-gradient(135deg, #002244 0%, #800000 100%);
+            padding: 24px 22px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .welcome-badge {
+            display: inline-block;
+            background: #eab308;
+            color: #002244;
+            font-weight: 900;
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+
+        .welcome-header h2 {
+            font-size: 21px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .welcome-header p {
+            font-size: 13px;
+            color: #e2e8f0;
+            line-height: 1.4;
+        }
+
+        .welcome-body {
+            padding: 20px 22px;
+        }
+
+        .welcome-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f8fafc;
+            padding: 10px 12px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .step-icon {
+            font-size: 20px;
+            background: #002244;
+            color: #eab308;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            font-size: 13.5px;
+            color: #0f172a;
+            margin-bottom: 2px;
+        }
+
+        .step-text p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.35;
+        }
+
+        .welcome-quick-search {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .welcome-quick-search input {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .welcome-quick-search input:focus {
+            border-color: #002244;
+        }
+
+        .welcome-quick-search button {
+            background: #800000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .btn-start-map {
+            width: 100%;
+            background: #002244;
+            color: #ffffff;
+            border: none;
+            padding: 13px;
+            border-radius: 12px;
+            font-size: 14.5px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 4px 14px rgba(0, 34, 68, 0.35);
+        }
+
+        .btn-start-map:hover {
+            background: #003366;
+        }
+
         /* BARRA SUPERIOR INSTITUCIONAL */
         .top-navbar {
             height: 56px;
@@ -401,6 +562,50 @@
 </head>
 <body>
 
+    <!-- MODAL DE BIENVENIDA PARA ESTUDIANTES -->
+    <div class="welcome-overlay" id="welcomeModal">
+        <div class="welcome-card">
+            <div class="welcome-header">
+                <span class="welcome-badge">BIENVENIDO A UDABOL</span>
+                <h2>Campus Universitario Sacaba</h2>
+                <p>Encuentra rápidamente tus aulas, laboratorios, oficinas administrativas y rutas de acceso en tiempo real.</p>
+            </div>
+            <div class="welcome-body">
+                <div class="welcome-steps">
+                    <div class="step-item">
+                        <div class="step-icon">🔍</div>
+                        <div class="step-text">
+                            <h4>1. Busca tu aula o servicio</h4>
+                            <p>Escribe el código de tu aula (ej. <strong>G-16, CS-14, C-1, CC-2</strong>) o el área que necesitas.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">🛤️</div>
+                        <div class="step-text">
+                            <h4>2. Sigue tu ruta iluminada</h4>
+                            <p>El mapa aislará tu destino en verde neón y te mostrará el camino peatonal desde la entrada.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon">🎯</div>
+                        <div class="step-text">
+                            <h4>3. Activa tu GPS</h4>
+                            <p>Usa el botón de ubicación para ver a cuántos metros te encuentras de tu clase.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Búsqueda directa desde la bienvenida -->
+                <div class="welcome-quick-search">
+                    <input type="text" id="welcomeSearchInput" placeholder="¿A qué aula vas hoy? Ej. G-16, C-1..." onkeypress="if(event.key === 'Enter') buscarDesdeBienvenida()">
+                    <button onclick="buscarDesdeBienvenida()">Ir directo</button>
+                </div>
+
+                <button class="btn-start-map" onclick="cerrarBienvenida()">🗺️ Explorar Mapa Completo</button>
+            </div>
+        </div>
+    </div>
+
     <header class="top-navbar">
         <div class="brand-section">
             <span class="brand-logo">UDABOL</span>
@@ -411,6 +616,7 @@
         </div>
         <div class="top-actions">
             <button class="btn-toggle-menu" onclick="toggleSidebar()">📋 Menú</button>
+            <button class="nav-btn" onclick="abrirBienvenida()" title="Ver guía de bienvenida">❓ Ayuda</button>
             <button class="nav-btn active" onclick="restablecerMapa()">🗺️ Todo</button>
             <button class="nav-btn" onclick="centrarEnUsuario()">🎯 GPS</button>
         </div>
@@ -498,6 +704,23 @@
     <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
 
     <script>
+        function cerrarBienvenida() {
+            document.getElementById('welcomeModal').style.display = 'none';
+        }
+
+        function abrirBienvenida() {
+            document.getElementById('welcomeModal').style.display = 'flex';
+        }
+
+        function buscarDesdeBienvenida() {
+            const val = document.getElementById('welcomeSearchInput').value.trim();
+            cerrarBienvenida();
+            if (val) {
+                document.getElementById('searchInput').value = val;
+                buscarDestino();
+            }
+        }
+
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3907, -66.0685], 19);
 
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -545,7 +768,7 @@
             return desc.replace(/<img[^>]*>/gi, "").trim();
         }
 
-        // Cargar KML y restaurar TODAS las etiquetas de aulas, pisos y edificios
+        // Cargar KML y mostrar todas las etiquetas de aulas, pisos y edificios
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
@@ -603,7 +826,7 @@
                             tieneEtiqueta: tieneEtiqueta
                         });
                     }
-                    // 2. PUNTOS (Aulas G, Pisos Edificio Antiguo y Pisos Edificio Nuevo)
+                    // 2. PUNTOS
                     else if (layer instanceof L.Marker) {
                         layer.setOpacity(0);
 
@@ -655,7 +878,7 @@
                             tieneEtiqueta: tieneEtiqueta
                         });
                     }
-                    // 3. LÍNEAS (Rutas con animación de flujo)
+                    // 3. LÍNEAS
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
                             color: '#00F5FF',
@@ -771,14 +994,12 @@
             let descripcionMostrar = "";
             let edificioAsociado = "";
 
-            // Limpiar rutas y marcador anterior
             elementosRutas.forEach(item => map.removeLayer(item.layer));
             if (marcadorDestinoActivo) {
                 map.removeLayer(marcadorDestinoActivo);
                 marcadorDestinoActivo = null;
             }
 
-            // OCULTAR TODAS LAS ETIQUETAS DE PUNTOS Y POLÍGONOS PARA DEJAR SOLO EL AULA BUSCADA
             elementosPuntos.forEach(p => {
                 if (p.tieneEtiqueta) p.layer.closeTooltip();
             });
@@ -797,7 +1018,6 @@
                     destinoLatLng = item.layer.getBounds().getCenter();
                     map.fitBounds(item.layer.getBounds(), { padding: [90, 90] });
 
-                    // Dejar visible únicamente este polígono y su etiqueta
                     item.layer.setStyle({
                         color: '#00FF66',
                         fillColor: '#00FF66',
@@ -806,7 +1026,6 @@
                     });
                     if (item.tieneEtiqueta) item.layer.openTooltip();
                 } else {
-                    // Ocultar por completo los demás polígonos y etiquetas
                     item.layer.setStyle({
                         color: 'transparent',
                         fillColor: 'transparent',
@@ -817,7 +1036,7 @@
                 }
             });
 
-            // 2. Buscar en Puntos (Aulas G, Pisos, Aulas internas)
+            // 2. Buscar en Puntos
             elementosPuntos.forEach(item => {
                 const coincideNombre = item.nombreNorm === queryNorm || item.nombreNorm.includes(queryNorm);
                 const coincideInterno = item.descNorm.includes(queryNorm);
@@ -854,7 +1073,6 @@
                 }
             });
 
-            // Si es un aula interna de edificio, iluminar solo ese edificio
             if (edificioAsociado) {
                 elementosPoligonos.forEach(p => {
                     if (p.claveBase.includes(edificioAsociado)) {
@@ -869,7 +1087,7 @@
                 });
             }
 
-            // 3. Encender la ruta correspondiente
+            // 3. Encender ruta correspondiente
             let rutaEncendida = false;
             const claveRuta = queryNorm.replace(/^aula\s+/, "").trim();
             elementosRutas.forEach(ruta => {
@@ -891,7 +1109,6 @@
                 }
             });
 
-            // 4. Respaldo automático de ruta más cercana si no tenía nombre propio
             if (hallado && !rutaEncendida && destinoLatLng) {
                 const rutaCercana = encontrarRutaMasCercana(destinoLatLng);
                 if (rutaCercana) {
@@ -937,7 +1154,7 @@
             }
         }
 
-        // RESTABLECER VISTA GENERAL CON TODOS LOS NOMBRES Y BLOQUES
+        // RESTABLECER VISTA GENERAL
         function restablecerMapa() {
             modoAislado = false;
             elementosRutas.forEach(item => map.removeLayer(item.layer));
@@ -946,7 +1163,6 @@
                 marcadorDestinoActivo = null;
             }
 
-            // Restaurar estilo y etiquetas de todos los polígonos
             elementosPoligonos.forEach(item => {
                 item.layer.setStyle({
                     color: '#eab308',
@@ -957,7 +1173,6 @@
                 if (item.tieneEtiqueta) item.layer.openTooltip();
             });
 
-            // Restaurar etiquetas de todas las aulas y pisos puntuales
             elementosPuntos.forEach(item => {
                 if (item.tieneEtiqueta) item.layer.openTooltip();
             });
