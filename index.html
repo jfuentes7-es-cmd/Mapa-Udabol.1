@@ -96,11 +96,11 @@
 
         /* PANEL LATERAL IZQUIERDO */
         .sidebar {
-            width: 350px;
+            width: 340px;
             background: #ffffff;
             height: 100%;
             z-index: 1500;
-            box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+            box-shadow: 4px 0 15px rgba(0,0,0,0.25);
             display: flex;
             flex-direction: column;
             overflow: hidden;
@@ -108,7 +108,7 @@
 
         .sidebar-search {
             padding: 14px;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
             background: #f8fafc;
         }
 
@@ -126,6 +126,10 @@
             outline: none;
         }
 
+        .search-box input:focus {
+            border-color: #002244;
+        }
+
         .btn-buscar-main {
             background: #002244;
             color: white;
@@ -140,7 +144,7 @@
             background: #ef4444;
             color: white;
             border: none;
-            padding: 10px 10px;
+            padding: 10px 12px;
             border-radius: 8px;
             font-weight: 700;
             cursor: pointer;
@@ -148,33 +152,35 @@
         }
 
         .sidebar-content {
-            padding: 15px;
+            padding: 16px;
             overflow-y: auto;
             flex: 1;
+            color: #475569;
+            font-size: 13px;
+            line-height: 1.5;
         }
 
         /* CONTENEDOR DEL MAPA */
         #map {
             flex: 1;
             height: 100%;
-            background: #e2e8f0;
+            background: #0f172a;
         }
 
-        /* ETIQUETA VECTORIAL SOBRE AMBIENTES */
+        /* ETIQUETA SOBRE AMBIENTES */
         .etiqueta-ambiente {
-            background: rgba(0, 34, 68, 0.95);
+            background: rgba(0, 34, 68, 0.92);
             color: #ffffff;
-            border: 1.5px solid #ffffff;
+            border: 1px solid #38bdf8;
             border-radius: 6px;
-            padding: 3px 8px;
+            padding: 2px 7px;
             font-size: 11px;
             font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             white-space: nowrap;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* BOTÓN GPS */
+        /* BOTÓN GPS FLOTANTE */
         .btn-gps {
             position: absolute;
             top: 20px;
@@ -190,39 +196,7 @@
             justify-content: center;
             font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-
-        /* SELECTOR DE CAPAS FLOTANTE */
-        .layer-selector {
-            position: absolute;
-            bottom: 25px;
-            right: 20px;
-            z-index: 1000;
-            background: rgba(0, 34, 68, 0.92);
-            padding: 8px 12px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            display: flex;
-            gap: 6px;
-        }
-
-        .layer-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: #cbd5e1;
-            border: 1px solid transparent;
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .layer-btn.active {
-            background: #eab308;
-            color: #002244;
-            border-color: #eab308;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
         }
 
         /* CARD DE INFORMACIÓN INFERIOR */
@@ -237,7 +211,7 @@
             background: rgba(0, 34, 68, 0.95);
             padding: 14px 18px;
             border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
             backdrop-filter: blur(10px);
             border-left: 4px solid #00FF66;
             color: #fff;
@@ -247,12 +221,12 @@
         .info-card h3 {
             color: #00FF66;
             font-size: 15px;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .info-card p {
             color: #cbd5e1;
-            font-size: 12.5px;
+            font-size: 13px;
         }
 
         /* PUNTO DE UBICACIÓN GPS */
@@ -262,7 +236,22 @@
             background-color: #007aff;
             border: 3px solid #ffffff;
             border-radius: 50%;
-            box-shadow: 0 0 12px rgba(0, 122, 255, 0.8);
+            box-shadow: 0 0 12px rgba(0, 122, 255, 0.9);
+        }
+
+        /* ADAPTABILIDAD MÓVIL */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                max-height: 130px;
+            }
+            .sidebar-content {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -274,7 +263,7 @@
             <span class="brand-logo">UDABOL</span>
             <div class="brand-title">
                 <h1>Campus Sacaba - Mapa Interactivo</h1>
-                <p>Navegación Peatonal Vectorial 2D/3D</p>
+                <p>Navegación Satelital y Ubicación de Aulas</p>
             </div>
         </div>
         <div class="top-actions">
@@ -288,15 +277,13 @@
         <aside class="sidebar">
             <div class="sidebar-search">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Ej. C-1, D-4, Cajas, Biblioteca...">
+                    <input type="text" id="searchInput" placeholder="Buscar aula, bloque o servicio..." onkeypress="if(event.key === 'Enter') buscarDestino()">
                     <button class="btn-buscar-main" onclick="buscarDestino()">Ir</button>
                     <button class="btn-reset" id="btnReset" onclick="restablecerMapa()">✖</button>
                 </div>
             </div>
             <div class="sidebar-content">
-                <p style="color: #64748b; font-size: 13px; line-height: 1.5;">
-                    📌 Busca o selecciona cualquier aula para desplegar el aislamiento en <strong>verde neón</strong> y trazar la ruta de llegada en <strong>cian neón</strong>.
-                </p>
+                <p>📌 Escribe un destino en el buscador o <strong>toca directamente cualquier bloque en el mapa</strong> para resaltarlo en <strong>verde neón</strong> y ver su ruta de llegada.</p>
             </div>
         </aside>
 
@@ -304,13 +291,7 @@
         <div id="map"></div>
 
         <!-- BOTÓN GPS -->
-        <button class="btn-gps" onclick="centrarEnUsuario()" title="Mi Ubicación">🎯</button>
-
-        <!-- SELECTOR DE CAPAS -->
-        <div class="layer-selector">
-            <button class="layer-btn active" id="btnCapaPlano" onclick="activarCapa('plano')">📐 Plano Vectorial</button>
-            <button class="layer-btn" id="btnCapaSatelite" onclick="activarCapa('satelite')">🛰️ Satelital HD</button>
-        </div>
+        <button class="btn-gps" onclick="centrarEnUsuario()" title="Centrar en mi ubicación">🎯</button>
 
         <!-- CARD INFORMATIVA INFERIOR -->
         <div class="info-card" id="infoCard">
@@ -326,64 +307,19 @@
     <script>
         const map = L.map('map', { maxZoom: 21 }).setView([-17.3918, -66.0692], 18);
 
-        // Capa Base Clean Vectorial Gratuita (OpenStreetMap Light)
-        const capaVectorial = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        // Capa Satelital Esri HD (Única capa base)
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             maxZoom: 21,
             maxNativeZoom: 19,
-            attribution: '© OpenStreetMap — UDABOL'
+            attribution: '© Esri Satelital — UDABOL Campus Sacaba'
         }).addTo(map);
-
-        // Capa Base Satelital HD (Esri World Imagery)
-        const capaSatelite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 21,
-            maxNativeZoom: 19,
-            attribution: '© Esri Satelital — UDABOL'
-        });
-
-        function activarCapa(tipo) {
-            document.getElementById('btnCapaPlano').classList.remove('active');
-            document.getElementById('btnCapaSatelite').classList.remove('active');
-
-            if (tipo === 'plano') {
-                map.removeLayer(capaSatelite);
-                capaVectorial.addTo(map);
-                document.getElementById('btnCapaPlano').classList.add('active');
-            } else {
-                map.removeLayer(capaVectorial);
-                capaSatelite.addTo(map);
-                document.getElementById('btnCapaSatelite').classList.add('active');
-            }
-        }
-
-        // PALETA CROMÁTICA ILUSTRADA ARQUITECTÓNICA POR ZONAS
-        function obtenerEstiloVectorial(nombre) {
-            const n = nombre.toLowerCase().trim();
-
-            if (n.startsWith('c-') || n.startsWith('aula c')) {
-                return { color: '#0284c7', fillColor: '#38bdf8', fillOpacity: 0.85, weight: 2 }; // Bloque C (Azul Cian)
-            } else if (n.startsWith('d-') || n.startsWith('aula d')) {
-                return { color: '#0369a1', fillColor: '#7dd3fc', fillOpacity: 0.85, weight: 2 }; // Bloque D (Celeste)
-            } else if (n.startsWith('cc-') || n.startsWith('aula cc')) {
-                return { color: '#c2410c', fillColor: '#fb923c', fillOpacity: 0.85, weight: 2 }; // CC (Naranja Salmón)
-            } else if (n.startsWith('a-') || n.startsWith('aula a')) {
-                return { color: '#15803d', fillColor: '#4ade80', fillOpacity: 0.85, weight: 2 }; // Bloque A (Verde Pastel)
-            } else if (n.includes('biblioteca') || n.includes('caja')) {
-                return { color: '#1d4ed8', fillColor: '#60a5fa', fillOpacity: 0.9, weight: 2 };  // Servicios (Azul Eléctrico)
-            } else if (n.includes('nuevo') || n.includes('petrolera')) {
-                return { color: '#7e22ce', fillColor: '#c084fc', fillOpacity: 0.85, weight: 2 }; // Edificios Grandes (Morado)
-            } else if (n.includes('cancha') || n.includes('polideportiva')) {
-                return { color: '#b45309', fillColor: '#fde047', fillOpacity: 0.75, weight: 2 }; // Canchas (Dorado)
-            } else {
-                return { color: '#002244', fillColor: '#003366', fillOpacity: 0.75, weight: 2 }; // Predeterminado
-            }
-        }
 
         let elementosEstructura = [];
         let elementosRutas = [];
         let nombresProcesados = new Set();
         let userMarker = null, userLatLng = null;
 
-        // Cargar KML y renderizar polígonos vectoriales
+        // Cargar nuevo KML de Google Earth Pro
         const kmlLayer = omnivore.kml('mapa.kml')
             .on('ready', function() {
                 map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
@@ -392,9 +328,14 @@
                     const nombre = layer.feature && layer.feature.properties ? layer.feature.properties.name : "";
                     const nombreL = nombre.toLowerCase().trim();
 
+                    // POLÍGONOS (AULAS, EDIFICIOS, CANCHAS)
                     if (layer instanceof L.Polygon) {
-                        const estilo = obtenerEstiloVectorial(nombre);
-                        layer.setStyle(estilo);
+                        layer.setStyle({
+                            color: '#eab308',      // Borde dorado
+                            fillColor: '#800000',  // Guindo institucional
+                            fillOpacity: 0.45,
+                            weight: 2
+                        });
 
                         if (nombre && !nombresProcesados.has(nombreL)) {
                             layer.bindTooltip(nombre, {
@@ -404,8 +345,18 @@
                             });
                             nombresProcesados.add(nombreL);
                         }
-                        elementosEstructura.push({ layer: layer, nombre: nombreL, estiloBase: estilo });
+
+                        // Permitir seleccionar tocando directamente en el mapa
+                        if (nombre) {
+                            layer.on('click', function() {
+                                document.getElementById('searchInput').value = nombre;
+                                buscarDestino();
+                            });
+                        }
+
+                        elementosEstructura.push({ layer: layer, nombre: nombreL, nombreOriginal: nombre });
                     } 
+                    // MARCADORES DE PUNTO
                     else if (layer instanceof L.Marker) {
                         if (nombresProcesados.has(nombreL)) {
                             map.removeLayer(layer);
@@ -416,12 +367,17 @@
                                 className: 'etiqueta-ambiente'
                             });
                             layer.setOpacity(0);
-                            elementosEstructura.push({ layer: layer, nombre: nombreL, estiloBase: null });
+                            layer.on('click', function() {
+                                document.getElementById('searchInput').value = nombre;
+                                buscarDestino();
+                            });
+                            elementosEstructura.push({ layer: layer, nombre: nombreL, nombreOriginal: nombre });
                         }
                     }
+                    // LÍNEAS (RUTAS PEATONALES)
                     else if (layer instanceof L.Polyline) {
                         layer.setStyle({
-                            color: '#00F5FF',
+                            color: '#00F5FF',      // Cian Neón
                             weight: 6,
                             opacity: 0.95,
                             dashArray: '6, 8'
@@ -433,21 +389,25 @@
             })
             .addTo(map);
 
-        // BÚSQUEDA Y AISLAMIENTO NEÓN DE ALTA PRECISIÓN
+        // FUNCIÓN DE BÚSQUEDA Y AISLAMIENTO NEÓN
         function buscarDestino() {
             const query = document.getElementById('searchInput').value.toLowerCase().trim();
             if (!query) return;
 
             let hallado = false;
             let destinoLatLng = null;
+            let tituloMostrar = document.getElementById('searchInput').value.toUpperCase();
 
+            // 1. Apagar todas las rutas
             elementosRutas.forEach(item => map.removeLayer(item.layer));
 
+            // 2. Aislar ambiente coincidente
             elementosEstructura.forEach(item => {
                 const coincide = item.nombre === query || item.nombre.includes(query);
 
                 if (coincide && !hallado) {
                     hallado = true;
+                    if (item.nombreOriginal) tituloMostrar = item.nombreOriginal.toUpperCase();
 
                     if (item.layer.getBounds) {
                         destinoLatLng = item.layer.getBounds().getCenter();
@@ -457,24 +417,22 @@
                         map.setView(destinoLatLng, 20);
                     }
 
-                    // Iluminar en VERDE NEÓN
                     if (item.layer.setStyle) {
                         item.layer.setStyle({
                             color: '#00FF66',
                             fillColor: '#00FF66',
-                            fillOpacity: 0.9,
-                            weight: 4
+                            fillOpacity: 0.75,
+                            weight: 3
                         });
                     }
                 } else {
-                    // Atenuar el resto de estructuras
                     if (item.layer.setStyle) {
-                        item.layer.setStyle({ fillOpacity: 0.15, weight: 1 });
+                        item.layer.setStyle({ fillOpacity: 0.12, weight: 1 });
                     }
                 }
             });
 
-            // Trazar únicamente la ruta correspondiente
+            // 3. Encender ruta asociada
             elementosRutas.forEach(item => {
                 if (item.nombre === `ruta a ${query}` || item.nombre === `ruta ${query}` || item.nombre.includes(query)) {
                     map.addLayer(item.layer);
@@ -488,19 +446,25 @@
                     detalleText = `Distancia aproximada: <strong>${metros} metros</strong> desde tu posición.`;
                 }
                 document.getElementById('infoCard').style.display = 'block';
-                document.getElementById('cardTitulo').innerText = `Ubicación: ${document.getElementById('searchInput').value.toUpperCase()}`;
+                document.getElementById('cardTitulo').innerText = `Ubicación: ${tituloMostrar}`;
                 document.getElementById('cardDetalle').innerHTML = detalleText;
                 document.getElementById('btnReset').style.display = 'block';
             } else {
-                alert('No se encontró el ambiente. Revisa si el nombre está escrito exactamente como en Google Earth.');
+                alert('No se encontró el ambiente. Verifica el nombre en el mapa.');
             }
         }
 
+        // RESTABLECER VISTA GENERAL
         function restablecerMapa() {
             elementosRutas.forEach(item => map.removeLayer(item.layer));
             elementosEstructura.forEach(item => {
-                if (item.layer.setStyle && item.estiloBase) {
-                    item.layer.setStyle(item.estiloBase);
+                if (item.layer.setStyle) {
+                    item.layer.setStyle({
+                        color: '#eab308',
+                        fillColor: '#800000',
+                        fillOpacity: 0.45,
+                        weight: 2
+                    });
                 }
             });
 
@@ -511,7 +475,7 @@
             map.fitBounds(kmlLayer.getBounds(), { padding: [30, 30] });
         }
 
-        // GEOLOCALIZACIÓN GPS ESTABILIZADA
+        // GEOLOCALIZACIÓN GPS
         map.locate({ setView: false, watch: true, enableHighAccuracy: true });
         map.on('locationfound', function(e) {
             userLatLng = e.latlng;
