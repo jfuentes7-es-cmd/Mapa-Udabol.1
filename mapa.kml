@@ -252,6 +252,16 @@
 			<styleUrl>#sh_grn-diamond</styleUrl>
 		</Pair>
 	</StyleMap>
+	<StyleMap id="msn_grn-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
 	<StyleMap id="msn_grn-pushpin01">
 		<Pair>
 			<key>normal</key>
@@ -272,16 +282,6 @@
 			<styleUrl>#sh_grn-pushpin20</styleUrl>
 		</Pair>
 	</StyleMap>
-	<StyleMap id="msn_grn-pushpin20">
-		<Pair>
-			<key>normal</key>
-			<styleUrl>#sn_grn-pushpin70</styleUrl>
-		</Pair>
-		<Pair>
-			<key>highlight</key>
-			<styleUrl>#sh_grn-pushpin40</styleUrl>
-		</Pair>
-	</StyleMap>
 	<StyleMap id="msn_grn-pushpin200">
 		<Pair>
 			<key>normal</key>
@@ -290,6 +290,16 @@
 		<Pair>
 			<key>highlight</key>
 			<styleUrl>#sh_grn-pushpin400</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin20">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin70</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin40</styleUrl>
 		</Pair>
 	</StyleMap>
 	<StyleMap id="msn_grn-pushpin30">
@@ -462,16 +472,6 @@
 			<styleUrl>#sh_ylw-diamond</styleUrl>
 		</Pair>
 	</StyleMap>
-	<StyleMap id="msn_ylw-pushpin0">
-		<Pair>
-			<key>normal</key>
-			<styleUrl>#sn_ylw-pushpin0</styleUrl>
-		</Pair>
-		<Pair>
-			<key>highlight</key>
-			<styleUrl>#sh_ylw-pushpin0</styleUrl>
-		</Pair>
-	</StyleMap>
 	<StyleMap id="msn_ylw-pushpin">
 		<Pair>
 			<key>normal</key>
@@ -480,6 +480,16 @@
 		<Pair>
 			<key>highlight</key>
 			<styleUrl>#sh_ylw-pushpin</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
 		</Pair>
 	</StyleMap>
 	<StyleMap id="msn_ylw-pushpin01">
@@ -1172,6 +1182,20 @@
 			</ItemIcon>
 		</ListStyle>
 	</Style>
+	<Style id="sh_grn-pushpin">
+		<IconStyle>
+			<scale>0.709091</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+	</Style>
 	<Style id="sh_grn-pushpin01">
 		<IconStyle>
 			<scale>1.18182</scale>
@@ -1217,7 +1241,7 @@
 			<scale>0.8</scale>
 		</LabelStyle>
 	</Style>
-	<Style id="sh_grn-pushpin40">
+	<Style id="sh_grn-pushpin400">
 		<IconStyle>
 			<scale>0.945455</scale>
 			<Icon>
@@ -1229,7 +1253,7 @@
 			<scale>0.8</scale>
 		</LabelStyle>
 	</Style>
-	<Style id="sh_grn-pushpin400">
+	<Style id="sh_grn-pushpin40">
 		<IconStyle>
 			<scale>0.945455</scale>
 			<Icon>
@@ -1423,21 +1447,6 @@
 			</ItemIcon>
 		</ListStyle>
 	</Style>
-	<Style id="sh_ylw-pushpin0">
-		<IconStyle>
-			<scale>1.3</scale>
-			<Icon>
-				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
-			</Icon>
-			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
-		</IconStyle>
-		<BalloonStyle>
-		</BalloonStyle>
-		<LineStyle>
-			<color>ff00ff00</color>
-			<width>4.5</width>
-		</LineStyle>
-	</Style>
 	<Style id="sh_ylw-pushpin">
 		<IconStyle>
 			<scale>1.3</scale>
@@ -1450,6 +1459,21 @@
 		</BalloonStyle>
 		<LineStyle>
 			<color>ff00ffff</color>
+			<width>4.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
 			<width>4.5</width>
 		</LineStyle>
 	</Style>
@@ -2171,6 +2195,20 @@
 			</ItemIcon>
 		</ListStyle>
 	</Style>
+	<Style id="sn_grn-pushpin">
+		<IconStyle>
+			<scale>0.6</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.7</scale>
+		</LabelStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+	</Style>
 	<Style id="sn_grn-pushpin01">
 		<IconStyle>
 			<scale>0.6</scale>
@@ -2420,21 +2458,6 @@
 			</ItemIcon>
 		</ListStyle>
 	</Style>
-	<Style id="sn_ylw-pushpin">
-		<IconStyle>
-			<scale>1.1</scale>
-			<Icon>
-				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
-			</Icon>
-			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
-		</IconStyle>
-		<BalloonStyle>
-		</BalloonStyle>
-		<LineStyle>
-			<color>ff00ffff</color>
-			<width>4.5</width>
-		</LineStyle>
-	</Style>
 	<Style id="sn_ylw-pushpin0">
 		<IconStyle>
 			<scale>1.1</scale>
@@ -2447,6 +2470,21 @@
 		</BalloonStyle>
 		<LineStyle>
 			<color>ff00ff00</color>
+			<width>4.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
 			<width>4.5</width>
 		</LineStyle>
 	</Style>
@@ -4976,6 +5014,44 @@ SALA DE ESPERA</description>
 					-66.06904886042372,-17.39068575112814,0 -66.06888559230353,-17.39077343653477,0 -66.06865074212189,-17.39039484246225,0 -66.06861081331705,-17.39041926574437,0 -66.06847418203105,-17.39050457256348,0 -66.06846073346104,-17.39044601001432,0 
 				</coordinates>
 			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>AUDITORIO NUEVO</name>
+			<open>1</open>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.48.50 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.48.50 PM (1).jpeg">]]></description>
+			<LookAt>
+				<longitude>-66.06857153936609</longitude>
+				<latitude>-17.39052718131338</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0002769195655816822</heading>
+				<tilt>28.3922989865383</tilt>
+				<range>112.5678988216774</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#msn_grn-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06844216119815,-17.39033868304158,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>AUDITORIO ANTIGUO</name>
+			<open>1</open>
+			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.48.50 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 9.48.50 PM (1).jpeg">]]></description>
+			<Camera>
+				<longitude>-66.06822304299014</longitude>
+				<latitude>-17.39133476194489</latitude>
+				<altitude>58.12050391684036</altitude>
+				<heading>7.033160786566205</heading>
+				<tilt>35.46518581130171</tilt>
+				<roll>-1.048827084368453</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#msn_grn-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-66.06811528965618,-17.39094135998325,0</coordinates>
+			</Point>
 		</Placemark>
 		<atom:link rel="app" href="https://www.google.com/earth/about/versions/#earth-pro" title="Google Earth Pro 7.3.7.1327"></atom:link>
 	</Folder>
