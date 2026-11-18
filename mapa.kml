@@ -2,6 +2,16 @@
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 <Document>
 	<name>mapa.kml</name>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
 	<StyleMap id="m_ylw-pushpin4">
 		<Pair>
 			<key>normal</key>
@@ -265,11 +275,21 @@
 	<StyleMap id="msn_grn-pushpin20">
 		<Pair>
 			<key>normal</key>
-			<styleUrl>#sn_grn-pushpin7</styleUrl>
+			<styleUrl>#sn_grn-pushpin70</styleUrl>
 		</Pair>
 		<Pair>
 			<key>highlight</key>
 			<styleUrl>#sh_grn-pushpin40</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_grn-pushpin200">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_grn-pushpin7</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_grn-pushpin400</styleUrl>
 		</Pair>
 	</StyleMap>
 	<StyleMap id="msn_grn-pushpin30">
@@ -440,6 +460,26 @@
 		<Pair>
 			<key>highlight</key>
 			<styleUrl>#sh_ylw-diamond</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin0</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<StyleMap id="msn_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#sn_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#sh_ylw-pushpin</styleUrl>
 		</Pair>
 	</StyleMap>
 	<StyleMap id="msn_ylw-pushpin01">
@@ -802,6 +842,19 @@
 			<styleUrl>#sh_ylw-pushpin61</styleUrl>
 		</Pair>
 	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>4.5</width>
+		</LineStyle>
+	</Style>
 	<Style id="s_ylw-pushpin4">
 		<IconStyle>
 			<scale>1.1</scale>
@@ -850,6 +903,19 @@
 		<PolyStyle>
 			<color>66ffaaff</color>
 		</PolyStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>4.5</width>
+		</LineStyle>
 	</Style>
 	<Style id="s_ylw-pushpin_hl4">
 		<IconStyle>
@@ -1163,6 +1229,18 @@
 			<scale>0.8</scale>
 		</LabelStyle>
 	</Style>
+	<Style id="sh_grn-pushpin400">
+		<IconStyle>
+			<scale>0.945455</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
 	<Style id="sh_grn-pushpin7">
 		<IconStyle>
 			<scale>0.945455</scale>
@@ -1344,6 +1422,36 @@
 				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond-lv.png</href>
 			</ItemIcon>
 		</ListStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>4.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sh_ylw-pushpin">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>4.5</width>
+		</LineStyle>
 	</Style>
 	<Style id="sh_ylw-pushpin01">
 		<IconStyle>
@@ -2119,6 +2227,18 @@
 			<scale>0.8</scale>
 		</LabelStyle>
 	</Style>
+	<Style id="sn_grn-pushpin70">
+		<IconStyle>
+			<scale>0.8</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/grn-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LabelStyle>
+			<scale>0.8</scale>
+		</LabelStyle>
+	</Style>
 	<Style id="sn_grn-pushpin7">
 		<IconStyle>
 			<scale>0.8</scale>
@@ -2299,6 +2419,36 @@
 				<href>http://maps.google.com/mapfiles/kml/paddle/ylw-diamond-lv.png</href>
 			</ItemIcon>
 		</ListStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff00ffff</color>
+			<width>4.5</width>
+		</LineStyle>
+	</Style>
+	<Style id="sn_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<BalloonStyle>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff00ff00</color>
+			<width>4.5</width>
+		</LineStyle>
 	</Style>
 	<Style id="sn_ylw-pushpin01">
 		<IconStyle>
@@ -3524,7 +3674,7 @@
 				<roll>-1.15744341235286</roll>
 				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 			</Camera>
-			<styleUrl>#msn_grn-pushpin20</styleUrl>
+			<styleUrl>#msn_grn-pushpin200</styleUrl>
 			<Point>
 				<gx:drawOrder>1</gx:drawOrder>
 				<coordinates>-66.06838828546233,-17.39079796616538,0</coordinates>
@@ -3542,7 +3692,7 @@
 				<roll>-1.157443412352825</roll>
 				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 			</Camera>
-			<styleUrl>#msn_grn-pushpin20</styleUrl>
+			<styleUrl>#msn_grn-pushpin200</styleUrl>
 			<Point>
 				<gx:drawOrder>1</gx:drawOrder>
 				<coordinates>-66.06837114693548,-17.39076076436617,0</coordinates>
@@ -3560,7 +3710,7 @@
 				<roll>-1.15744341235286</roll>
 				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 			</Camera>
-			<styleUrl>#msn_grn-pushpin20</styleUrl>
+			<styleUrl>#msn_grn-pushpin200</styleUrl>
 			<Point>
 				<gx:drawOrder>1</gx:drawOrder>
 				<coordinates>-66.06838031409266,-17.39078009672527,0</coordinates>
@@ -3569,19 +3719,19 @@
 		<Placemark>
 			<name>AULA G-5</name>
 			<description><![CDATA[<img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.34 PM (1).jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.08.32 PM.jpeg"><img style="max-width:500px;" src="file:///C:/Users/ASUS/Downloads/WhatsApp Image 2026-11-10 at 10.27.52 PM (2).jpeg">]]></description>
-			<Camera>
-				<longitude>-66.06832440128028</longitude>
-				<latitude>-17.39108813903966</latitude>
-				<altitude>57.14752368482704</altitude>
-				<heading>6.901679613249171</heading>
-				<tilt>31.69162808206307</tilt>
-				<roll>-1.15744341235286</roll>
+			<LookAt>
+				<longitude>-66.06828892973731</longitude>
+				<latitude>-17.39075191694093</latitude>
+				<altitude>0</altitude>
+				<heading>-0.0001935526894208488</heading>
+				<tilt>20.4398447225893</tilt>
+				<range>72.66432032356124</range>
 				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
-			</Camera>
+			</LookAt>
 			<styleUrl>#msn_grn-pushpin20</styleUrl>
 			<Point>
 				<gx:drawOrder>1</gx:drawOrder>
-				<coordinates>-66.06839510328108,-17.39081583970601,0</coordinates>
+				<coordinates>-66.0683936892093,-17.39077318521461,0</coordinates>
 			</Point>
 		</Placemark>
 		<Placemark>
@@ -4794,6 +4944,36 @@ SALA DE ESPERA</description>
 				<tessellate>1</tessellate>
 				<coordinates>
 					-66.06904579137894,-17.39067841401503,0 -66.06888584689024,-17.39077468943551,0 -66.06864682199389,-17.39039990157642,0 -66.06842989651668,-17.39053566483369,0 -66.06838405526523,-17.39047526967007,0 -66.06804696411245,-17.39062564790094,0 -66.06793344609612,-17.39044726913269,0 -66.06785056044804,-17.39047989228203,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Aulas G</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904613304972,-17.39067670060937,0 -66.06879387079925,-17.39083559209741,0 -66.06862316576976,-17.39056778408101,0 -66.06848035445334,-17.39065456215798,0 -66.06842951600993,-17.39057547166107,0 -66.06836376796683,-17.39061546500352,0 -66.06838435215829,-17.39064765780622,0 -66.06832803150047,-17.39067487945833,0 -66.0683488681106,-17.39071240266217,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Auditorio Antiguo</name>
+			<styleUrl>#msn_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904864554407,-17.39067758915041,0 -66.06864485527876,-17.39091864563091,0 -66.06876264330157,-17.39110470249744,0 -66.06817757679283,-17.39122212248222,0 -66.06802480429211,-17.39100041986934,0 -66.06804149944963,-17.39098955114279,0 -66.06806770421825,-17.39097170738341,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Auditorio Nuevo </name>
+			<styleUrl>#msn_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-66.06904886042372,-17.39068575112814,0 -66.06888559230353,-17.39077343653477,0 -66.06865074212189,-17.39039484246225,0 -66.06861081331705,-17.39041926574437,0 -66.06847418203105,-17.39050457256348,0 -66.06846073346104,-17.39044601001432,0 
 				</coordinates>
 			</LineString>
 		</Placemark>
